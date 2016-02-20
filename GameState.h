@@ -6,6 +6,7 @@
 #define OTHELLO_GAMESTATE_H
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class GameState {
   const int N=8;
@@ -16,6 +17,11 @@ class GameState {
   void printBoard();
   void addWhite(int i,int j);//TODO:
   void addBlack(int i,int j);//TODO:
+  //TODO: gives legal moves for white player
+  std::vector<std::pair<int,int> > possibleMovesWhite();
+  //TODO: gives legal moves for black player
+  std::vector<std::pair<int,int> > possibleMovesBlack();
+
 };
 
 
