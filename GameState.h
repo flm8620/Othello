@@ -8,12 +8,22 @@
 #include <vector>
 #include <algorithm>
 
+
+
+struct ChessBoardScore{
+  const int N;
+  std::vector<double> scores;
+  ChessBoardScore(int Nsize):N(Nsize){
+    scores.resize(Nsize);
+  }
+};
+
 class GameState {
-  const int N=8;
+  const int N;
   std::vector<bool> isWhile;
   std::vector<bool> isBlack;
  public:
-  GameState();
+  GameState(int Nsize);
   void printBoard();
   void addWhite(int i,int j);//TODO:
   void addBlack(int i,int j);//TODO:

@@ -4,7 +4,7 @@
 
 #include "GameState.h"
 using namespace std;
-GameState::GameState() {
+GameState::GameState(int Nsize):N(Nsize) {
   isWhile.resize(N * N, false);
   isBlack.resize(N * N, false);
   //four pieces is put to start
