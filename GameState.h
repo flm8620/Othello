@@ -14,6 +14,8 @@ class GameState {
  public:
   GameState();
   void printBoard();
+  void addWhite(int i,int j);//TODO:
+  void addBlack(int i,int j);//TODO:
 };
 
 
