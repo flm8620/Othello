@@ -8,7 +8,7 @@
 #include <vector>
 #include <algorithm>
 
-
+enum Color{Black,White};
 
 struct ChessBoardScore{
   const int N;
@@ -20,13 +20,12 @@ struct ChessBoardScore{
 
 class GameState {
   const int N;
-  std::vector<bool> isWhile;
+  std::vector<bool> isWhite;
   std::vector<bool> isBlack;
  public:
   GameState(int Nsize);
   void printBoard();
-  void addWhite(int i,int j);//TODO:
-  void addBlack(int i,int j);//TODO:
+  void addPiece(int i,int j,Color player);//TODO:
   //TODO: gives legal moves for white player
   std::vector<std::pair<int,int> > possibleMovesWhite();
   //TODO: gives legal moves for black player

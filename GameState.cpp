@@ -3,9 +3,10 @@
 //
 
 #include "GameState.h"
+#include <stdexcept>
 using namespace std;
 GameState::GameState(int Nsize):N(Nsize) {
-  isWhile.resize(N * N, false);
+  isWhite.resize(N * N, false);
   isBlack.resize(N * N, false);
   //four pieces is put to start
   //    01234567
@@ -19,8 +20,8 @@ GameState::GameState(int Nsize):N(Nsize) {
   //  7 OOOOOOOO
   //
   // index of position (i,j) is [i*N+j]
-  isWhile[(N / 2 - 1) * N + (N / 2 - 1)] = true;
-  isWhile[(N / 2) * N + (N / 2)] = true;
+  isWhite[(N / 2 - 1) * N + (N / 2 - 1)] = true;
+  isWhite[(N / 2) * N + (N / 2)] = true;
   isBlack[(N / 2) * N + (N / 2 - 1)] = true;
   isBlack[(N / 2 - 1) * N + (N / 2)] = true;
 }
@@ -28,10 +29,22 @@ GameState::GameState(int Nsize):N(Nsize) {
 void GameState::printBoard() {
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
-      if (isWhile[i * N + j]) std::cout << 'O';
+      if (isWhite[i * N + j]) std::cout << 'O';
       else if (isBlack[i * N + j]) cout << '@';
       else cout << '-';
     }
     cout << endl;
   }
+}
+void GameState::addPiece(int i, int j, Color player) {
+  if(i<0 || i>=N || j<0 || j>=N){
+    throw invalid_argument("position out of bound");
+  }
+  if(isWhite[i*N+j] || isBlack[i*N+j]){
+    throw invalid_argument("position already taken by a piece");
+  }
+  if(player==Color::White)
+    isWhite[i*N+j]=true;
+  else
+    isBlack[i*N+j]=true;
 }
