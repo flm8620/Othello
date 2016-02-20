@@ -1,6 +1,8 @@
 #include <iostream>
+#include "GameState.h"
 using namespace std;
 int main() {
-  cout << "Hello, World!" << endl;
+  GameState state;
+  state.printBoard();
   return 0;
 }
