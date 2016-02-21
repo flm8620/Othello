@@ -8,14 +8,15 @@
 #include <vector>
 #include <algorithm>
 
-enum Color{Black,White};
+enum Color{Black,White,Neither};
 
 struct ChessBoardScore{
   const int N;
   std::vector<double> scores;
   ChessBoardScore(int Nsize):N(Nsize){
-    scores.resize(Nsize);
+    scores.resize(Nsize,0);
   }
+  void randomizeScore();
 };
 
 class GameState {
@@ -24,12 +25,12 @@ class GameState {
   std::vector<bool> isBlack;
  public:
   GameState(int Nsize);
-  void printBoard();
+  void printBoard() const;
   void addPiece(int i,int j,Color player);//TODO:
-  //TODO: gives legal moves for white player
-  std::vector<std::pair<int,int> > possibleMovesWhite();
-  //TODO: gives legal moves for black player
-  std::vector<std::pair<int,int> > possibleMovesBlack();
+  //TODO: gives legal moves for player
+  std::vector<std::pair<int,int> > possibleMoves(Color player);
+  //TODO: get piece number of player
+  int pieceCount(Color player)const;
 
 };
 
