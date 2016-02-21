@@ -52,3 +52,76 @@ void GameState::addPiece(int i, int j, Color player) {
   else
     isBlack[i*N+j]=true;
 }
+vector<pair<int,int> > GameState::position_NextTo_Piece(Color player){
+    vector<pair<int, int>> Candidate_P;
+    if (player==Color::White){
+        for (int i=0;i<N;i++){
+            for(int j =0; j <N; j++){
+                if (isBlack[i*N+j]==true){
+                    if(i>0){
+                        if(isBlack[(i-1)*N+j]==false && isWhite[(i-1)*N+j]==false){
+                            pair<int, int> p(i-1,j);
+                            Candidate_P.push_back(p);
+                        }
+                    }
+                    if(i<N){
+                        if(isBlack[(i+1)*N+j]==false && isWhite[(i+1)*N+j]==false){
+                            pair<int, int> p(i+1,j);
+                            Candidate_P.push_back(p);
+                        }
+                    }
+                    if(j>0){
+                        if(isBlack[i*N+j-1]==false && isWhite[i*N+j-1]==false){
+                            pair<int, int> p(i,j-1);
+                            Candidate_P.push_back(p);
+                        }
+                    }
+                    if(j<N){
+                        if(isBlack[i*N+j+1]==false && isWhite[i*N+j+1]==false){
+                            pair<int, int> p(i,j+1);
+                            Candidate_P.push_back(p);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if (player==Color::Black){
+        for (int i=0;i<N;i++){
+            for(int j =0; j <N; j++){
+                if (isWhite[i*N+j]==true){
+                    if(i>0){
+                        if(isBlack[(i-1)*N+j]==false && isWhite[(i-1)*N+j]==false){
+                            pair<int, int> p(i-1,j);
+                            Candidate_P.push_back(p);
+                        }
+                    }
+                    if(i<N){
+                        if(isBlack[(i+1)*N+j]==false && isWhite[(i+1)*N+j]==false){
+                            pair<int, int> p(i+1,j);
+                            Candidate_P.push_back(p);
+                        }
+                    }
+                    if(j>0){
+                        if(isBlack[i*N+j-1]==false && isWhite[i*N+j-1]==false){
+                            pair<int, int> p(i,j-1);
+                            Candidate_P.push_back(p);
+                        }
+                    }
+                    if(j<N){
+                        if(isBlack[i*N+j+1]==false && isWhite[i*N+j+1]==false){
+                            pair<int, int> p(i,j+1);
+                            Candidate_P.push_back(p);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return Candidate_P;
+}
+
+
+
+
+
