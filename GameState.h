@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
+#include <stdexcept>
 enum Color{Black,White};
 
 struct ChessBoardScore{
@@ -30,7 +30,8 @@ class GameState {
   std::vector<std::pair<int,int> > possibleMovesWhite();
   //TODO: gives legal moves for black player
   std::vector<std::pair<int,int> > possibleMovesBlack();
-
+  std::vector<std::pair<int,int> > position_NextTo_Piece(Color player);
+    //TODO: give the candidate positons of possible moves.
 };
 
 

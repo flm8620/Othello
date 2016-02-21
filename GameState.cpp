@@ -3,9 +3,13 @@
 //
 
 #include "GameState.h"
-#include <stdexcept>
+
 using namespace std;
 GameState::GameState(int Nsize):N(Nsize) {
+    if (N%2==1){
+        throw invalid_argument("size of chess board must be even");
+    }
+
   isWhite.resize(N * N, false);
   isBlack.resize(N * N, false);
   //four pieces is put to start
