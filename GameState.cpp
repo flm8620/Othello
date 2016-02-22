@@ -215,7 +215,7 @@ vector<pair<int,int> > GameState::position_NextTo_Piece(Color player) const{
     return Candidate_P;
 }
 
-vector<pair<int,int> > GameState:: possibleMoves(Color player){
+vector<pair<int,int> > GameState::possibleMoves(Color player){
     
 }
 
