@@ -27,6 +27,9 @@ class GameState {
   Color nextMoveColor;
   std::vector<std::pair<int,int> > nextPossibleMoves;
  public:
+    std::vector<bool> isColor(Color player) const{
+        return player == Color::Black ? isBlack : isWhite;
+    }
   GameState(int Nsize);
   bool gameIsEnd()const{return nextMoveColor==Color::Neither;}
   Color nextPlayer()const{return nextMoveColor;}
