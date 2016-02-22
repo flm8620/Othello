@@ -29,20 +29,26 @@ class GameState {
   
   //TODO: gives legal moves for player
   std::vector<std::pair<int,int> > possibleMoves(Color player)const;
+  
+  //TODO: give the candidate positons of possible moves.
+  std::vector<std::pair<int,int> > position_NextTo_Piece(Color player)const;
+    
+  
  public:
   GameState(int Nsize);
   bool gameIsEnd()const{return nextMoveColor==Color::Neither;}
   Color currentPlayer()const{return nextMoveColor;}
   void printBoard() const;
-  void addPiece(int i,int j,Color player);//TODO:
+  void addPiece(int i,int j,Color player);
   
   //before you use this function, you should check that you are the currentPlayer()
-  std::vector<std::pair<int,int> > getPossibleMovesForCurrentPlayer()const;
+  std::vector<std::pair<int,int> > getPossibleMovesForCurrentPlayer()const{
+    return nextPossibleMoves; 
+  }
+  
   //TODO: get piece number of player
   int pieceCount(Color player)const;
-  std::vector<std::pair<int,int> > position_NextTo_Piece(Color player)const;
-    //TODO: give the candidate positons of possible moves.
-
+  
   double evaluateBoardScore(const ChessBoardScore& score, Color player)const;
 };
 
