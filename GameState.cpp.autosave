@@ -74,10 +74,10 @@ void GameState::addPiece(int i, int j, Color player) {
   }
 
   Color otherPlayer = player==Color::Black ? Color::White : Color::Black;
-  nextPossibleMoves=this->possibleMoves(player);
+  nextPossibleMoves=this->possibleMoves(otherPlayer);
   if(nextPossibleMoves.empty()){
-    nextMoveColor = otherPlayer;
-    nextPossibleMoves=this->possibleMoves(otherPlayer);
+    nextMoveColor = player;
+    nextPossibleMoves=this->possibleMoves(player);
     if(nextPossibleMoves.empty()){
       nextMoveColor=Color::Neither;
     }

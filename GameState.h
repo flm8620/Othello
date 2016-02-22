@@ -24,16 +24,21 @@ class GameState {
   const int N;
   std::vector<bool> isWhite;
   std::vector<bool> isBlack;
+  Color nextMoveColor;
+  std::vector<std::pair<int,int> > nextPossibleMoves;
  public:
   GameState(int Nsize);
+  bool gameIsEnd(){return nextMoveColor==Color::Neither;}
   void printBoard() const;
   void addPiece(int i,int j,Color player);//TODO:
   //TODO: gives legal moves for player
   std::vector<std::pair<int,int> > possibleMoves(Color player);
   //TODO: get piece number of player
   int pieceCount(Color player)const;
-  std::vector<std::pair<int,int> > position_NextTo_Piece(Color player);
+  std::vector<std::pair<int,int> > position_NextTo_Piece(Color player)const;
     //TODO: give the candidate positons of possible moves.
+
+  double evaluateBoardScore(const ChessBoardScore& score, Color player)const;
 };
 
 
