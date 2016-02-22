@@ -48,6 +48,8 @@ GameState::GameState(int Nsize):N(Nsize),nextMoveColor(Color::Black) {
   isWhite[(N / 2) * N + (N / 2)] = true;
   isBlack[(N / 2) * N + (N / 2 - 1)] = true;
   isBlack[(N / 2 - 1) * N + (N / 2)] = true;
+
+  nextPossibleMoves = this->possibleMoves(nextMoveColor);
 }
 
 void GameState::printBoard() const {
@@ -74,10 +76,10 @@ void GameState::addPiece(int i, int j, Color player) {
   }
 
   Color otherPlayer = player==Color::Black ? Color::White : Color::Black;
-  nextPossibleMoves=this->possibleMoves(player);
+  nextPossibleMoves=this->possibleMoves(otherPlayer);
   if(nextPossibleMoves.empty()){
-    nextMoveColor = otherPlayer;
-    nextPossibleMoves=this->possibleMoves(otherPlayer);
+    nextMoveColor = player;
+    nextPossibleMoves=this->possibleMoves(player);
     if(nextPossibleMoves.empty()){
       nextMoveColor=Color::Neither;
     }
@@ -85,7 +87,7 @@ void GameState::addPiece(int i, int j, Color player) {
 
 }
 
-std::vector<std::pair<int, int> > GameState::possibleMoves(Color player)
+std::vector<std::pair<int, int> > GameState::possibleMoves(Color player) const
 {
 
 }

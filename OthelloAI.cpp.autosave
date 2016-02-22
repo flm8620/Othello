@@ -15,11 +15,12 @@ OthelloAI::OthelloAI(int Nsize):chessBoardScore(Nsize), N(Nsize)
 
 double OthelloAI::max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor)
 {
-  if(depth==0){
+  if(depth==0 || gs.gameIsEnd()){
     return evaluateScore(gs,myColor);
   }
-  if(gs.gameIsEnd()){
-    return
+  if(isMyTurn){
+    double a = -1e10;
+    auto moves = gs.possibleMoves(myColor);
   }
 }
 
