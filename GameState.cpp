@@ -6,6 +6,7 @@
 #include <stdexcept>
 #include <chrono>
 #include <random>
+#include <cassert>
 using namespace std;
 
 auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();
@@ -25,6 +26,10 @@ void ChessBoardScore::randomizeScore() {
 }
 
 GameState::GameState(int Nsize):N(Nsize) {
+    if (N%2==1){
+        throw invalid_argument("size of chess board must be even");
+    }
+
   isWhite.resize(N * N, false);
   isBlack.resize(N * N, false);
   //four pieces is put to start
@@ -67,4 +72,83 @@ void GameState::addPiece(int i, int j, Color player) {
   else
     isBlack[i*N+j]=true;
 }
+
+int GameState::pieceCount(Color player) const
+{
+  int sum=0;
+  if(player==Color::Black){
+    for(auto b : isBlack) if(b)sum++;
+  }else if(player==Color::White){
+    for(auto b : isWhite) if(b)sum++;
+  }else{
+    assert(false);
+  }
+  return sum;
+}
+
+vector<pair<int,int> > GameState::position_NextTo_Piece(Color player){
+    vector<pair<int, int>> Candidate_P;
+    if (player==Color::White){
+        for (int i=0;i<N;i++){
+            for(int j =0; j <N; j++){
+                if (isBlack[i*N+j]==true){
+                    if(i>0){
+                        if(isBlack[(i-1)*N+j]==false && isWhite[(i-1)*N+j]==false){
+                            Candidate_P.push_back(make_pair(i-1,j));
+                        }
+                    }
+                    if(i<N-1){
+                        if(isBlack[(i+1)*N+j]==false && isWhite[(i+1)*N+j]==false){
+                            Candidate_P.push_back(make_pair(i+1,j));
+                        }
+                    }
+                    if(j>0){
+                        if(isBlack[i*N+j-1]==false && isWhite[i*N+j-1]==false){
+                            Candidate_P.push_back(make_pair(i,j-1));
+                        }
+                    }
+                    if(j<N-1){
+                        if(isBlack[i*N+j+1]==false && isWhite[i*N+j+1]==false){
+                            Candidate_P.push_back(make_pair(i,j+1));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if (player==Color::Black){
+        for (int i=0;i<N;i++){
+            for(int j =0; j <N; j++){
+                if (isWhite[i*N+j]==true){
+                    if(i>0){
+                        if(isBlack[(i-1)*N+j]==false && isWhite[(i-1)*N+j]==false){
+                            pair<int, int> p(i-1,j);
+                            Candidate_P.push_back(p);
+                        }
+                    }
+                    if(i<N-1){
+                        if(isBlack[(i+1)*N+j]==false && isWhite[(i+1)*N+j]==false){
+                            pair<int, int> p(i+1,j);
+                            Candidate_P.push_back(p);
+                        }
+                    }
+                    if(j>0){
+                        if(isBlack[i*N+j-1]==false && isWhite[i*N+j-1]==false){
+                            pair<int, int> p(i,j-1);
+                            Candidate_P.push_back(p);
+                        }
+                    }
+                    if(j<N-1){
+                        if(isBlack[i*N+j+1]==false && isWhite[i*N+j+1]==false){
+                            pair<int, int> p(i,j+1);
+                            Candidate_P.push_back(p);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return Candidate_P;
+}
+
 

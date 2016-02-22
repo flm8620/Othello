@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <stdexcept>
 
 enum Color{Black,White,Neither};
 
@@ -31,7 +32,8 @@ class GameState {
   std::vector<std::pair<int,int> > possibleMoves(Color player);
   //TODO: get piece number of player
   int pieceCount(Color player)const;
-
+  std::vector<std::pair<int,int> > position_NextTo_Piece(Color player);
+    //TODO: give the candidate positons of possible moves.
 };
 
 
