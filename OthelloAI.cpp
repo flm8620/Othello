@@ -15,7 +15,7 @@ OthelloAI::OthelloAI(int Nsize):chessBoardScore(Nsize), N(Nsize)
   }
 }
 
-double OthelloAI::max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor)const
+double OthelloAI::max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor, double alpha, double beta)const
 {
   if(depth==0 || gs.gameIsEnd()){
     return evaluateScore(gs,myColor);
@@ -28,7 +28,9 @@ double OthelloAI::max_min(const GameState &gs, int depth, bool isMyTurn, Color m
       GameState gsBranch=gs;
       gsBranch.addPiece(move.first,move.second,myColor);
       bool isMyTurnAgain = gs.currentPlayer() == myColor;
-      a=fmax(a,max_min(gsBranch,depth-1,isMyTurnAgain,myColor));
+      a=fmax(a,max_min(gsBranch,depth-1,isMyTurnAgain,myColor,alpha,beta));
+      alpha = fmax(alpha,a);
+      if(beta <= alpha)break;//beta cut off
     }
     return a;
   }else{
@@ -40,7 +42,9 @@ double OthelloAI::max_min(const GameState &gs, int depth, bool isMyTurn, Color m
       GameState gsBranch=gs;
       gsBranch.addPiece(move.first,move.second,otherPlayer);
       bool isMyTurnNow = gs.currentPlayer() == myColor;
-      a=fmin(a,max_min(gsBranch,depth-1,isMyTurnNow,myColor));
+      a=fmin(a,max_min(gsBranch,depth-1,isMyTurnNow,myColor,alpha,beta));
+      beta = min(beta,a);
+      if(beta <= alpha) break; //alpha cut off
     }
     return a;
   }
@@ -71,7 +75,7 @@ std::pair<int, int> OthelloAI::giveNextMove(const GameState &gs, Color myColor,
     GameState gsBranch=gs;
     gsBranch.addPiece(move.first,move.second,myColor);
     bool isMyTurnAgain = gs.currentPlayer() == myColor;
-    double s = max_min(gsBranch,maxDepth-1,isMyTurnAgain,myColor);
+    double s = max_min(gsBranch,maxDepth-1,isMyTurnAgain,myColor,-1e10,1e10);
     if(s>maxScore){
       bestMove=move;
       maxScore=s;
