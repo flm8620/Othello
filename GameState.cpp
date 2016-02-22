@@ -87,10 +87,6 @@ void GameState::addPiece(int i, int j, Color player) {
 
 }
 
-std::vector<std::pair<int, int> > GameState::possibleMoves(Color player) const
-{
-
-}
 
 int GameState::pieceCount(Color player) const
 {
@@ -107,18 +103,40 @@ int GameState::pieceCount(Color player) const
 
 vector<pair<int,int> > GameState::position_NextTo_Piece(Color player) const{
     vector<pair<int, int>> Candidate_P;
-    if (player==Color::White){
+    vector<bool> P_color = isColor(player);
         for (int i=0;i<N;i++){
             for(int j =0; j <N; j++){
-                if (isBlack[i*N+j]==true){
+                if (P_color[i*N+j]==true){
                     if(i>0){
                         if(isBlack[(i-1)*N+j]==false && isWhite[(i-1)*N+j]==false){
                             Candidate_P.push_back(make_pair(i-1,j));
+                        }
+                        if(j>0){
+                            if(isBlack[(i-1)*N+j-1]==false && isWhite[(i-1)*N+j-1]==false){
+                                Candidate_P.push_back(make_pair(i-1,j-1));
+                            }
+                        }
+                        if(j<N-1){
+                            if(isBlack[(i-1)*N+j+1]==false && isWhite[(i-1)*N+j+1]==false){
+                                Candidate_P.push_back(make_pair(i-1,j+1));
+                            }
+
                         }
                     }
                     if(i<N-1){
                         if(isBlack[(i+1)*N+j]==false && isWhite[(i+1)*N+j]==false){
                             Candidate_P.push_back(make_pair(i+1,j));
+                        }
+                        if(j>0){
+                            if(isBlack[(i+1)*N+j-1]==false && isWhite[(i+1)*N+j-1]==false){
+                                Candidate_P.push_back(make_pair(i-1,j-1));
+                            }
+                        }
+                        if(j<N-1){
+                            if(isBlack[(i+1)*N+j+1]==false && isWhite[(i+1)*N+j+1]==false){
+                                Candidate_P.push_back(make_pair(i-1,j+1));
+                            }
+                            
                         }
                     }
                     if(j>0){
@@ -134,41 +152,23 @@ vector<pair<int,int> > GameState::position_NextTo_Piece(Color player) const{
                 }
             }
         }
-    }
-    if (player==Color::Black){
-        for (int i=0;i<N;i++){
-            for(int j =0; j <N; j++){
-                if (isWhite[i*N+j]==true){
-                    if(i>0){
-                        if(isBlack[(i-1)*N+j]==false && isWhite[(i-1)*N+j]==false){
-                            pair<int, int> p(i-1,j);
-                            Candidate_P.push_back(p);
-                        }
-                    }
-                    if(i<N-1){
-                        if(isBlack[(i+1)*N+j]==false && isWhite[(i+1)*N+j]==false){
-                            pair<int, int> p(i+1,j);
-                            Candidate_P.push_back(p);
-                        }
-                    }
-                    if(j>0){
-                        if(isBlack[i*N+j-1]==false && isWhite[i*N+j-1]==false){
-                            pair<int, int> p(i,j-1);
-                            Candidate_P.push_back(p);
-                        }
-                    }
-                    if(j<N-1){
-                        if(isBlack[i*N+j+1]==false && isWhite[i*N+j+1]==false){
-                            pair<int, int> p(i,j+1);
-                            Candidate_P.push_back(p);
-                        }
-                    }
-                }
-            }
-        }
-    }
+    
     return Candidate_P;
 }
+
+vector<pair<int,int> > GameState::possibleMoves(Color player) const{
+    vector<pair<int, int>> Candidate_P = position_NextTo_Piece(player);
+    set <pair<int, int>> P_moves;
+    //int N=P_moves.size();
+    for (auto &it:Candidate_P) {
+        int i=it.first;
+        int j=it.second;
+        if(i>0){
+            
+        }
+    }
+}
+
 
 double GameState::evaluateBoardScore(const ChessBoardScore &score, Color player) const
 {
