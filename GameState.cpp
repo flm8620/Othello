@@ -87,10 +87,6 @@ void GameState::addPiece(int i, int j, Color player) {
 
 }
 
-std::vector<std::pair<int, int> > GameState::possibleMoves(Color player) const
-{
-
-}
 
 int GameState::pieceCount(Color player) const
 {
@@ -198,14 +194,12 @@ vector<pair<int,int> > GameState::position_NextTo_Piece(Color player) const{
                     }
                     if(j>0){
                         if(isBlack[i*N+j-1]==false && isWhite[i*N+j-1]==false){
-                            pair<int, int> p(i,j-1);
-                            Candidate_P.push_back(p);
+                            Candidate_P.push_back(make_pair(i,j-1));
                         }
                     }
                     if(j<N-1){
                         if(isBlack[i*N+j+1]==false && isWhite[i*N+j+1]==false){
-                            pair<int, int> p(i,j+1);
-                            Candidate_P.push_back(p);
+                            Candidate_P.push_back(make_pair(i, j+1));
                         }
                     }
                 }
@@ -215,8 +209,17 @@ vector<pair<int,int> > GameState::position_NextTo_Piece(Color player) const{
     return Candidate_P;
 }
 
-vector<pair<int,int> > GameState::possibleMoves(Color player){
-    
+vector<pair<int,int> > GameState::possibleMoves(Color player) const{
+    vector<pair<int, int>> Candidate_P = position_NextTo_Piece(player);
+    set <pair<int, int>> P_moves;
+    //int N=P_moves.size();
+    for (auto &it:Candidate_P) {
+        int i=it.first;
+        int j=it.second;
+        if(i>0){
+            
+        }
+    }
 }
 
 

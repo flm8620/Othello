@@ -8,7 +8,7 @@
 #include <vector>
 #include <algorithm>
 #include <stdexcept>
-
+#include <set>
 enum Color{Black,White,Neither};
 
 struct ChessBoardScore{
