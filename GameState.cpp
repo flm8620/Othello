@@ -113,10 +113,32 @@ vector<pair<int,int> > GameState::position_NextTo_Piece(Color player) const{
                         if(isBlack[(i-1)*N+j]==false && isWhite[(i-1)*N+j]==false){
                             Candidate_P.push_back(make_pair(i-1,j));
                         }
+                        if(j>0){
+                            if(isBlack[(i-1)*N+j-1]==false && isWhite[(i-1)*N+j-1]==false){
+                                Candidate_P.push_back(make_pair(i-1,j-1));
+                            }
+                        }
+                        if(j<N-1){
+                            if(isBlack[(i-1)*N+j+1]==false && isWhite[(i-1)*N+j+1]==false){
+                                Candidate_P.push_back(make_pair(i-1,j+1));
+                            }
+
+                        }
                     }
                     if(i<N-1){
                         if(isBlack[(i+1)*N+j]==false && isWhite[(i+1)*N+j]==false){
                             Candidate_P.push_back(make_pair(i+1,j));
+                        }
+                        if(j>0){
+                            if(isBlack[(i+1)*N+j-1]==false && isWhite[(i+1)*N+j-1]==false){
+                                Candidate_P.push_back(make_pair(i-1,j-1));
+                            }
+                        }
+                        if(j<N-1){
+                            if(isBlack[(i+1)*N+j+1]==false && isWhite[(i+1)*N+j+1]==false){
+                                Candidate_P.push_back(make_pair(i-1,j+1));
+                            }
+                            
                         }
                     }
                     if(j>0){
@@ -142,11 +164,34 @@ vector<pair<int,int> > GameState::position_NextTo_Piece(Color player) const{
                             pair<int, int> p(i-1,j);
                             Candidate_P.push_back(p);
                         }
+                        if(j>0){
+                            if(isBlack[(i-1)*N+j-1]==false && isWhite[(i-1)*N+j-1]==false){
+                                Candidate_P.push_back(make_pair(i-1,j-1));
+                            }
+                        }
+                        if(j<N-1){
+                            if(isBlack[(i-1)*N+j+1]==false && isWhite[(i-1)*N+j+1]==false){
+                                Candidate_P.push_back(make_pair(i-1,j+1));
+                            }
+                            
+                        }
+
                     }
                     if(i<N-1){
                         if(isBlack[(i+1)*N+j]==false && isWhite[(i+1)*N+j]==false){
                             pair<int, int> p(i+1,j);
                             Candidate_P.push_back(p);
+                        }
+                        if(j>0){
+                            if(isBlack[(i+1)*N+j-1]==false && isWhite[(i+1)*N+j-1]==false){
+                                Candidate_P.push_back(make_pair(i-1,j-1));
+                            }
+                        }
+                        if(j<N-1){
+                            if(isBlack[(i+1)*N+j+1]==false && isWhite[(i+1)*N+j+1]==false){
+                                Candidate_P.push_back(make_pair(i-1,j+1));
+                            }
+                            
                         }
                     }
                     if(j>0){
@@ -167,6 +212,11 @@ vector<pair<int,int> > GameState::position_NextTo_Piece(Color player) const{
     }
     return Candidate_P;
 }
+
+vector<pair<int,int> > GameState:: possibleMoves(Color player){
+    
+}
+
 
 double GameState::evaluateBoardScore(const ChessBoardScore &score, Color player) const
 {
