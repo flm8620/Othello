@@ -159,6 +159,7 @@ vector<pair<int,int> > GameState::position_NextTo_Piece(Color player) const{
 vector<pair<int,int> > GameState::possibleMoves(Color player) const{
     vector<pair<int, int>> Candidate_P = position_NextTo_Piece(player);
     set <pair<int, int>> P_moves;
+    vector<bool>P_color = isColor(player);
     //int N=P_moves.size();
     for (auto &it:Candidate_P) {
         int i=it.first;
