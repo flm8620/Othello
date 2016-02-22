@@ -5,14 +5,13 @@
 #ifndef OTHELLO_OTHELLOAI_H
 #define OTHELLO_OTHELLOAI_H
 #include "GameState.h"
-
+#include <vector>
 class OthelloAI {
   ChessBoardScore chessBoardScore;
-  vector<double> lambdas;
+  std::vector<double> lambdas;
   const int N;
-  double max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor);
-  double evaluateScore(const GameState &gs, Color myColor);
-  double lambda(int steps);
+  double max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor)const;
+  double evaluateScore(const GameState &gs, Color myColor)const;
  public:
   std::pair<int,int> giveNextMove(const GameState &gs,Color myColor,
                                   const std::vector<std::pair<int,int> >& possibleMoves) const;
