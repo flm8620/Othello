@@ -13,321 +13,249 @@ auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();
 mt19937 generator(seed);
 
 void ChessBoardScore::randomizeScore() {
-    uniform_real_distribution<double> randReal(-1000,1000);
-    //score should be symmetic
-    //score(i,j) == score(N-i-1,N-j-1)
-    int NN=N*N;
-    for(int i=0;i<N/2;i++){
-        for(int j=0;j<N;j++){
-            int index=i*N+j;
-            scores[index]=scores[NN-index-1]=randReal(generator);
-        }
+  uniform_real_distribution<double> randReal(-1000,1000);
+  //score should be symmetic
+  //score(i,j) == score(N-i-1,N-j-1)
+  int NN=N*N;
+  for(int i=0;i<N/2;i++){
+    for(int j=0;j<N;j++){
+      int index=i*N+j;
+      scores[index]=scores[NN-index-1]=randReal(generator);
     }
+  }
+}
+
+vector<pair<int, int> > &GameState::getNeighbourOffset(int i, int j)const
+{
+  // for exemple:
+  //  topRight:   ----@*
+  //              ----@@
+  //              ------
+  //          * is  (i,j)
+  //          @ are (i,j-1) (i+1,j-1) (i+1,j)
+  //  so offset are (0, -1) (1,-1)    (1,0)
+  typedef vector<pair<int, int> > Positions;
+  static Positions topLeft =      {{0, 1},{1, 1},{1,0}};
+  static Positions topRight =     {{0,-1},{1,-1},{1,0}};
+  static Positions bottomLeft =   {{-1,0},{-1,1},{0,1}};
+  static Positions bottomRight =  {{-1,-1},{-1,0},{0,-1}};
+  static Positions left =         {{-1,0},{-1,1},{0,1},{1,1},{1,0}};
+  static Positions right =        {{-1,0},{-1,-1},{0,-1},{1,-1},{1,0}};
+  static Positions top =          {{0,-1},{1,-1},{1,0},{1,1},{0,1}};
+  static Positions bottom =       {{0,-1},{-1,-1},{-1,0},{-1,1},{0,1}};
+  static Positions center =       {{-1,-1},{-1,0},{-1,1},{0,-1},{0,1},{1,-1},{1,0},{1,1}};
+  assert(i>=0&&i<N&&j>=0&&j<N);
+  if(i==0){
+    if(j==0) return topLeft;
+    if(j==N-1) return topRight;
+    return top;
+  }else if(i==N-1){
+    if(j==0) return bottomLeft;
+    if(j==N-1) return bottomRight;
+    return bottom;
+  }else{
+    if(j==0) return left;
+    if(j==N-1) return right;
+    return center;
+  }
+}
+
+std::pair<int, int> GameState::getDirectionOffset(Direction direction) const
+{
+  switch (direction) {
+    case TopLeft:    return make_pair(-1,-1);
+    case TopRight:   return make_pair(-1, 1);
+    case BottomLeft: return make_pair( 1,-1);
+    case BottomRight:return make_pair( 1, 1);
+    case Top:        return make_pair(-1, 0);
+    case Bottom:     return make_pair( 1, 0);
+    case Left:       return make_pair( 0,-1);
+    case Right:      return make_pair( 0, 1);
+  }
 }
 
 GameState::GameState(int Nsize):N(Nsize),nextMoveColor(Color::Black) {
-    if (N%2==1){
-        throw invalid_argument("size of chess board must be even");
-    }
-    
-    isWhite.resize(N * N, false);
-    isBlack.resize(N * N, false);
-    //four pieces is put to start
-    //    01234567
-    //  0 OOOOOOOO
-    //  1 OOOOOOOO
-    //  2 OOOOOOOO
-    //  3 OOOWBOOO
-    //  4 OOOBWOOO
-    //  5 OOOOOOOO
-    //  6 OOOOOOOO
-    //  7 OOOOOOOO
-    //
-    // index of position (i,j) is [i*N+j]
-    isWhite[(N / 2 - 1) * N + (N / 2 - 1)] = true;
-    isWhite[(N / 2) * N + (N / 2)] = true;
-    isBlack[(N / 2) * N + (N / 2 - 1)] = true;
-    isBlack[(N / 2 - 1) * N + (N / 2)] = true;
-    
-    nextPossibleMoves = this->possibleMoves(nextMoveColor);
+  if (N%2==1){
+    throw invalid_argument("size of chess board must be even");
+  }
+
+  isWhite.resize(N * N, false);
+  isBlack.resize(N * N, false);
+  //four pieces is put to start
+  //    01234567
+  //  0 OOOOOOOO
+  //  1 OOOOOOOO
+  //  2 OOOOOOOO
+  //  3 OOOWBOOO
+  //  4 OOOBWOOO
+  //  5 OOOOOOOO
+  //  6 OOOOOOOO
+  //  7 OOOOOOOO
+  //
+  // index of position (i,j) is [i*N+j]
+  isWhite[(N / 2 - 1) * N + (N / 2 - 1)] = true;
+  isWhite[(N / 2) * N + (N / 2)] = true;
+  isBlack[(N / 2) * N + (N / 2 - 1)] = true;
+  isBlack[(N / 2 - 1) * N + (N / 2)] = true;
+
+  this->updatePossibleMoves(nextMoveColor);
 }
 
 void GameState::printBoard() const {
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            if (isWhite[i * N + j]) std::cout << 'O';
-            else if (isBlack[i * N + j]) cout << '@';
-            else cout << '-';
-        }
-        cout << endl;
+  for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {
+      if (isWhite[i * N + j]) std::cout << 'O';
+      else if (isBlack[i * N + j]) cout << '@';
+      else cout << '-';
     }
+    cout << endl;
+  }
 }
-void GameState::addPiece(int i, int j, Color player) {
-    auto Posi_Moves_now=this->possibleMoves(player);
-    if(i<0 || i>=N || j<0 || j>=N){
-        throw invalid_argument("position out of bound");
-    }
-    if(isWhite[i*N+j] || isBlack[i*N+j]){
-        throw invalid_argument("position already taken by a piece");
-    }
-    
-    this->setColor(player)[i*N+j]=true;
-    auto Position_played = make_pair(i, j);
-    vector<bool> Direction_played (8);
-    for (auto const & move :Posi_Moves_now){
-        if(Position_played==move.first){
-            Direction_played = move.second;
-            break;
-        }
-    }
-    if(Direction_played[0]==true){
-        for(int ii=1;isColor(player)[(i-ii)*N+j+ii]==false;ii++){
-            setColor(player)[(i-ii)*N+j+ii]= true;
-            setColor_I(player)[(i-ii)*N+j+ii]=false;
-        }
-    }
-    if(Direction_played[1]==true){
-        for(int ii=1;isColor(player)[(i)*N+j+ii]==false;ii++){
-            setColor(player)[(i)*N+j+ii]= true;
-            setColor_I(player)[(i)*N+j+ii]=false;
-        }
-    }
-    if(Direction_played[2]==true){
-        for(int ii=1;isColor(player)[(i+ii)*N+j+ii]==false;ii++){
-            setColor(player)[(i+ii)*N+j+ii]= true;
-            setColor_I(player)[(i+ii)*N+j+ii]=false;
-        }
-    }
-    if(Direction_played[3]==true){
-        for(int ii=1;isColor(player)[(i+ii)*N+j]==false;ii++){
-            setColor(player)[(i+ii)*N+j]= true;
-            setColor_I(player)[(i+ii)*N+j]=false;
-        }
-    }
-    if(Direction_played[4]==true){
-        for(int ii=1;isColor(player)[(i+ii)*N+j-ii]==false;ii++){
-            setColor(player)[(i+ii)*N+j-ii]= true;
-            setColor_I(player)[(i+ii)*N+j-ii]=false;
-        }
-    }
-    if(Direction_played[5]==true){
-        for(int ii=1;isColor(player)[(i)*N+j-ii]==false;ii++){
-            setColor(player)[(i)*N+j-ii]= true;
-            setColor_I(player)[(i)*N+j-ii]=false;
-        }
-    }
-    if(Direction_played[6]==true){
-        for(int ii=1;isColor(player)[(i-ii)*N+j-ii]==false;ii++){
-            setColor(player)[(i-ii)*N+j-ii]= true;
-            setColor_I(player)[(i-ii)*N+j-ii]=false;
-        }
-    }
-    if(Direction_played[7]==true){
-        for(int ii=1;isColor(player)[(i-ii)*N+j]==false;ii++){
-            setColor(player)[(i-ii)*N+j]= true;
-            setColor_I(player)[(i-ii)*N+j]=false;
-        }
-    }
 
-    
-    Color otherPlayer = player==Color::Black ? Color::White : Color::Black;
-    nextPossibleMoves=this->possibleMoves(otherPlayer);
-    if(nextPossibleMoves.empty()){
-        nextMoveColor = player;
-        nextPossibleMoves=this->possibleMoves(player);
-        if(nextPossibleMoves.empty()){
-            nextMoveColor=Color::Neither;
-        }
+void GameState::addPiece(int i, int j, Color player) {
+  Color otherPlayer = player==Color::Black ? Color::White : Color::Black;
+  if(i<0 || i>=N || j<0 || j>=N){
+    throw invalid_argument("position out of bound");
+  }
+  if(isWhite[i*N+j] || isBlack[i*N+j]){
+    throw invalid_argument("position already taken by a piece");
+  }
+  if(nextPlayer()==Color::Neither){
+    throw logic_error("Game has ended, why you still want to play?");
+  }
+  if(nextPlayer()==otherPlayer){
+    throw logic_error("It's not your turn!");
+  }
+  vector<bool>& hasAdversary = Color::Black ? isWhite : isBlack;
+  vector<bool>& hasPlayer = Color::Black ? isBlack : isWhite;
+
+  hasPlayer[i*N+j]=true;
+
+  auto positionPlayed = make_pair(i, j);
+
+  vector<bool> Direction_played (8);
+  auto it = this->nextPossibleMoves.find(positionPlayed);
+  if(it==this->nextPossibleMoves.end())
+    throw invalid_argument("illegal move");
+
+  vector<Direction> directions = this->moveWithDirection[positionPlayed];
+  for(Direction d : directions){
+    pair<int,int> offset = getDirectionOffset(d);
+    i+=offset.first;
+    j+=offset.second;
+    assert(hasAdversary[i*N+j]);
+    while(i>=0&&i<N&&j>=0&&j<N){
+      if(hasAdversary[i*N+j]){
+        hasAdversary[i*N+j]=false;
+        hasPlayer[i*N+j]=true;
+      }else{
+        break;
+      }
+      i+=offset.first;
+      j+=offset.second;
     }
-    
+  }
+
+  this->updatePossibleMoves(otherPlayer);
+  if(nextPossibleMoves.empty()){
+    nextMoveColor = player;
+    this->updatePossibleMoves(player);
+    if(nextPossibleMoves.empty()){
+      nextMoveColor=Color::Neither;
+    }
+  }
 }
 
 
 int GameState::pieceCount(Color player) const
 {
-    int sum=0;
-    if(player==Color::Black){
-        for(auto b : isBlack) if(b)sum++;
-    }else if(player==Color::White){
-        for(auto b : isWhite) if(b)sum++;
-    }else{
-        assert(false);
-    }
-    return sum;
+  int sum=0;
+  if(player==Color::Black){
+    for(auto b : isBlack) if(b)sum++;
+  }else if(player==Color::White){
+    for(auto b : isWhite) if(b)sum++;
+  }else{
+    assert(false);
+  }
+  return sum;
 }
 
 vector<pair<int,int> > GameState::position_NextTo_Piece(Color player) const{
-    vector<pair<int, int>> Candidate_P;
-    vector<bool> P_color = isColor_I(player);
-    for (int i=0;i<N;i++){
-        for(int j =0; j <N; j++){
-            if (P_color[i*N+j]==true){
-                if(i>0){
-                    if(isBlack[(i-1)*N+j]==false && isWhite[(i-1)*N+j]==false){
-                        Candidate_P.push_back(make_pair(i-1,j));
-                    }
-                    if(j>0){
-                        if(isBlack[(i-1)*N+j-1]==false && isWhite[(i-1)*N+j-1]==false){
-                            Candidate_P.push_back(make_pair(i-1,j-1));
-                        }
-                    }
-                    if(j<N-1){
-                        if(isBlack[(i-1)*N+j+1]==false && isWhite[(i-1)*N+j+1]==false){
-                            Candidate_P.push_back(make_pair(i-1,j+1));
-                        }
-                        
-                    }
-                }
-                if(i<N-1){
-                    if(isBlack[(i+1)*N+j]==false && isWhite[(i+1)*N+j]==false){
-                        Candidate_P.push_back(make_pair(i+1,j));
-                    }
-                    if(j>0){
-                        if(isBlack[(i+1)*N+j-1]==false && isWhite[(i+1)*N+j-1]==false){
-                            Candidate_P.push_back(make_pair(i-1,j-1));
-                        }
-                    }
-                    if(j<N-1){
-                        if(isBlack[(i+1)*N+j+1]==false && isWhite[(i+1)*N+j+1]==false){
-                            Candidate_P.push_back(make_pair(i-1,j+1));
-                        }
-                        
-                    }
-                }
-                if(j>0){
-                    if(isBlack[i*N+j-1]==false && isWhite[i*N+j-1]==false){
-                        Candidate_P.push_back(make_pair(i,j-1));
-                    }
-                }
-                if(j<N-1){
-                    if(isBlack[i*N+j+1]==false && isWhite[i*N+j+1]==false){
-                        Candidate_P.push_back(make_pair(i,j+1));
-                    }
-                }
-            }
+  vector<pair<int, int>> Candidate_P;
+  const vector<bool>& hasColor = player == Color::Black ? isBlack : isWhite;
+  for (int i=0;i<N;i++){
+    for(int j =0; j<N; j++){
+      if (isBlack[i*N+j]==false && isWhite[i*N+j]==false){
+        const vector<pair<int, int> >& neighbours = getNeighbourOffset(i,j);
+        for(auto offset : neighbours){
+          if(hasColor[(i+offset.first)*N+j+offset.second]){
+            Candidate_P.push_back(make_pair(i,j));
+            break;
+          }
         }
+      }
     }
-    
-    return Candidate_P;
+  }
+  return Candidate_P;
 }
 
-set<pair<pair<int,int>, vector<bool>> > GameState::possibleMoves(Color player) const{
-    vector<pair<int, int>> Candidate_P = position_NextTo_Piece(player);
-    set<pair<pair<int,int>, vector<bool>> > P_moves;
-    vector<bool>P_color_I = isColor_I(player);
-    vector<bool>P_color = isColor(player);
-    //int N=P_moves.size();
-    for (auto const &it:Candidate_P) {
-        int i=it.first;
-        int j=it.second;
-        vector<bool> Direction(8);
-        if(i>0){
-            if(P_color_I[(i-1)*N+j]==true){
-                for(int k=i-1;k>=0;k--){
-                    if(P_color[k*N+j]==true){       //direction 7
-                        Direction[7]=true;
-                        break;
-                    }
-                }
-            }
-            if(j>0){
-                if(P_color_I[(i-1)*N+j-1]==true){    //direction 6
-                    int l=min(i,j);
-                    for(int k=l;k>0;k--){
-                        if(P_color[(i-k)*N+(j-k)]==true){
-                            Direction[6]=true;
-                            break;
-                        }
-                    }
-                }
-            }
-            if(j<N-1){
-                if(P_color_I[(i-1)*N+j+1]==true){   //direction 0
-                    int l=min(i,N-j-1);
-                    for (int k= 1;k<=l;k++){
-                        if(P_color[(i-k)*N+j+k]==true){
-                            Direction[0]=true;
-                            break;
-                        }
-                    }
-                }
-            }
+void GameState::updatePossibleMoves(Color player){
+  Color adversary = player == Color::Black ? Color::White : Color::Black;
+  vector<pair<int, int>> Candidate_P = position_NextTo_Piece(adversary);
+  set<pair<pair<int,int>, vector<Direction>> > possibleMoves;
+  const vector<bool>& hasAdversary = Color::Black ? isWhite : isBlack;
+  const vector<bool>& hasPlayer = Color::Black ? isBlack : isWhite;
+
+  this->nextPossibleMoves.clear();
+  this->moveWithDirection.clear();
+
+  for (const auto &move : Candidate_P) {
+    int i=move.first;
+    int j=move.second;
+    assert(!isBlack[i*N+j] && !isWhite[i*N+j]);
+    vector<Direction> directions =
+    {Direction::TopLeft, Direction::Top, Direction::TopRight,
+     Direction::Left,                    Direction::Right,
+     Direction::BottomLeft,Direction::Bottom,Direction::BottomRight};
+
+    bool isLegalMove = false;
+
+    for(auto d : directions){
+      pair<int,int> offset = getDirectionOffset(d);
+      i+=offset.first;
+      j+=offset.second;
+      bool hasMetAdversary=false;
+      while(i>=0&&i<N&&j>=0&&j<N){
+        if(hasAdversary[i*N+j]){
+          hasMetAdversary=true;
         }
-        if(i<N-1){
-            if(P_color_I[(i+1)*N+j]==true){
-                for(int k=i+2;k<N;k++){
-                    if(P_color[k*N+j]==true){       //direction 3
-                        Direction[3]=true;
-                        break;
-                    }
-                }
-            }
-            if(j>0){
-                if(P_color_I[(i+1)*N+j-1]==true){    //direction 4
-                    int l=min(N-i-1,j);
-                    for(int k=l;k>0;k--){
-                        if(P_color[(i+k)*N+(j-k)]==true){
-                            Direction[4]=true;
-                            break;
-                        }
-                    }
-                }
-            }
-            if(j<N-1){
-                if(P_color_I[(i+1)*N+j+1]==true){   //direction 2
-                    int l=min(N-i-1,N-j-1);
-                    for (int k= 2;k<=l;k++){
-                        if(P_color[(i+k)*N+j+k]==true){
-                            Direction[2]=true;
-                            break;
-                        }
-                    }
-                }
-            }
-            
+        else if(hasPlayer[i*N+j]){
+          if(hasMetAdversary){
+            isLegalMove=true;
+            this->moveWithDirection[move].push_back(d);
+            break;
+          }
         }
-        if(j>0){
-            if(P_color_I[i*N+j-1]==true){           //direction 5
-                for(int k=2; k<=j ; k++){
-                    if(P_color[i*N+j-k]==true){
-                        Direction[5]=true;
-                        break;
-                    }
-                }
-            }
-        }
-        if(j<N-1){
-            if(P_color_I[i*N+j+1]==true){           //direction 1
-                for(int k=j+2;k<N;k++){
-                    if(P_color[i*N+k]==true){
-                        Direction[1]=true;
-                        break;
-                    }
-                }
-            }
-        }
-        for(auto i = Direction.begin(); i!=Direction.end();i++){
-            if(*i==true){
-                P_moves.insert(make_pair(it,Direction));
-                break;
-            }
-        }
+        i+=offset.first;
+        j+=offset.second;
+      }
     }
-    return P_moves;
+    if(isLegalMove) this->nextPossibleMoves.insert(move);
+  }
 }
 
 
 double GameState::evaluateBoardScore(const ChessBoardScore &score, Color player) const
 {
-    if(score.N!=this->N) throw invalid_argument("Chess Board size is not compatible!");
-    double blackScore=0;
-    double whiteScore=0;
-    for(int i=0;i<N*N;i++){
-        if(isBlack[i]) blackScore+=score.scores[i];
-        if(isWhite[i]) whiteScore+=score.scores[i];
-    }
-    if(player==Color::Black) return blackScore-whiteScore;
-    if(player==Color::White) return -blackScore+whiteScore;
+  if(score.N!=this->N) throw invalid_argument("Chess Board size is not compatible!");
+  double blackScore=0;
+  double whiteScore=0;
+  for(int i=0;i<N*N;i++){
+    if(isBlack[i]) blackScore+=score.scores[i];
+    if(isWhite[i]) whiteScore+=score.scores[i];
+  }
+  if(player==Color::Black) return blackScore-whiteScore;
+  if(player==Color::White) return -blackScore+whiteScore;
 }
 
 

@@ -9,8 +9,9 @@
 #include <algorithm>
 #include <stdexcept>
 #include <set>
+#include <map>
 enum Color{Black,White,Neither};
-
+enum Direction{TopLeft,TopRight,BottomLeft,BottomRight,Left,Right,Top,Bottom,Center};
 struct ChessBoardScore{
   const int N;
   std::vector<double> scores;
@@ -25,38 +26,34 @@ class GameState {
   std::vector<bool> isWhite;
   std::vector<bool> isBlack;
   Color nextMoveColor;
-    
-  std::set<std::pair<std::pair<int,int>,std::vector<bool> > > nextPossibleMoves;
+  // The following two values are updated when constructed and when addPiece()
+  std::set<std::pair<int,int> > nextPossibleMoves;
+  std::map<std::pair<int,int>, std::vector<Direction> > moveWithDirection;
+
+  //get relative position of neighbours (case of corner considered)
+  std::vector<std::pair<int,int> >& getNeighbourOffset(int i,int j) const;
+
+  //for example: getDirectionOffset(Left) = pair{0,-1}
+  std::pair<int,int> getDirectionOffset(Direction direction)const;
+
+
+
+
+  //give the candidate positons of possible moves.
+  std::vector<std::pair<int,int> > position_NextTo_Piece(Color player)const;
+
+  //update this->nextPossibleMoves and this->moveWithDirection
+  void updatePossibleMoves(Color player);
+
  public:
-    std::vector<bool> isColor_I(Color player)const {  // if color = white, return the positon of black
-        return player == Color::White ? isBlack : isWhite;
-    }
-    std::vector<bool> isColor(Color player) const{  // if color = white, return the positon of white
-        return player == Color::Black ? isBlack : isWhite;
-    }
-    std::vector<bool> & setColor_I(Color player) {  // if color = white, return the positon of black
-        return player == Color::White ? isBlack : isWhite;
-    }
-    std::vector<bool> & setColor(Color player) {  // if color = white, return the positon of white
-        return player == Color::Black ? isBlack : isWhite;
-    }
   GameState(int Nsize);
+  //get piece count of player
+  int pieceCount(Color player)const;
   bool gameIsEnd()const{return nextMoveColor==Color::Neither;}
   Color nextPlayer()const{return nextMoveColor;}
   void printBoard() const;
-  void addPiece(int i,int j,Color player);//TODO:
-  //TODO: gives legal moves for player
-  std::set<std::pair< std::pair<int,int>,std::vector<bool> > > possibleMoves (Color player)const;
-    //in which directions we change the piece:
-    //   6  7  0
-    //   5  .  1
-    //   4  3  2
-    
-  //TODO: get piece number of player
-  int pieceCount(Color player)const;
-  std::vector<std::pair<int,int> > position_NextTo_Piece(Color player)const;
-    //TODO: give the candidate positons of possible moves.
-
+  void addPiece(int i,int j,Color player);
+  std::set<std::pair<int,int> > getPossibleMovesForNextPlayer()const{return nextPossibleMoves;}
   double evaluateBoardScore(const ChessBoardScore& score, Color player)const;
 };
 

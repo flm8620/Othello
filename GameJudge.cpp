@@ -6,28 +6,14 @@
 using namespace std;
 Color GameJudge::PlayAGame_getWinner(const OthelloAI & black, const OthelloAI& white, int Nsize) {
   GameState gs(Nsize);
-  Color currentPlayerColor=Color::Black;
   vector<pair<int,int> > possibleMoves;
 
 
   do{
-    bool noMoveBlack = false;
-    possibleMoves=gs.possibleMoves(Color::Black);
-    if(!possibleMoves.empty()){
-      pair<int,int> move = black.giveNextMove(gs,currentPlayerColor,possibleMoves);
-      gs.addPiece(move.first,move.second,currentPlayerColor);
-    }else{
-      noMoveBlack=true;
-    }
-
-    possibleMoves=gs.possibleMoves(Color::White);
-    if(!possibleMoves.empty()){
-      pair<int,int> move = white.giveNextMove(gs,currentPlayerColor,possibleMoves);
-      gs.addPiece(move.first,move.second,currentPlayerColor);
-    }else if(noMoveBlack){
-      break;
-    }
-  }while(true);
+    const OthelloAI& nextPlayer = gs.nextPlayer()== Color::Black ? black : white;
+    pair<int,int> move = nextPlayer.giveNextMove(gs,Color::Black);
+    gs.addPiece(move.first,move.second,Color::Black);
+  }while(!gs.gameIsEnd());
 
   int blackScore=gs.pieceCount(Color::Black);
   int whiteScore=gs.pieceCount(Color::White);
@@ -38,5 +24,4 @@ Color GameJudge::PlayAGame_getWinner(const OthelloAI & black, const OthelloAI& w
     return Color::White;
   else
     return Color::Neither;
-
 }
