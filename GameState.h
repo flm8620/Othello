@@ -25,10 +25,14 @@ class GameState {
   std::vector<bool> isWhite;
   std::vector<bool> isBlack;
   Color nextMoveColor;
-  std::vector<std::pair<int,int> > nextPossibleMoves;
+    
+  std::set<std::pair<std::pair<int,int>,std::vector<bool> > > nextPossibleMoves;
  public:
-    std::vector<bool> isColor(Color player) const{  // if color = white, return the positon of black
+    std::vector<bool> isColor_I(Color player) const{  // if color = white, return the positon of black
         return player == Color::White ? isBlack : isWhite;
+    }
+    std::vector<bool> isColor(Color player) const{  // if color = white, return the positon of white
+        return player == Color::Black ? isBlack : isWhite;
     }
   GameState(int Nsize);
   bool gameIsEnd()const{return nextMoveColor==Color::Neither;}
@@ -36,7 +40,12 @@ class GameState {
   void printBoard() const;
   void addPiece(int i,int j,Color player);//TODO:
   //TODO: gives legal moves for player
-  std::vector<std::pair<int,int> > possibleMoves(Color player)const;
+  std::set<std::pair< std::pair<int,int>,std::vector<bool> > > possibleMoves (Color player)const;
+    //in which directions we change the piece:
+    //   6  7  0
+    //   5  .  1
+    //   4  3  2
+    
   //TODO: get piece number of player
   int pieceCount(Color player)const;
   std::vector<std::pair<int,int> > position_NextTo_Piece(Color player)const;
