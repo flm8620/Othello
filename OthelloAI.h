@@ -10,7 +10,7 @@ class OthelloAI {
   ChessBoardScore chessBoardScore;
   std::vector<double> lambdas;
   const int N;
-  double max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor)const;
+  double max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor,double alpha,double beta)const;
   double evaluateScore(const GameState &gs, Color myColor)const;
  public:
   std::pair<int,int> giveNextMove(const GameState &gs,Color myColor,
