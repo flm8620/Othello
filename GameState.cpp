@@ -63,17 +63,72 @@ void GameState::printBoard() const {
     }
 }
 void GameState::addPiece(int i, int j, Color player) {
+    auto Posi_Moves_now=this->possibleMoves(player);
     if(i<0 || i>=N || j<0 || j>=N){
         throw invalid_argument("position out of bound");
     }
     if(isWhite[i*N+j] || isBlack[i*N+j]){
         throw invalid_argument("position already taken by a piece");
     }
-    if(player==Color::White){
-        isWhite[i*N+j]=true;
-    }else{
-        isBlack[i*N+j]=true;
+    
+    this->setColor(player)[i*N+j]=true;
+    auto Position_played = make_pair(i, j);
+    vector<bool> Direction_played (8);
+    for (auto const & move :Posi_Moves_now){
+        if(Position_played==move.first){
+            Direction_played = move.second;
+            break;
+        }
     }
+    if(Direction_played[0]==true){
+        for(int ii=1;isColor(player)[(i-ii)*N+j+ii]==false;ii++){
+            setColor(player)[(i-ii)*N+j+ii]= true;
+            setColor_I(player)[(i-ii)*N+j+ii]=false;
+        }
+    }
+    if(Direction_played[1]==true){
+        for(int ii=1;isColor(player)[(i)*N+j+ii]==false;ii++){
+            setColor(player)[(i)*N+j+ii]= true;
+            setColor_I(player)[(i)*N+j+ii]=false;
+        }
+    }
+    if(Direction_played[2]==true){
+        for(int ii=1;isColor(player)[(i+ii)*N+j+ii]==false;ii++){
+            setColor(player)[(i+ii)*N+j+ii]= true;
+            setColor_I(player)[(i+ii)*N+j+ii]=false;
+        }
+    }
+    if(Direction_played[3]==true){
+        for(int ii=1;isColor(player)[(i+ii)*N+j]==false;ii++){
+            setColor(player)[(i+ii)*N+j]= true;
+            setColor_I(player)[(i+ii)*N+j]=false;
+        }
+    }
+    if(Direction_played[4]==true){
+        for(int ii=1;isColor(player)[(i+ii)*N+j-ii]==false;ii++){
+            setColor(player)[(i+ii)*N+j-ii]= true;
+            setColor_I(player)[(i+ii)*N+j-ii]=false;
+        }
+    }
+    if(Direction_played[5]==true){
+        for(int ii=1;isColor(player)[(i)*N+j-ii]==false;ii++){
+            setColor(player)[(i)*N+j-ii]= true;
+            setColor_I(player)[(i)*N+j-ii]=false;
+        }
+    }
+    if(Direction_played[6]==true){
+        for(int ii=1;isColor(player)[(i-ii)*N+j-ii]==false;ii++){
+            setColor(player)[(i-ii)*N+j-ii]= true;
+            setColor_I(player)[(i-ii)*N+j-ii]=false;
+        }
+    }
+    if(Direction_played[7]==true){
+        for(int ii=1;isColor(player)[(i-ii)*N+j]==false;ii++){
+            setColor(player)[(i-ii)*N+j]= true;
+            setColor_I(player)[(i-ii)*N+j]=false;
+        }
+    }
+
     
     Color otherPlayer = player==Color::Black ? Color::White : Color::Black;
     nextPossibleMoves=this->possibleMoves(otherPlayer);

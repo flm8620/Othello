@@ -28,10 +28,16 @@ class GameState {
     
   std::set<std::pair<std::pair<int,int>,std::vector<bool> > > nextPossibleMoves;
  public:
-    std::vector<bool> isColor_I(Color player) const{  // if color = white, return the positon of black
+    std::vector<bool> isColor_I(Color player)const {  // if color = white, return the positon of black
         return player == Color::White ? isBlack : isWhite;
     }
     std::vector<bool> isColor(Color player) const{  // if color = white, return the positon of white
+        return player == Color::Black ? isBlack : isWhite;
+    }
+    std::vector<bool> & setColor_I(Color player) {  // if color = white, return the positon of black
+        return player == Color::White ? isBlack : isWhite;
+    }
+    std::vector<bool> & setColor(Color player) {  // if color = white, return the positon of white
         return player == Color::Black ? isBlack : isWhite;
     }
   GameState(int Nsize);
