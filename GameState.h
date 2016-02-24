@@ -18,6 +18,18 @@ struct ChessBoardScore{
   ChessBoardScore(int Nsize):N(Nsize){
     scores.resize(N*N,0);
   }
+  ChessBoardScore(const ChessBoardScore& other):N(other.N){
+    scores=other.scores;
+  }
+  void printOut(){
+    for(int i=0;i<N/2;i++){
+      for(int j=0;j<N;j++){
+        std::cout<<scores[i*N+j]<<'\t';
+      }
+      std::cout<<std::endl;
+    }
+  }
+
   void randomizeScore();
 };
 

@@ -5,7 +5,7 @@
 #include "GameJudge.h"
 #include <iostream>
 using namespace std;
-Color GameJudge::PlayAGame_getWinner(const OthelloAI & black, const OthelloAI& white, int Nsize, bool showGame) {
+int GameJudge::PlayAGame_getScore(const OthelloAI & black, const OthelloAI& white, int Nsize, bool showGame) {
   GameState gs(Nsize);
   int count = 1;
   do{
@@ -18,17 +18,14 @@ Color GameJudge::PlayAGame_getWinner(const OthelloAI & black, const OthelloAI& w
       cout<<" Round "<<count<<" "<<thinkSteps<<" steps of think"<<endl;
       gs.printBoard();
       cout<<endl;
+    }else{
+      cout<<count<<".";
     }
     count++;
   }while(!gs.gameIsEnd());
+  cout<<endl;
 
   int blackScore=gs.pieceCount(Color::Black);
   int whiteScore=gs.pieceCount(Color::White);
-
-  if(blackScore>whiteScore)
-    return Color::Black;
-  else if(blackScore<whiteScore)
-    return Color::White;
-  else
-    return Color::Neither;
+  return blackScore-whiteScore;
 }

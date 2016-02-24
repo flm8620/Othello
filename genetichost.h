@@ -6,10 +6,14 @@
 #include "GameJudge.h"
 class GeneticHost
 {
-  std::vector<OthelloAI> cultureDish;
+  std::vector<OthelloAI> zoo;
+  std::vector<int> zooScores;
+  const int N;
 public:
-  GeneticHost();
-
+  GeneticHost(int Nsize);
+  void startEvolution(int animalSize, int generation);
+  OthelloAI mutation(const OthelloAI& ai);
+  OthelloAI crossover(const OthelloAI& ai1,const OthelloAI& ai2);
 };
 
 #endif // GENETICHOST_H

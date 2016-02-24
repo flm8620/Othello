@@ -8,11 +8,25 @@
 using namespace std;
 OthelloAI::OthelloAI(int Nsize):chessBoardScore(Nsize), N(Nsize)
 {
+  this->ID = generateID();
   chessBoardScore.randomizeScore();
   this->lambdas.resize(N*N);
   for(int i=5;i<N*N;i++){
     lambdas[i]=fabs(N*N*0.8-i)/(N*N*0.8-5);
   }
+}
+
+OthelloAI::OthelloAI(const OthelloAI &other):chessBoardScore(other.chessBoardScore), N(other.N)
+{
+  this->ID = generateID();
+  lambdas=other.lambdas;
+}
+
+int OthelloAI::generateID()
+{
+  static int staticID = -1;
+  staticID++;
+  return staticID;
 }
 
 double OthelloAI::max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor, double alpha, double beta,int& iter)const
@@ -66,7 +80,7 @@ double OthelloAI::evaluateScore(const GameState &gs, Color myColor)const
 
 std::pair<int, int> OthelloAI::giveNextMove(const GameState &gs, Color myColor, int &iteration) const
 {
-  const int maxDepth=5;
+  const int maxDepth=4;
   assert(gs.nextPlayer()==myColor);
   double maxScore = -1e10;
   pair<int,int> bestMove = make_pair(-1,-1);

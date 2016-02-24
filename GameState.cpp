@@ -17,11 +17,8 @@ void ChessBoardScore::randomizeScore() {
   //score should be symmetic
   //score(i,j) == score(N-i-1,N-j-1)
   int NN=N*N;
-  for(int i=0;i<N/2;i++){
-    for(int j=0;j<N;j++){
-      int index=i*N+j;
-      scores[index]=scores[NN-index-1]=randReal(generator);
-    }
+  for(int i=0;i<N*N/2;i++){
+      scores[i]=scores[NN-i-1]=randReal(generator);
   }
 }
 
