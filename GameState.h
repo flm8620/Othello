@@ -59,6 +59,7 @@ class GameState {
   //for test only:
   std::vector<bool> getWhitePosition()const{return isWhite;}
   std::vector<bool> getBlackPosition()const{return isBlack;}
+  void setColorPositionPlayer(std::vector<bool> black,std::vector<bool>white,Color nextPlayer);
 };
 
 

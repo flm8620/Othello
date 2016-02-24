@@ -145,18 +145,18 @@ void GameState::addPiece(int i, int j, Color player) {
   vector<Direction> directions = this->moveWithDirection[positionPlayed];
   for(Direction d : directions){
     pair<int,int> offset = getDirectionOffset(d);
-    i+=offset.first;
-    j+=offset.second;
-    assert(hasAdversary[i*N+j]);
-    while(i>=0&&i<N&&j>=0&&j<N){
-      if(hasAdversary[i*N+j]){
-        hasAdversary[i*N+j]=false;
-        hasPlayer[i*N+j]=true;
+    int ii=i+offset.first;
+    int jj=j+offset.second;
+    assert(hasAdversary[ii*N+jj]);
+    while(ii>=0&&ii<N&&jj>=0&&jj<N){
+      if(hasAdversary[ii*N+jj]){
+        hasAdversary[ii*N+jj]=false;
+        hasPlayer[ii*N+jj]=true;
       }else{
         break;
       }
-      i+=offset.first;
-      j+=offset.second;
+      ii+=offset.first;
+      jj+=offset.second;
     }
   }
 
@@ -265,6 +265,27 @@ double GameState::evaluateBoardScore(const ChessBoardScore &score, Color player)
   }
   if(player==Color::Black) return blackScore-whiteScore;
   if(player==Color::White) return -blackScore+whiteScore;
+}
+
+void GameState::setColorPositionPlayer(std::vector<bool> black, std::vector<bool> white, Color nextPlayer)
+{
+  if(black.size()!=N*N || white.size()!=N*N)
+    throw invalid_argument("wrong size");
+  for(int i=0;i<N*N;i++){
+    if(black[i]&&white[i]) throw invalid_argument("black white can't take the same place");
+  }
+  this->isBlack=black;
+  this->isWhite=white;
+  this->updatePossibleMoves(nextPlayer);
+  Color otherPlayer = nextPlayer == Color::Black ? Color::White : Color::Black;
+  nextMoveColor = nextPlayer;
+  if(nextPossibleMoves.empty()){
+    nextMoveColor = otherPlayer;
+    this->updatePossibleMoves(otherPlayer);
+    if(nextPossibleMoves.empty()){
+      nextMoveColor=Color::Neither;
+    }
+  }
 }
 
 

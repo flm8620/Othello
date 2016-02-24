@@ -9,7 +9,7 @@
 
 class GameJudge {
  public:
-  Color PlayAGame_getWinner(const OthelloAI & black, const OthelloAI& white, int Nsize);
+  Color PlayAGame_getWinner(const OthelloAI & black, const OthelloAI& white, int Nsize, bool showGame=false);
 };
 
 

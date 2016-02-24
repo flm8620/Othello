@@ -9,7 +9,7 @@ using namespace std;
 OthelloAI::OthelloAI(int Nsize):chessBoardScore(Nsize), N(Nsize)
 {
   chessBoardScore.randomizeScore();
-  lambdas.resize(N*N);
+  this->lambdas.resize(N*N);
   for(int i=5;i<N*N;i++){
     lambdas[i]=fabs(N*N*0.8-i)/(N*N*0.8-5);
   }
