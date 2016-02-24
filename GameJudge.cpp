@@ -9,7 +9,6 @@ int GameJudge::PlayAGame_getScore(const OthelloAI & black, const OthelloAI& whit
   GameState gs(Nsize);
   int count = 1;
   do{
-
     const OthelloAI& nextPlayer = gs.nextPlayer()== Color::Black ? black : white;
     int thinkSteps=0;
     pair<int,int> move = nextPlayer.giveNextMove(gs,gs.nextPlayer(),thinkSteps);

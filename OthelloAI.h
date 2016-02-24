@@ -23,6 +23,7 @@ class OthelloAI {
   std::pair<int,int> giveNextMove(const GameState &gs, Color myColor, int &iteration) const;
   OthelloAI(int Nsize);
   OthelloAI(const OthelloAI& other);
+  OthelloAI& operator=(const OthelloAI& other);
 
   //used for genetic modification
   ChessBoardScore getChessBoardScore()const{return chessBoardScore;}

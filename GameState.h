@@ -21,6 +21,10 @@ struct ChessBoardScore{
   ChessBoardScore(const ChessBoardScore& other):N(other.N){
     scores=other.scores;
   }
+  ChessBoardScore& operator=(const ChessBoardScore& other){
+    this->scores=other.scores;
+  }
+
   void printOut(){
     for(int i=0;i<N/2;i++){
       for(int j=0;j<N;j++){

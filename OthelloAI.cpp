@@ -11,14 +11,21 @@ OthelloAI::OthelloAI(int Nsize):chessBoardScore(Nsize), N(Nsize)
   this->ID = generateID();
   chessBoardScore.randomizeScore();
   this->lambdas.resize(N*N);
-  for(int i=5;i<N*N;i++){
-    lambdas[i]=fabs(N*N*0.8-i)/(N*N*0.8-5);
+  for(int i=4;i<N*N;i++){
+    lambdas[i]=fmax(N*N*0.8-i,0)/(N*N*0.8-4);//lambdas is a decreasing function
   }
 }
 
 OthelloAI::OthelloAI(const OthelloAI &other):chessBoardScore(other.chessBoardScore), N(other.N)
 {
   this->ID = generateID();
+  lambdas=other.lambdas;
+}
+
+OthelloAI &OthelloAI::operator=(const OthelloAI &other)
+{
+  chessBoardScore=other.chessBoardScore;
+  ID=this->getID();
   lambdas=other.lambdas;
 }
 
@@ -69,12 +76,14 @@ double OthelloAI::evaluateScore(const GameState &gs, Color myColor)const
 {
   int whiteCount=gs.pieceCount(Color::White);
   int blackCount=gs.pieceCount(Color::Black);
-  int step=whiteCount+blackCount;
+  int step=whiteCount+blackCount;//current step count
   double positionScore = gs.evaluateBoardScore(this->chessBoardScore,myColor);
   double pieceCountScore = whiteCount-blackCount;
   if(myColor==Color::Black) pieceCountScore=-pieceCountScore;
-  double lambda = lambdas[whiteCount+blackCount];
+  //lambda is a function of time(step)
+  double lambda = lambdas[step];
   if(gs.gameIsEnd()) lambda=0;
+  //At the end of the game, lambda should be small
   return pieceCountScore*100.0+lambda*positionScore;
 }
 
@@ -85,10 +94,13 @@ std::pair<int, int> OthelloAI::giveNextMove(const GameState &gs, Color myColor, 
   double maxScore = -1e10;
   pair<int,int> bestMove = make_pair(-1,-1);
   auto moves = gs.getPossibleMovesForNextPlayer();
+  //start minimax algo
   for(auto &move : moves){
     GameState gsBranch=gs;
     gsBranch.addPiece(move.first,move.second,myColor);
     bool isMyTurnAgain = gsBranch.nextPlayer() == myColor;
+    //alpha=-infinite
+    //beta=+infinite
     double s = max_min(gsBranch,maxDepth-1,isMyTurnAgain,myColor,-1e10,1e10,iteration);
     if(s>maxScore){
       bestMove=move;

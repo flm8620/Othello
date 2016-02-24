@@ -3,6 +3,7 @@
 #include "GameState.h"
 #include "OthelloAI.h"
 #include "GameJudge.h"
+#include "genetichost.h"
 using namespace std;
 using namespace bandit;
 const int N = 8;
@@ -160,6 +161,26 @@ go_bandit([](){
       gs.setColorPositionPlayer(blackPos,whitePos,Color::Black);
       AssertThat(gs.nextPlayer(),Equals(Color::Neither));
     });
+  });
+  describe("Genetic Algo Test", [](){
+    GeneticHost host(8);
+    it("mutation",[&](){
+      for(int i=0;i<10;i++){
+        OthelloAI ai(8);
+        for(int j=0;j<10;j++){
+          ai=host.mutation(ai);
+        }
+      }
+    });
+    it("crossover",[&](){
+      for(int i=0;i<10;i++){
+        OthelloAI ai1(8),ai2(8);
+        for(int j=0;j<10;j++){
+          ai1=host.crossover(ai1,ai2);
+        }
+      }
+    });
+
   });
 });
 
