@@ -16,7 +16,7 @@ struct ChessBoardScore{
   const int N;
   std::vector<double> scores;
   ChessBoardScore(int Nsize):N(Nsize){
-    scores.resize(Nsize,0);
+    scores.resize(N*N,0);
   }
   void randomizeScore();
 };
@@ -25,6 +25,7 @@ class GameState {
   const int N;
   std::vector<bool> isWhite;
   std::vector<bool> isBlack;
+  std::pair<int,int> lastPosition;
   Color nextMoveColor;
   // The following two values are updated when constructed and when addPiece()
   std::set<std::pair<int,int> > nextPossibleMoves;

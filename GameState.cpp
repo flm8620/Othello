@@ -102,14 +102,26 @@ void GameState::restartGame()
   isWhite[(N / 2) * N + (N / 2)] = true;
   isBlack[(N / 2) * N + (N / 2 - 1)] = true;
   isBlack[(N / 2 - 1) * N + (N / 2)] = true;
+  lastPosition=make_pair(-1,-1);
   this->updatePossibleMoves(nextMoveColor);
 }
 
 void GameState::printBoard() const {
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
-      if (isWhite[i * N + j]) std::cout << 'O';
-      else if (isBlack[i * N + j]) cout << '@';
+      if (isWhite[i * N + j]) {
+        if(lastPosition==make_pair(i,j))
+          std::cout << 'G';
+        else
+          std::cout << 'O';
+      }
+      else if (isBlack[i * N + j]){
+        if(lastPosition==make_pair(i,j))
+          std::cout << '#';
+        else
+          std::cout << '@';
+      }
+
       else cout << '-';
     }
     cout << endl;
@@ -136,6 +148,7 @@ void GameState::addPiece(int i, int j, Color player) {
   hasPlayer[i*N+j]=true;
 
   auto positionPlayed = make_pair(i, j);
+  lastPosition=positionPlayed;
 
   vector<bool> Direction_played (8);
   auto it = this->nextPossibleMoves.find(positionPlayed);

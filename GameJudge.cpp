@@ -11,11 +11,13 @@ Color GameJudge::PlayAGame_getWinner(const OthelloAI & black, const OthelloAI& w
   do{
 
     const OthelloAI& nextPlayer = gs.nextPlayer()== Color::Black ? black : white;
-    pair<int,int> move = nextPlayer.giveNextMove(gs,Color::Black);
-    gs.addPiece(move.first,move.second,Color::Black);
+    int thinkSteps=0;
+    pair<int,int> move = nextPlayer.giveNextMove(gs,gs.nextPlayer(),thinkSteps);
+    gs.addPiece(move.first,move.second,gs.nextPlayer());
     if(showGame){
-      cout<<"-Round-"<<count<<"-"<<endl;
+      cout<<" Round "<<count<<" "<<thinkSteps<<" steps of think"<<endl;
       gs.printBoard();
+      cout<<endl;
     }
     count++;
   }while(!gs.gameIsEnd());

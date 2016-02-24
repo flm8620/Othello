@@ -15,8 +15,9 @@ OthelloAI::OthelloAI(int Nsize):chessBoardScore(Nsize), N(Nsize)
   }
 }
 
-double OthelloAI::max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor, double alpha, double beta)const
+double OthelloAI::max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor, double alpha, double beta,int& iter)const
 {
+  iter++;
   if(depth==0 || gs.gameIsEnd()){
     return evaluateScore(gs,myColor);
   }
@@ -27,8 +28,8 @@ double OthelloAI::max_min(const GameState &gs, int depth, bool isMyTurn, Color m
     for(auto &move : moves){
       GameState gsBranch=gs;
       gsBranch.addPiece(move.first,move.second,myColor);
-      bool isMyTurnAgain = gs.nextPlayer() == myColor;
-      a=fmax(a,max_min(gsBranch,depth-1,isMyTurnAgain,myColor,alpha,beta));
+      bool isMyTurnAgain = gsBranch.nextPlayer() == myColor;
+      a=fmax(a,max_min(gsBranch,depth-1,isMyTurnAgain,myColor,alpha,beta,iter));
       alpha = fmax(alpha,a);
       if(beta <= alpha)break;//beta cut off
     }
@@ -41,8 +42,8 @@ double OthelloAI::max_min(const GameState &gs, int depth, bool isMyTurn, Color m
     for(auto &move : moves){
       GameState gsBranch=gs;
       gsBranch.addPiece(move.first,move.second,otherPlayer);
-      bool isMyTurnNow = gs.nextPlayer() == myColor;
-      a=fmin(a,max_min(gsBranch,depth-1,isMyTurnNow,myColor,alpha,beta));
+      bool isMyTurnNow = gsBranch.nextPlayer() == myColor;
+      a=fmin(a,max_min(gsBranch,depth-1,isMyTurnNow,myColor,alpha,beta,iter));
       beta = min(beta,a);
       if(beta <= alpha) break; //alpha cut off
     }
@@ -63,7 +64,7 @@ double OthelloAI::evaluateScore(const GameState &gs, Color myColor)const
   return pieceCountScore*100.0+lambda*positionScore;
 }
 
-std::pair<int, int> OthelloAI::giveNextMove(const GameState &gs, Color myColor) const
+std::pair<int, int> OthelloAI::giveNextMove(const GameState &gs, Color myColor, int &iteration) const
 {
   const int maxDepth=5;
   assert(gs.nextPlayer()==myColor);
@@ -73,8 +74,8 @@ std::pair<int, int> OthelloAI::giveNextMove(const GameState &gs, Color myColor) 
   for(auto &move : moves){
     GameState gsBranch=gs;
     gsBranch.addPiece(move.first,move.second,myColor);
-    bool isMyTurnAgain = gs.nextPlayer() == myColor;
-    double s = max_min(gsBranch,maxDepth-1,isMyTurnAgain,myColor,-1e10,1e10);
+    bool isMyTurnAgain = gsBranch.nextPlayer() == myColor;
+    double s = max_min(gsBranch,maxDepth-1,isMyTurnAgain,myColor,-1e10,1e10,iteration);
     if(s>maxScore){
       bestMove=move;
       maxScore=s;
