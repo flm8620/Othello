@@ -47,7 +47,7 @@ class GameState {
 
  public:
   GameState(int Nsize);
-  //get piece count of player
+  void restartGame();
   int pieceCount(Color player)const;
   bool gameIsEnd()const{return nextMoveColor==Color::Neither;}
   Color nextPlayer()const{return nextMoveColor;}
@@ -55,6 +55,10 @@ class GameState {
   void addPiece(int i,int j,Color player);
   std::set<std::pair<int,int> > getPossibleMovesForNextPlayer()const{return nextPossibleMoves;}
   double evaluateBoardScore(const ChessBoardScore& score, Color player)const;
+
+  //for test only:
+  std::vector<bool> getWhitePosition()const{return isWhite;}
+  std::vector<bool> getBlackPosition()const{return isBlack;}
 };
 
 

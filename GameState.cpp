@@ -78,9 +78,12 @@ GameState::GameState(int Nsize):N(Nsize),nextMoveColor(Color::Black) {
   if (N%2==1){
     throw invalid_argument("size of chess board must be even");
   }
+  this->restartGame();
+}
 
-  isWhite.resize(N * N, false);
-  isBlack.resize(N * N, false);
+void GameState::restartGame()
+{
+  nextMoveColor=Color::Black;
   //four pieces is put to start
   //    01234567
   //  0 OOOOOOOO
@@ -93,11 +96,12 @@ GameState::GameState(int Nsize):N(Nsize),nextMoveColor(Color::Black) {
   //  7 OOOOOOOO
   //
   // index of position (i,j) is [i*N+j]
+  isWhite.resize(N * N, false);
+  isBlack.resize(N * N, false);
   isWhite[(N / 2 - 1) * N + (N / 2 - 1)] = true;
   isWhite[(N / 2) * N + (N / 2)] = true;
   isBlack[(N / 2) * N + (N / 2 - 1)] = true;
   isBlack[(N / 2 - 1) * N + (N / 2)] = true;
-
   this->updatePossibleMoves(nextMoveColor);
 }
 
@@ -113,7 +117,7 @@ void GameState::printBoard() const {
 }
 
 void GameState::addPiece(int i, int j, Color player) {
-  Color otherPlayer = player==Color::Black ? Color::White : Color::Black;
+  Color otherPlayer = player == Color::Black ? Color::White : Color::Black;
   if(i<0 || i>=N || j<0 || j>=N){
     throw invalid_argument("position out of bound");
   }
@@ -126,8 +130,8 @@ void GameState::addPiece(int i, int j, Color player) {
   if(nextPlayer()==otherPlayer){
     throw logic_error("It's not your turn!");
   }
-  vector<bool>& hasAdversary = Color::Black ? isWhite : isBlack;
-  vector<bool>& hasPlayer = Color::Black ? isBlack : isWhite;
+  vector<bool>& hasAdversary = player == Color::Black ? isWhite : isBlack;
+  vector<bool>& hasPlayer = player == Color::Black ? isBlack : isWhite;
 
   hasPlayer[i*N+j]=true;
 
@@ -157,6 +161,7 @@ void GameState::addPiece(int i, int j, Color player) {
   }
 
   this->updatePossibleMoves(otherPlayer);
+  nextMoveColor = otherPlayer;
   if(nextPossibleMoves.empty()){
     nextMoveColor = player;
     this->updatePossibleMoves(player);
@@ -183,9 +188,9 @@ int GameState::pieceCount(Color player) const
 vector<pair<int,int> > GameState::position_NextTo_Piece(Color player) const{
   vector<pair<int, int>> Candidate_P;
   const vector<bool>& hasColor = player == Color::Black ? isBlack : isWhite;
-  for (int i=0;i<N;i++){
-    for(int j =0; j<N; j++){
-      if (isBlack[i*N+j]==false && isWhite[i*N+j]==false){
+  for (int i=0; i<N; i++){
+    for(int j=0; j<N; j++){
+      if (!isBlack[i*N+j] && !isWhite[i*N+j]){
         const vector<pair<int, int> >& neighbours = getNeighbourOffset(i,j);
         for(auto offset : neighbours){
           if(hasColor[(i+offset.first)*N+j+offset.second]){
@@ -203,8 +208,8 @@ void GameState::updatePossibleMoves(Color player){
   Color adversary = player == Color::Black ? Color::White : Color::Black;
   vector<pair<int, int>> Candidate_P = position_NextTo_Piece(adversary);
   set<pair<pair<int,int>, vector<Direction>> > possibleMoves;
-  const vector<bool>& hasAdversary = Color::Black ? isWhite : isBlack;
-  const vector<bool>& hasPlayer = Color::Black ? isBlack : isWhite;
+  const vector<bool>& hasAdversary = player == Color::Black ? isWhite : isBlack;
+  const vector<bool>& hasPlayer = player == Color::Black ? isBlack : isWhite;
 
   this->nextPossibleMoves.clear();
   this->moveWithDirection.clear();
@@ -222,22 +227,26 @@ void GameState::updatePossibleMoves(Color player){
 
     for(auto d : directions){
       pair<int,int> offset = getDirectionOffset(d);
-      i+=offset.first;
-      j+=offset.second;
+      int ii=move.first+offset.first;
+      int jj=move.second+offset.second;
       bool hasMetAdversary=false;
-      while(i>=0&&i<N&&j>=0&&j<N){
-        if(hasAdversary[i*N+j]){
+      while(ii>=0&&ii<N&&jj>=0&&jj<N){
+        if(hasAdversary[ii*N+jj]){
           hasMetAdversary=true;
         }
-        else if(hasPlayer[i*N+j]){
+        else if(hasPlayer[ii*N+jj]){
           if(hasMetAdversary){
             isLegalMove=true;
             this->moveWithDirection[move].push_back(d);
             break;
+          }else{
+            break;
           }
+        }else{
+          break;
         }
-        i+=offset.first;
-        j+=offset.second;
+        ii+=offset.first;
+        jj+=offset.second;
       }
     }
     if(isLegalMove) this->nextPossibleMoves.insert(move);
