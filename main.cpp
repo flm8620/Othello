@@ -6,6 +6,6 @@
 using namespace std;
 int main() {
   GeneticHost host(8);
-  host.startEvolution(20,20);
+  host.startEvolution(10,10);
   return 0;
 }

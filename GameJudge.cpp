@@ -17,8 +17,6 @@ int GameJudge::PlayAGame_getScore(const OthelloAI & black, const OthelloAI& whit
       cout<<" Round "<<count<<" "<<thinkSteps<<" steps of think"<<endl;
       gs.printBoard();
       cout<<endl;
-    }else{
-      cout<<count<<".";
     }
     count++;
   }while(!gs.gameIsEnd());

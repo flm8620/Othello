@@ -6,12 +6,15 @@
 #include <cassert>
 #include <vector>
 #include <algorithm>
+#include <fstream>
 
 using namespace std;
-
+#ifndef srcPath
+#define srcPath "."
+#endif
 auto seed2 = chrono::high_resolution_clock::now().time_since_epoch().count();
 mt19937 generator2(seed2);
-
+string outputFile = srcPath "/record.txt";
 GeneticHost::GeneticHost(int Nsize):N(Nsize)
 {
 
@@ -20,15 +23,18 @@ GeneticHost::GeneticHost(int Nsize):N(Nsize)
 void GeneticHost::startEvolution(int animalSize, int generation)
 {
   //create random AIs
+  zoo.clear();
   for(int i=0;i<animalSize;i++){
     this->zoo.push_back(OthelloAI(N));
   }
   GameJudge judge;
-
+  ofstream file(outputFile,ios::app);
   for(int k=0;k<generation;k++){
     zooScores.resize(zoo.size(),0);
+    int count=0;
     for(int i=0;i<zoo.size();i++){
       for(int j=i+1;j<zoo.size();j++){
+        count++;
         cout<<"AI_"<<zoo[i].getID()<<" vs AI_"<<zoo[j].getID()<<endl;
         int score = judge.PlayAGame_getScore(zoo[i],zoo[j],N,false);
         zooScores[i]+=score;
@@ -40,7 +46,8 @@ void GeneticHost::startEvolution(int animalSize, int generation)
         }else{
           cout<<"Draw"<<endl;
         }
-        cout<<endl;
+        cout<<double(count)/(zoo.size()*(zoo.size()-1)/2)*100<<"% finished"<<endl;
+
       }
     }
     //index of AIs to sort (0,1,2,3,4,5...)
@@ -52,7 +59,16 @@ void GeneticHost::startEvolution(int animalSize, int generation)
     });
 
     cout<<"Best ChessBoardScore for now:"<<endl;
-    zoo[index[0]].getChessBoardScore().printOut();
+    auto s = zoo[index[0]].getChessBoardScore();
+    s.printOut();
+    file<<"Generation "<<k<<": Best chessBoardScore:"<<endl;
+    for(int i=0;i<N/2;i++){
+      for(int j=0;j<N;j++){
+        file<<s.scores[i*N+j]<<'\t';
+      }
+      file<<endl;
+    }
+
 
     std::vector<OthelloAI> newZoo;
     //we take the 1/3 best AIs, throw the 2/3
@@ -78,6 +94,7 @@ void GeneticHost::startEvolution(int animalSize, int generation)
       zoo.push_back(crossover(newZoo[i],newZoo[j]));
     }
   }
+  file.close();
 }
 
 OthelloAI GeneticHost::mutation(const OthelloAI &ai)
