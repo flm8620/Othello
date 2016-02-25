@@ -37,7 +37,6 @@ class GameState {
   //  8*4
   //  765
   // direction in which we have a piece as neighbour
-  std::vector<std::bitset<8>> neighbourDirection;
   std::set<std::pair<int,int>> emptyAdjacent;
 
   // The following two values are updated when constructed and when addPiece()
@@ -55,7 +54,7 @@ class GameState {
 
   //update this->nextPossibleMoves and this->moveWithDirection
   void updatePossibleMoves(Color player);
-  void recalculateNeighbourDirection_emptyAdjacent();
+  void recalculateEmptyAdjacent();
  public:
   GameState(int Nsize);
   void restartGame();
