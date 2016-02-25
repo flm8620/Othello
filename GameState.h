@@ -32,12 +32,6 @@ class GameState {
   std::vector<bool> isBlack;
   std::pair<int,int> lastPosition;
   Color nextMoveColor;
-  //neighbourDirection:
-  //  123
-  //  8*4
-  //  765
-  // direction in which we have a piece as neighbour
-  std::set<std::pair<int,int>> emptyAdjacent;
 
   // The following two values are updated when constructed and when addPiece()
   std::set<std::pair<int,int> > nextPossibleMoves;
@@ -50,11 +44,10 @@ class GameState {
   std::pair<int,int> getDirectionOffset(Direction direction)const;
 
   //give the candidate positons of possible moves.
-  std::vector<std::pair<std::pair<int,int>,std::vector<Direction>>> position_NextTo_Piece(Color adversary)const;
+  std::vector<std::pair<int,int>> position_NextTo_Piece(Color adversary)const;
 
   //update this->nextPossibleMoves and this->moveWithDirection
   void updatePossibleMoves(Color player);
-  void recalculateEmptyAdjacent();
  public:
   GameState(int Nsize);
   void restartGame();
