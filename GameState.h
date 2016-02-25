@@ -10,15 +10,16 @@
 #include <stdexcept>
 #include <set>
 #include <map>
+#include <bitset>
 enum Color{Black,White,Neither};
 enum Direction{TopLeft,TopRight,BottomLeft,BottomRight,Left,Right,Top,Bottom,Center};
-struct ChessBoardScore{
+struct DiskSquare{
   static const double MAXSCORE;
   const int N;
   std::vector<double> scores;
-  ChessBoardScore(int Nsize);
-  ChessBoardScore(const ChessBoardScore& other);
-  ChessBoardScore& operator=(const ChessBoardScore& other);
+  DiskSquare(int Nsize);
+  DiskSquare(const DiskSquare& other);
+  DiskSquare& operator=(const DiskSquare& other);
   static std::vector<double> triangleFormatToFullFormat(std::vector<double> triangle, int N);
   std::vector<double> getTriangleFormat() const;
   void printOut();
@@ -31,23 +32,30 @@ class GameState {
   std::vector<bool> isBlack;
   std::pair<int,int> lastPosition;
   Color nextMoveColor;
+  //neighbourDirection:
+  //  123
+  //  8*4
+  //  765
+  // direction in which we have a piece as neighbour
+  std::vector<std::bitset<8>> neighbourDirection;
+  std::set<std::pair<int,int>> emptyAdjacent;
 
   // The following two values are updated when constructed and when addPiece()
   std::set<std::pair<int,int> > nextPossibleMoves;
   std::map<std::pair<int,int>, std::vector<Direction> > moveWithDirection;
 
   //get relative position of neighbours (case of corner considered)
-  std::vector<std::pair<int,int> >& getNeighbourOffset(int i,int j) const;
+  const std::vector<std::pair<int,int> >& getNeighbourOffset(int i,int j) const;
 
   //for example: getDirectionOffset(Left) = pair{0,-1}
   std::pair<int,int> getDirectionOffset(Direction direction)const;
 
   //give the candidate positons of possible moves.
-  std::vector<std::pair<int,int> > position_NextTo_Piece(Color player)const;
+  std::vector<std::pair<std::pair<int,int>,std::vector<Direction>>> position_NextTo_Piece(Color adversary)const;
 
   //update this->nextPossibleMoves and this->moveWithDirection
   void updatePossibleMoves(Color player);
-
+  void recalculateNeighbourDirection_emptyAdjacent();
  public:
   GameState(int Nsize);
   void restartGame();
@@ -56,8 +64,8 @@ class GameState {
   Color nextPlayer()const{return nextMoveColor;}
   void printBoard() const;
   void addPiece(int i,int j,Color player);
-  std::set<std::pair<int,int> > getPossibleMovesForNextPlayer()const{return nextPossibleMoves;}
-  double evaluateBoardScore(const ChessBoardScore& score, Color player)const;
+  const std::set<std::pair<int,int> >& getPossibleMovesForNextPlayer()const{return nextPossibleMoves;}
+  double evaluateBoardScore(const DiskSquare& score, Color player)const;
 
   //for test only:
   std::vector<bool> getWhitePosition()const{return isWhite;}

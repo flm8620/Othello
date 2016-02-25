@@ -13,7 +13,7 @@ class ExceptionTimeUp{
 
 class OthelloAI {
   //the score for position, which determines the quality of this AI
-  ChessBoardScore chessBoardScore;
+  DiskSquare diskSquare;
   //lambda is the ratio between position score and piece number score
   std::vector<double> lambdas;
   const int N;
@@ -23,13 +23,13 @@ class OthelloAI {
 
   int generateID();
   //recursive minimax with alpha-beta
-  double max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor, double alpha, double beta, int &iter)const;
+  double max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor, double alpha, double beta, int &iter, bool limitTime=false)const;
   //evaluate the score of current GameState for player
   double evaluateScore(const GameState &gs, Color myColor)const;
-  std::pair<int, int> startMaxMin(const GameState &gs, Color myColor, int &iteration, int maxDepth) const;
+  std::pair<int, int> startMaxMin(const GameState &gs, Color myColor, int &iteration, int maxDepth, bool limitTime=false) const;
  public:
   //let AI to decide next move
-  std::pair<int,int> giveNextMove(const GameState &gs, Color myColor, int &iteration, int &reachedDepth, double thinkTime=1.0) const;
+  std::pair<int,int> giveNextMove(const GameState &gs, Color myColor, int &iteration, int &reachedDepth, double thinkTime=1.0, int thinkDepth=0) const;
 
   OthelloAI(int Nsize);
   OthelloAI(const OthelloAI& other);
@@ -38,8 +38,8 @@ class OthelloAI {
   void useRecommandedChessBoardScore();
 
   //used for genetic modification
-  ChessBoardScore getChessBoardScore()const{return chessBoardScore;}
-  void setChessBoardScore(const ChessBoardScore& cbs){this->chessBoardScore.scores=cbs.scores;}
+  DiskSquare getDiskSquare()const{return diskSquare;}
+  void setDiskSquare(const DiskSquare &ds){ this->diskSquare.scores=ds.scores;}
   std::vector<double> getLambdas()const{return lambdas;}
   void setLambdas(std::vector<double>& newLambdas){this->lambdas=newLambdas;}
   int getID()const{return ID;}

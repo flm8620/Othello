@@ -1,11 +1,5 @@
 #include "genetichost.h"
-#include "GameJudge.h"
-#include <iostream>
-#include <chrono>
-#include <random>
 #include <cassert>
-#include <vector>
-#include <algorithm>
 #include <fstream>
 #include <cmath>
 #include <iomanip>
@@ -21,8 +15,8 @@ void GeneticHost::saveAIToFile(string file)
   f<<zoo.size()<<endl;
   for(auto p : zoo){
     f<<p->getID()<<endl;
-    auto cbs = p->getChessBoardScore();
-    auto triangle = cbs.getTriangleFormat();
+    auto ds = p->getDiskSquare();
+    auto triangle = ds.getTriangleFormat();
     int k=0;
     for(int i=0;i<N/2;i++){
       for(int j=0;j<i;j++) f<<setw(10)<<' ';
@@ -51,11 +45,11 @@ void GeneticHost::loadAIFromFile(string file)
     int id;
     f>>id;
     p->setID(id);
-    ChessBoardScore cbs(N);
-    auto triangle = cbs.getTriangleFormat();
+    DiskSquare ds(N);
+    auto triangle = ds.getTriangleFormat();
     for(auto &t : triangle) f>>t;
-    cbs.scores=ChessBoardScore::triangleFormatToFullFormat(triangle,cbs.N);
-    p->setChessBoardScore(cbs);
+    ds.scores=DiskSquare::triangleFormatToFullFormat(triangle, ds.N);
+    p->setDiskSquare(ds);
 
     vector<double> lambdas(N*N);
     for(auto& l : lambdas) f>>l;
@@ -95,7 +89,7 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
         if(i==j)continue;
         count++;
         cout<<"AI_"<<zoo[i]->getID()<<" vs AI_"<<zoo[j]->getID()<<endl;
-        int score = judge.PlayAGame_getScore(*zoo[i],*zoo[j],N,0.01,false);
+        int score = judge.PlayAGame_getScore(*zoo[i],*zoo[j],N,0.02,false);
         zooScores[i]+=score;
         zooScores[j]-=score;
         if(score>0){
@@ -133,14 +127,14 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
       file<<"\tDraw: "<<drawCount[index[i]]<<"/"<<(zoo.size()-1)*2<<endl;
     }
     cout<<"Best ChessBoardScore:"<<endl;
-    auto s = zoo[index[0]]->getChessBoardScore();
+    auto s = zoo[index[0]]->getDiskSquare();
     auto l = zoo[index[0]]->getLambdas();
     s.printOut();
 
     for(int i=0;i<N/2;i++){
       for(int j=0;j<i;j++) file<<setw(10)<<' ';
       for(int j=i;j<N/2;j++){
-        file<<setw(10)<<(int)s.scores[i*N+j]<<'\t';
+        file<<setw(10)<<(int)s.scores[i*N+j];
       }
       file<<endl;
     }
@@ -196,13 +190,13 @@ OthelloAI *GeneticHost::mutation(const OthelloAI *ai)
   int M=N/2;
   int MM=M*(1+M)/2;
   uniform_int_distribution<int> randi(0,MM-1);
-  uniform_real_distribution<double> randReal(-ChessBoardScore::MAXSCORE,ChessBoardScore::MAXSCORE);
-  auto triangle = ai->getChessBoardScore().getTriangleFormat();
+  uniform_real_distribution<double> randReal(-DiskSquare::MAXSCORE,DiskSquare::MAXSCORE);
+  auto triangle = ai->getDiskSquare().getTriangleFormat();
 
   //pick one element in ChessBoardScore and modify it to a random real number
   triangle[randi(generator2)]=randReal(generator2);
-  ChessBoardScore cbs(N);
-  cbs.scores=ChessBoardScore::triangleFormatToFullFormat(triangle,N);
+  DiskSquare ds(N);
+  ds.scores=DiskSquare::triangleFormatToFullFormat(triangle, N);
 
 
   //lambda:
@@ -228,7 +222,7 @@ OthelloAI *GeneticHost::mutation(const OthelloAI *ai)
   for(int i=4;i<=time;i++) lambdas[i]+=modify;
 
   OthelloAI *newAI = new OthelloAI(N);
-  newAI->setChessBoardScore(cbs);
+  newAI->setDiskSquare(ds);
   newAI->setLambdas(lambdas);
 
   return newAI;
@@ -237,9 +231,9 @@ OthelloAI *GeneticHost::mutation(const OthelloAI *ai)
 OthelloAI *GeneticHost::crossover(const OthelloAI *ai1, const OthelloAI *ai2)
 {
 
-  ChessBoardScore score(N);
-  auto triangle1 = ai1->getChessBoardScore().getTriangleFormat();
-  auto triangle2 = ai2->getChessBoardScore().getTriangleFormat();
+  DiskSquare score(N);
+  auto triangle1 = ai1->getDiskSquare().getTriangleFormat();
+  auto triangle2 = ai2->getDiskSquare().getTriangleFormat();
   uniform_int_distribution<int> randi(0,1);
   auto triangle = triangle1;
   //chessBoardScore is just like DNA
@@ -252,7 +246,7 @@ OthelloAI *GeneticHost::crossover(const OthelloAI *ai1, const OthelloAI *ai2)
     }
   }
 
-  score.scores=ChessBoardScore::triangleFormatToFullFormat(triangle,N);
+  score.scores=DiskSquare::triangleFormatToFullFormat(triangle,N);
 
   //TODO:
   //take mean of lambdas.... maybe to be improved later
@@ -264,7 +258,7 @@ OthelloAI *GeneticHost::crossover(const OthelloAI *ai1, const OthelloAI *ai2)
   }
 
   OthelloAI* newAI = new OthelloAI(N);
-  newAI->setChessBoardScore(score);
+  newAI->setDiskSquare(score);
   newAI->setLambdas(lambdas1);
 
   return newAI;
