@@ -50,15 +50,13 @@ double OthelloAI::max_min(const GameState &gs,
                           double beta,
                           int &iter,
                           bool limitTime) const {
-  iter++;
+
   if (limitTime) {
     auto time = std::chrono::high_resolution_clock::now();
     duration<double> time_span = duration_cast<duration<double>>(time - this->startTime);
-    if (time_span.count() > this->thinkTime){
-      cout<<"before throw "<<iter<<endl;
-      throw ExceptionTimeUp();
-    }
+    if (time_span.count() > this->thinkTime) throw ExceptionTimeUp();
   }
+  iter++;
 
   if (depth == 0 || gs.gameIsEnd()) {
     return evaluateScore(gs, myColor);
@@ -67,7 +65,26 @@ double OthelloAI::max_min(const GameState &gs,
     double a = -1e10;
     assert(gs.nextPlayer() == myColor);
     auto moves = gs.getPossibleMovesForNextPlayer();
-    for (auto &move : moves) {
+
+    //sort moves
+    vector<pair<int,int>> moveUnsorted;
+    copy(moves.begin(),moves.end(),back_inserter(moveUnsorted));
+    vector<double> predictScore(moveUnsorted.size());
+    vector<int> indexSorted(moveUnsorted.size());
+    for(int i=0; i<moveUnsorted.size(); i++){
+      indexSorted[i]=i;
+      GameState gsBranch = gs;
+      gsBranch.addPiece(moveUnsorted[i].first, moveUnsorted[i].second, myColor);
+      predictScore[i]=evaluateScore(gsBranch,myColor);
+    }
+    sort(indexSorted.begin(),indexSorted.end(),[&](int a,int b){
+      return predictScore[a]>predictScore[b];
+    });
+    vector<pair<int,int>> sortedMoves(moveUnsorted.size());
+    for(int i=0;i<sortedMoves.size();i++) sortedMoves[i] = moveUnsorted[indexSorted[i]];
+
+
+    for (auto &move : sortedMoves) {
       GameState gsBranch = gs;
       gsBranch.addPiece(move.first, move.second, myColor);
       bool isMyTurnAgain = gsBranch.nextPlayer() == myColor;
@@ -81,12 +98,31 @@ double OthelloAI::max_min(const GameState &gs,
     Color otherPlayer = gs.nextPlayer();
     assert(gs.nextPlayer() != myColor);
     auto moves = gs.getPossibleMovesForNextPlayer();
-    for (auto &move : moves) {
+
+    //sort moves
+    vector<pair<int,int>> moveUnsorted;
+    copy(moves.begin(),moves.end(),back_inserter(moveUnsorted));
+    vector<double> predictScore(moveUnsorted.size());
+    vector<int> indexSorted(moveUnsorted.size());
+    for(int i=0; i<moveUnsorted.size(); i++){
+      indexSorted[i]=i;
+      GameState gsBranch = gs;
+      gsBranch.addPiece(moveUnsorted[i].first, moveUnsorted[i].second, otherPlayer);
+      predictScore[i]=evaluateScore(gsBranch,myColor);
+    }
+    sort(indexSorted.begin(),indexSorted.end(),[&](int a,int b){
+      return predictScore[a]<predictScore[b];
+    });
+    vector<pair<int,int>> sortedMoves(moveUnsorted.size());
+    for(int i=0;i<sortedMoves.size();i++) sortedMoves[i] = moveUnsorted[indexSorted[i]];
+
+
+    for (auto &move : sortedMoves) {
       GameState gsBranch = gs;
       gsBranch.addPiece(move.first, move.second, otherPlayer);
       bool isMyTurnNow = gsBranch.nextPlayer() == myColor;
       a = fmin(a, max_min(gsBranch, depth - 1, isMyTurnNow, myColor, alpha, beta, iter));
-      beta = min(beta, a);
+      beta = fmin(beta, a);
       if (beta <= alpha) break; //alpha cut off
     }
     return a;
@@ -114,15 +150,17 @@ pair<int, int> OthelloAI::startMaxMin(const GameState &gs,
                                       bool limitTime) const {
   double maxScore = -1e10;
   pair<int, int> bestMove = make_pair(-1, -1);
-  const auto& moves = gs.getPossibleMovesForNextPlayer();
+  const auto &moves = gs.getPossibleMovesForNextPlayer();
+
   //start minimax algo
+  double alpha = -1e10;
+  double beta = 1e10;
   for (const auto &move : moves) {
     GameState gsBranch = gs;
     gsBranch.addPiece(move.first, move.second, myColor);
     bool isMyTurnAgain = gsBranch.nextPlayer() == myColor;
-    //alpha=-infinite
-    //beta=+infinite
-    double s = max_min(gsBranch, maxDepth - 1, isMyTurnAgain, myColor, -1e10, 1e10, iteration, limitTime);
+    double s = max_min(gsBranch, maxDepth - 1, isMyTurnAgain, myColor, alpha, beta, iteration, limitTime);
+    alpha = fmax(alpha, s);
     if (s > maxScore) {
       bestMove = move;
       maxScore = s;
@@ -167,9 +205,9 @@ std::pair<int, int> OthelloAI::giveNextMove(const GameState &gs,
         bestMove = startMaxMin(gs, myColor, iter, maxDepth, true);
         reachedDepth = maxDepth;
         iteration += iter;
-        cout<<"normal: "<<iter<<endl;
+        cout << "normal: " << iter << endl;
       } catch (ExceptionTimeUp &e) {
-        cout<<"catched:"<<iter<<" "<<maxDepth<<endl;
+        cout << "catched:" << iter << " " << maxDepth << endl;
         reachedDepth = maxDepth;
         iteration += iter;
         break;
