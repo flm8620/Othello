@@ -166,19 +166,48 @@ go_bandit([](){
     GeneticHost host(8);
     it("mutation",[&](){
       for(int i=0;i<10;i++){
-        OthelloAI ai(8);
+        auto ai=new OthelloAI(8);
         for(int j=0;j<10;j++){
-          ai=host.mutation(ai);
+          auto newAI=host.mutation(ai);
+          delete ai;
+          ai=newAI;
         }
+        delete ai;
       }
     });
     it("crossover",[&](){
       for(int i=0;i<10;i++){
-        OthelloAI ai1(8),ai2(8);
+        auto ai1=new OthelloAI(8);
+        auto ai2=new OthelloAI(8);
         for(int j=0;j<10;j++){
-          ai1=host.crossover(ai1,ai2);
+          auto newAI=host.crossover(ai1,ai2);
+          delete ai1;
+          ai1=newAI;
         }
+        delete ai1;
+        delete ai2;
       }
+    });
+
+  });
+  describe("ChessBoardScore Test", [](){
+    vector<double> triangle = {1,2,3,4,
+                                 5,6,7,
+                                   8,9,
+                                     0};
+    vector<double> full = {1,2,3,4,4,3,2,1,
+                           2,5,6,7,7,6,5,2,
+                           3,6,8,9,9,8,6,3,
+                           4,7,9,0,0,9,7,4,
+                           4,7,9,0,0,9,7,4,
+                           3,6,8,9,9,8,6,3,
+                           2,5,6,7,7,6,5,2,
+                           1,2,3,4,4,3,2,1};
+    it("triangle",[&](){
+      AssertThat(full, Equals(ChessBoardScore::triangleFormatToFullFormat(triangle,8)));
+      ChessBoardScore cbs(8);
+      cbs.scores=full;
+      AssertThat(triangle, Equals(cbs.getTriangleFormat()));
     });
 
   });

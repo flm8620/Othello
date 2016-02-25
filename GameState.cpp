@@ -12,14 +12,74 @@ using namespace std;
 auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();
 mt19937 generator(seed);
 
+const double ChessBoardScore::MAXSCORE=1000.0;
+
+ChessBoardScore::ChessBoardScore(int Nsize):N(Nsize){
+  scores.resize(N*N,0);
+}
+
+ChessBoardScore::ChessBoardScore(const ChessBoardScore &other):N(other.N){
+  scores=other.scores;
+}
+
+ChessBoardScore &ChessBoardScore::operator=(const ChessBoardScore &other){
+  this->scores=other.scores;
+}
+
+std::vector<double> ChessBoardScore::triangleFormatToFullFormat(std::vector<double> triangle,int N)
+{
+  // by symmetry, we only need to consider a triangle
+  // ****----
+  // -***----
+  // --**----
+  // ---*----
+  // --------
+  // --------
+  // --------
+  // --------
+  int M=N/2;
+  int sizeTriangle = M*(1+M)/2;
+  if(triangle.size()!=sizeTriangle) throw invalid_argument("triangle size incorrect");
+  vector<double> full(N*N);
+  int k=0;
+  for(int i=0;i<N/2;i++){
+    for(int j=i;j<N/2;j++){
+      full[i*N+j]=full[j*N+i]=triangle[k];
+      full[(N-i-1)*N+(N-j-1)]=full[(N-i-1)*N+j]=full[i*N+(N-j-1)]=triangle[k];
+      full[(N-j-1)*N+(N-i-1)]=full[(N-j-1)*N+i]=full[j*N+(N-i-1)]=triangle[k];
+      k++;
+    }
+  }
+  return full;
+}
+
+std::vector<double> ChessBoardScore::getTriangleFormat()const
+{
+  vector<double> t;
+  for(int i=0;i<N/2;i++)
+    for(int j=i;j<N/2;j++)
+      t.push_back(scores[i*N+j]);
+  return t;
+}
+
+void ChessBoardScore::printOut(){
+  for(int i=0;i<N/2;i++){
+    for(int j=0;j<i;j++)std::cout<<'\t';
+    for(int j=i;j<N/2;j++){
+      std::cout<<scores[i*N+j]<<'\t';
+    }
+    std::cout<<std::endl;
+  }
+}
+
 void ChessBoardScore::randomizeScore() {
-  uniform_real_distribution<double> randReal(-1000,1000);
+  uniform_real_distribution<double> randReal(-MAXSCORE,MAXSCORE);
   //score should be symmetic
   //score(i,j) == score(N-i-1,N-j-1)
-  int NN=N*N;
-  for(int i=0;i<N*N/2;i++){
-      scores[i]=scores[NN-i-1]=randReal(generator);
-  }
+  vector<double> triangle;
+  int M=N/2;
+  for(int i=0;i<M*(1+M)/2;i++)triangle.push_back(randReal(generator));
+  scores=triangleFormatToFullFormat(triangle,N);
 }
 
 vector<pair<int, int> > &GameState::getNeighbourOffset(int i, int j)const

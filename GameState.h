@@ -13,27 +13,15 @@
 enum Color{Black,White,Neither};
 enum Direction{TopLeft,TopRight,BottomLeft,BottomRight,Left,Right,Top,Bottom,Center};
 struct ChessBoardScore{
+  static const double MAXSCORE;
   const int N;
   std::vector<double> scores;
-  ChessBoardScore(int Nsize):N(Nsize){
-    scores.resize(N*N,0);
-  }
-  ChessBoardScore(const ChessBoardScore& other):N(other.N){
-    scores=other.scores;
-  }
-  ChessBoardScore& operator=(const ChessBoardScore& other){
-    this->scores=other.scores;
-  }
-
-  void printOut(){
-    for(int i=0;i<N/2;i++){
-      for(int j=0;j<N;j++){
-        std::cout<<scores[i*N+j]<<'\t';
-      }
-      std::cout<<std::endl;
-    }
-  }
-
+  ChessBoardScore(int Nsize);
+  ChessBoardScore(const ChessBoardScore& other);
+  ChessBoardScore& operator=(const ChessBoardScore& other);
+  static std::vector<double> triangleFormatToFullFormat(std::vector<double> triangle, int N);
+  std::vector<double> getTriangleFormat() const;
+  void printOut();
   void randomizeScore();
 };
 
@@ -43,6 +31,7 @@ class GameState {
   std::vector<bool> isBlack;
   std::pair<int,int> lastPosition;
   Color nextMoveColor;
+
   // The following two values are updated when constructed and when addPiece()
   std::set<std::pair<int,int> > nextPossibleMoves;
   std::map<std::pair<int,int>, std::vector<Direction> > moveWithDirection;
@@ -52,9 +41,6 @@ class GameState {
 
   //for example: getDirectionOffset(Left) = pair{0,-1}
   std::pair<int,int> getDirectionOffset(Direction direction)const;
-
-
-
 
   //give the candidate positons of possible moves.
   std::vector<std::pair<int,int> > position_NextTo_Piece(Color player)const;

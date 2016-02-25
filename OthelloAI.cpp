@@ -5,7 +5,9 @@
 #include "OthelloAI.h"
 #include <cassert>
 #include <algorithm>
+
 using namespace std;
+using namespace std::chrono;
 OthelloAI::OthelloAI(int Nsize):chessBoardScore(Nsize), N(Nsize)
 {
   this->ID = generateID();
@@ -25,8 +27,18 @@ OthelloAI::OthelloAI(const OthelloAI &other):chessBoardScore(other.chessBoardSco
 OthelloAI &OthelloAI::operator=(const OthelloAI &other)
 {
   chessBoardScore=other.chessBoardScore;
-  ID=this->getID();
+  ID=this->generateID();
   lambdas=other.lambdas;
+}
+
+void OthelloAI::useRecommandedChessBoardScore()
+{
+  double M = ChessBoardScore::MAXSCORE;
+  vector<double> triangle = {M*20/20,-M*3/20,M*11/20, M*8/20,
+                                  -M*7/20,-M*4/20,M*1/20,
+                                           M*2/20,M*2/20,
+                                                  -M*3/20};
+  this->chessBoardScore.scores=ChessBoardScore::triangleFormatToFullFormat(triangle,8);
 }
 
 int OthelloAI::generateID()
@@ -38,6 +50,9 @@ int OthelloAI::generateID()
 
 double OthelloAI::max_min(const GameState &gs, int depth, bool isMyTurn, Color myColor, double alpha, double beta,int& iter)const
 {
+  auto time = std::chrono::high_resolution_clock::now();
+  duration<double> time_span = duration_cast<duration<double>>(time - this->startTime);
+  if(time_span.count()>this->thinkTime) throw ExceptionTimeUp();
   iter++;
   if(depth==0 || gs.gameIsEnd()){
     return evaluateScore(gs,myColor);
@@ -87,10 +102,8 @@ double OthelloAI::evaluateScore(const GameState &gs, Color myColor)const
   return pieceCountScore*100.0+lambda*positionScore;
 }
 
-std::pair<int, int> OthelloAI::giveNextMove(const GameState &gs, Color myColor, int &iteration) const
+pair<int, int> OthelloAI::startMaxMin(const GameState &gs, Color myColor, int &iteration, int maxDepth) const
 {
-  const int maxDepth=4;
-  assert(gs.nextPlayer()==myColor);
   double maxScore = -1e10;
   pair<int,int> bestMove = make_pair(-1,-1);
   auto moves = gs.getPossibleMovesForNextPlayer();
@@ -108,6 +121,31 @@ std::pair<int, int> OthelloAI::giveNextMove(const GameState &gs, Color myColor, 
     }
   }
   assert(bestMove!=make_pair(-1,-1));
+
+  return bestMove;
+}
+
+std::pair<int, int> OthelloAI::giveNextMove(const GameState &gs, Color myColor, int &iteration,int &reachedDepth, double thinkTime) const
+{
+  this->thinkTime = thinkTime;
+
+  assert(gs.nextPlayer()==myColor);
+  startTime=std::chrono::high_resolution_clock::now();
+  pair<int,int> bestMove=make_pair(-1,-1);
+  iteration=0;
+  for(int maxDepth=2;maxDepth<20;maxDepth++){
+    int iter=0;
+    try{
+      bestMove = startMaxMin(gs, myColor, iter, maxDepth);
+      reachedDepth=maxDepth;
+      iteration+=iter;
+    }catch(ExceptionTimeUp &e){
+      if(bestMove==make_pair(-1,-1)){
+        throw invalid_argument("Come on, just give me more time to think!");
+      }
+
+    }
+  }
   return bestMove;
 }
 
