@@ -14,12 +14,26 @@ class ExceptionTimeUp{
 class OthelloAI {
   //the score for position, which determines the quality of this AI
   DiskSquare diskSquare;
-  //lambda is the ratio between position score and piece number score
-  std::vector<double> lambdas;
   const int N;
   int ID;
+  struct ScoreWeight{
+    double middleTime, endTime;
+    double mobility_begin;
+    double mobility_middle;
+    double position_begin;
+    double position_middle;
+    //piecenumber_begin = 1-mobility_begin-position_begin
+    //piecenumber_middle = 1-mobility_middle-position_middle
+    //piecenumber_end = 1;
+    void getThreeWeights(double& mobility,double& position,double& piecenumber,double t)const;
+    void randomnize();
+    void mutateMyself();
+    ScoreWeight crossover(ScoreWeight other)const;
+  } scoreWeight;
+
   mutable std::chrono::high_resolution_clock::time_point startTime;
   mutable double thinkTime;
+
 
   int generateID();
   //recursive minimax with alpha-beta
@@ -35,13 +49,15 @@ class OthelloAI {
   OthelloAI(const OthelloAI& other);
   OthelloAI& operator=(const OthelloAI& other);
 
-  void useRecommandedChessBoardScore();
+  void useRecommandedDiskSquare();
 
   //used for genetic modification
   DiskSquare getDiskSquare()const{return diskSquare;}
   void setDiskSquare(const DiskSquare &ds){ this->diskSquare.scores=ds.scores;}
-  std::vector<double> getLambdas()const{return lambdas;}
-  void setLambdas(std::vector<double>& newLambdas){this->lambdas=newLambdas;}
+  ScoreWeight getScoreWeight()const{return scoreWeight;}
+  void setScoreWeight(ScoreWeight sw){scoreWeight=sw;}
+  OthelloAI *createNewAIByMutation()const;
+  OthelloAI *createNewAIByCrossOver(const OthelloAI* other)const;
   int getID()const{return ID;}
   void setID(int id){ID=id;}
 

@@ -11,15 +11,15 @@
 #include <set>
 #include <map>
 #include <bitset>
-enum Color{Black,White,Neither};
-enum Direction{TopLeft,TopRight,BottomLeft,BottomRight,Left,Right,Top,Bottom,Center};
-struct DiskSquare{
+enum Color { Black, White, Neither };
+enum Direction { TopLeft, TopRight, BottomLeft, BottomRight, Left, Right, Top, Bottom, Center };
+struct DiskSquare {
   static const double MAXSCORE;
   const int N;
   std::vector<double> scores;
   DiskSquare(int Nsize);
-  DiskSquare(const DiskSquare& other);
-  DiskSquare& operator=(const DiskSquare& other);
+  DiskSquare(const DiskSquare &other);
+  DiskSquare &operator=(const DiskSquare &other);
   static std::vector<double> triangleFormatToFullFormat(std::vector<double> triangle, int N);
   std::vector<double> getTriangleFormat() const;
   void printOut();
@@ -30,39 +30,46 @@ class GameState {
   const int N;
   std::vector<bool> isWhite;
   std::vector<bool> isBlack;
-  std::pair<int,int> lastPosition;
+  std::pair<int, int> lastPosition;
   Color nextMoveColor;
 
   // The following two values are updated when constructed and when addPiece()
-  std::set<std::pair<int,int> > nextPossibleMoves;
-  std::map<std::pair<int,int>, std::vector<Direction> > moveWithDirection;
+  std::set<std::pair<int, int> > nextPossibleMovesWhite;
+  std::set<std::pair<int, int> > nextPossibleMovesBlack;
+  std::map<std::pair<int, int>, std::vector<Direction> > moveWithDirectionWhite;
+  std::map<std::pair<int, int>, std::vector<Direction> > moveWithDirectionBlack;
 
   //get relative position of neighbours (case of corner considered)
-  const std::vector<std::pair<int,int> >& getNeighbourOffset(int i,int j) const;
+  const std::vector<std::pair<int, int> > &getNeighbourOffset(int i, int j) const;
 
   //for example: getDirectionOffset(Left) = pair{0,-1}
-  std::pair<int,int> getDirectionOffset(Direction direction)const;
+  std::pair<int, int> getDirectionOffset(Direction direction) const;
 
   //give the candidate positons of possible moves.
-  std::vector<std::pair<int,int>> position_NextTo_Piece(Color adversary)const;
+  std::vector<std::pair<int, int>> position_NextTo_Piece(Color adversary) const;
 
   //update this->nextPossibleMoves and this->moveWithDirection
   void updatePossibleMoves(Color player);
  public:
   GameState(int Nsize);
   void restartGame();
-  int pieceCount(Color player)const;
-  bool gameIsEnd()const{return nextMoveColor==Color::Neither;}
-  Color nextPlayer()const{return nextMoveColor;}
+  int pieceCount(Color player) const;
+  bool gameIsEnd() const { return nextMoveColor == Color::Neither; }
+  Color nextPlayer() const { return nextMoveColor; }
   void printBoard() const;
-  void addPiece(int i,int j,Color player);
-  const std::set<std::pair<int,int> >& getPossibleMovesForNextPlayer()const{return nextPossibleMoves;}
-  double evaluateBoardScore(const DiskSquare& score, Color player)const;
+  void addPiece(int i, int j, Color player);
+  const std::set<std::pair<int, int> > &getPossibleMovesForNextPlayer() const {
+    return nextMoveColor == Black ? nextPossibleMovesBlack : nextPossibleMovesWhite;
+  }
+  double evaluateBoardScore(const DiskSquare &score, Color player) const;
+  int playerMobility(Color player) const {
+    return player == Black ? nextPossibleMovesBlack.size() : nextPossibleMovesWhite.size();
+  }
 
   //for test only:
-  std::vector<bool> getWhitePosition()const{return isWhite;}
-  std::vector<bool> getBlackPosition()const{return isBlack;}
-  void setColorPositionPlayer(std::vector<bool> black,std::vector<bool>white,Color nextPlayer);
+  std::vector<bool> getWhitePosition() const { return isWhite; }
+  std::vector<bool> getBlackPosition() const { return isBlack; }
+  void setColorPositionPlayer(std::vector<bool> black, std::vector<bool> white, Color nextPlayer);
 };
 
 

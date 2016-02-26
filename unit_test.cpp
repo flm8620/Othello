@@ -177,6 +177,25 @@ go_bandit([]() {
       gs.setColorPositionPlayer(blackPos, whitePos, Color::Black);
       AssertThat(gs.nextPlayer(), Equals(Color::Neither));
     });
+
+    it("special cases3", [&]() {
+      //    01234567
+      //  0 --------
+      //  1 --------
+      //  2 --------
+      //  3 --BWb---
+      //  4 --------
+      //  5 --------
+      //  6 --------
+      //  7 --------
+      vector<bool> blackPos(N * N, false);
+      vector<bool> whitePos(N * N, false);
+      whitePos[3 * N + 3] = true;
+      blackPos[3 * N + 2] = true;
+      gs.setColorPositionPlayer(blackPos, whitePos, Color::Black);
+      gs.addPiece(3,4,Black);
+      AssertThat(gs.gameIsEnd(), Equals(true));
+    });
   });
   describe("Genetic Algo Test", []() {
     GeneticHost host(8);
@@ -230,7 +249,7 @@ go_bandit([]() {
   describe("Running time", []() {
     GameState gs(8);
     OthelloAI ai(8);
-    ai.useRecommandedChessBoardScore();
+    ai.useRecommandedDiskSquare();
     int iter, reachedDepth, iterTotal = 0;
     tic();
     auto move = ai.giveNextMove(gs, gs.nextPlayer(), iter, reachedDepth, 0.0, 9);
@@ -253,7 +272,6 @@ go_bandit([]() {
       whitePos[i] = false;
     }
     gs.setColorPositionPlayer(blackPos, whitePos, Color::Black);
-
 
 
     cout << iter << endl;

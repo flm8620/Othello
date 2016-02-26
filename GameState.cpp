@@ -11,7 +11,7 @@ using namespace std;
 auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();
 mt19937 generator(seed);
 
-const double DiskSquare::MAXSCORE = 1000.0;
+const double DiskSquare::MAXSCORE = 50.0;
 
 static map<Direction, pair<int, int>> dirToOffset =
     {{TopLeft, {-1, -1}}, {Top, {-1, 0}}, {TopRight, {-1, 1}},
@@ -160,8 +160,10 @@ void GameState::restartGame() {
   isWhite.clear();
   isBlack.clear();
   lastPosition = make_pair(-1, -1);
-  nextPossibleMoves.clear();
-  moveWithDirection.clear();
+  nextPossibleMovesBlack.clear();
+  nextPossibleMovesWhite.clear();
+  moveWithDirectionBlack.clear();
+  moveWithDirectionWhite.clear();
 
   nextMoveColor = Color::Black;
   //four pieces is put to start
@@ -224,12 +226,14 @@ void GameState::addPiece(int i, int j, Color player) {
   }
   vector<bool> &hasAdversary = player == Color::Black ? isWhite : isBlack;
   vector<bool> &hasPlayer = player == Color::Black ? isBlack : isWhite;
-
+  auto &nextPossibleMoves = player == Color::Black ? nextPossibleMovesBlack : nextPossibleMovesWhite;
+  auto &moveWithDirection = player == Color::Black ? moveWithDirectionBlack : moveWithDirectionWhite;
+  auto &nextPossibleMovesOther = player == Color::White ? nextPossibleMovesBlack : nextPossibleMovesWhite;
   auto positionPlayed = make_pair(i, j);
 
   //verify move
-  auto it = this->nextPossibleMoves.find(positionPlayed);
-  if (it == this->nextPossibleMoves.end())
+  auto it = nextPossibleMoves.find(positionPlayed);
+  if (it == nextPossibleMoves.end())
     throw invalid_argument("illegal move");
 
   //put piece
@@ -238,19 +242,7 @@ void GameState::addPiece(int i, int j, Color player) {
   //record as lastPosition
   lastPosition = positionPlayed;
 
-  //update emptyAdjacent
-//  auto pos = emptyAdjacent.find(positionPlayed);
-//  emptyAdjacent.erase(pos);
-//  auto nbOffset = getNeighbourOffset(positionPlayed.first, positionPlayed.second);
-//  for (auto offset : nbOffset) {
-//    int i = positionPlayed.first + offset.first;
-//    int j = positionPlayed.second + offset.second;
-//    if (!isBlack[i * N + j] && !isWhite[i * N + j]) {
-//      emptyAdjacent.insert(make_pair(i, j));
-//    }
-//  }
-
-  vector<Direction> directions = this->moveWithDirection[positionPlayed];
+  vector<Direction> directions = moveWithDirection[positionPlayed];
   for (Direction d : directions) {
     pair<int, int> offset = getDirectionOffset(d);
     int ii = i + offset.first;
@@ -268,11 +260,11 @@ void GameState::addPiece(int i, int j, Color player) {
     }
   }
 
-  this->updatePossibleMoves(otherPlayer);
+  this->updatePossibleMoves(Color::Black);
+  this->updatePossibleMoves(Color::White);
   nextMoveColor = otherPlayer;
-  if (nextPossibleMoves.empty()) {
+  if (nextPossibleMovesOther.empty()) {
     nextMoveColor = player;
-    this->updatePossibleMoves(player);
     if (nextPossibleMoves.empty()) {
       nextMoveColor = Color::Neither;
     }
@@ -314,12 +306,15 @@ vector<pair<int, int>> GameState::position_NextTo_Piece(Color adversary) const {
 
 void GameState::updatePossibleMoves(Color player) {
   Color adversary = player == Color::Black ? Color::White : Color::Black;
+  auto &nextPossibleMoves = player == Color::Black ? nextPossibleMovesBlack : nextPossibleMovesWhite;
+  auto &moveWithDirection = player == Color::Black ? moveWithDirectionBlack : moveWithDirectionWhite;
+
   vector<pair<int, int>> Candidate_P = position_NextTo_Piece(adversary);
   const vector<bool> &hasAdversary = player == Color::Black ? isWhite : isBlack;
   const vector<bool> &hasPlayer = player == Color::Black ? isBlack : isWhite;
 
-  this->nextPossibleMoves.clear();
-  this->moveWithDirection.clear();
+  nextPossibleMoves.clear();
+  moveWithDirection.clear();
 
   for (const auto &move : Candidate_P) {
     int i = move.first;
@@ -344,7 +339,7 @@ void GameState::updatePossibleMoves(Color player) {
         else if (hasPlayer[ii * N + jj]) {
           if (hasMetAdversary) {
             isLegalMove = true;
-            this->moveWithDirection[move].push_back(d);
+            moveWithDirection[move].push_back(d);
             break;
           } else {
             break;
@@ -356,7 +351,7 @@ void GameState::updatePossibleMoves(Color player) {
         jj += offset.second;
       }
     }
-    if (isLegalMove) this->nextPossibleMoves.insert(move);
+    if (isLegalMove) nextPossibleMoves.insert(move);
   }
 }
 
@@ -381,13 +376,19 @@ void GameState::setColorPositionPlayer(std::vector<bool> black, std::vector<bool
   }
   this->isBlack = black;
   this->isWhite = white;
-  this->updatePossibleMoves(nextPlayer);
+
+
   Color otherPlayer = nextPlayer == Color::Black ? Color::White : Color::Black;
+
+  auto &nextPossibleMoves = nextPlayer == Color::Black ? nextPossibleMovesBlack : nextPossibleMovesWhite;
+  auto &nextPossibleMovesOther = nextPlayer == Color::White ? nextPossibleMovesBlack : nextPossibleMovesWhite;
+
   nextMoveColor = nextPlayer;
+  this->updatePossibleMoves(Color::Black);
+  this->updatePossibleMoves(Color::White);
   if (nextPossibleMoves.empty()) {
     nextMoveColor = otherPlayer;
-    this->updatePossibleMoves(otherPlayer);
-    if (nextPossibleMoves.empty()) {
+    if (nextPossibleMovesOther.empty()) {
       nextMoveColor = Color::Neither;
     }
   }
