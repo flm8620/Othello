@@ -3,61 +3,11 @@
 #include <fstream>
 #include <cmath>
 #include <iomanip>
-
+#include "tools.h"
 using namespace std;
 
 extern mt19937 generator;
 string outputFile = srcPath "/record3.txt";
-void GeneticHost::saveAIToFile(string file) {
-  ofstream f(file);
-  f << zoo.size() << endl;
-  for (auto p : zoo) {
-    f << p->getID() << endl;
-    auto ds = p->getDiskSquare();
-    auto triangle = ds.getTriangleFormat();
-    int k = 0;
-    for (int i = 0; i < N / 2; i++) {
-      for (int j = 0; j < i; j++) f << setw(10) << ' ';
-      for (int j = i; j < N / 2; j++) {
-        f << setw(10) << triangle[k];
-        k++;
-      }
-      f << endl;
-    }
-    auto sw = p->getScoreWeight();
-    f << sw.middleTime << '\t' << sw.endTime << '\t' << sw.mobility_begin
-        << '\t' << sw.mobility_middle << '\t' << sw.position_begin << '\t' << sw.position_middle;
-    f << endl;
-  }
-  f.close();
-}
-
-void GeneticHost::loadAIFromFile(string file) {
-  ifstream f(file);
-  clearAllAi();
-  int n;
-  f >> n;
-  for (int k = 0; k < n; k++) {
-    auto p = new OthelloAI(N);
-    zoo.push_back(p);
-    int id;
-    f >> id;
-    p->setID(id);
-    DiskSquare ds(N);
-    auto triangle = ds.getTriangleFormat();
-    for (auto &t : triangle) f >> t;
-    ds.scores = DiskSquare::triangleFormatToFullFormat(triangle, ds.N);
-    p->setDiskSquare(ds);
-
-    auto sw = p->getScoreWeight();
-    f >> sw.middleTime >> sw.endTime >> sw.mobility_begin
-        >> sw.mobility_middle >> sw.position_begin >> sw.position_middle;
-    p->setScoreWeight(sw);
-  }
-  if (f.fail())
-    throw invalid_argument("file read failed!");
-  f.close();
-}
 
 GeneticHost::GeneticHost(int Nsize) : N(Nsize) {
 
@@ -67,7 +17,8 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
   //create random AIs
   zoo.clear();
   if (loadAiFile) {
-    this->loadAIFromFile(aiFile);
+    clearAllAi();
+    this->zoo = readAIFile(aiFile,N);
   } else {
     for (int i = 0; i < animalSize; i++) {
       this->zoo.push_back(new OthelloAI(N));
@@ -151,7 +102,7 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
       sortedZoo.push_back(zoo[index[i]]);
     }
     zoo = sortedZoo;
-    this->saveAIToFile(aiFile);
+    saveAIFile(zoo,aiFile,N);
 
     //from now zoo is sorted by performance
 

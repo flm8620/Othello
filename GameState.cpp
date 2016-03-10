@@ -14,19 +14,19 @@ mt19937 generator(seed);
 const double DiskSquare::MAXSCORE = 50.0;
 
 static map<Direction, pair<int, int>> dirToOffset =
-    {{TopLeft, {-1, -1}}, {Top, {-1, 0}}, {TopRight, {-1, 1}},
-     {Left, {0, -1}}, {Right, {0, 1}},
-     {BottomLeft, {1, -1}}, {Bottom, {1, 0}}, {BottomRight, {1, 1}}};
+{{TopLeft, {-1, -1}}, {Top, {-1, 0}}, {TopRight, {-1, 1}},
+ {Left, {0, -1}}, {Right, {0, 1}},
+ {BottomLeft, {1, -1}}, {Bottom, {1, 0}}, {BottomRight, {1, 1}}};
 
 static map<pair<int, int>, Direction> offsetToDir =
-    {{{-1, -1}, TopLeft}, {{-1, 0}, Top}, {{-1, 1}, TopRight},
-     {{0, -1}, Left}, {{0, 1}, Right},
-     {{1, -1}, BottomLeft}, {{1, 0}, Bottom}, {{1, 1}, BottomRight}};
+{{{-1, -1}, TopLeft}, {{-1, 0}, Top}, {{-1, 1}, TopRight},
+ {{0, -1}, Left}, {{0, 1}, Right},
+ {{1, -1}, BottomLeft}, {{1, 0}, Bottom}, {{1, 1}, BottomRight}};
 
 static map<pair<int, int>, int> offsetToDirInt =
-    {{{-1, -1}, 0}, {{-1, 0}, 1}, {{-1, 1}, 2},
-     {{0, -1}, 7}, {{0, 1}, 3},
-     {{1, -1}, 6}, {{1, 0}, 5}, {{1, 1}, 4}};
+{{{-1, -1}, 0}, {{-1, 0}, 1}, {{-1, 1}, 2},
+ {{0, -1}, 7}, {{0, 1}, 3},
+ {{1, -1}, 6}, {{1, 0}, 5}, {{1, 1}, 4}};
 
 DiskSquare::DiskSquare(int Nsize) : N(Nsize) {
   scores.resize(N * N, 0);
@@ -189,24 +189,30 @@ void GameState::restartGame() {
 }
 
 void GameState::printBoard() const {
+  cout<<"     ";
+  for(int i=0;i<N;i++) cout<<(char)('a'+i)<<' ';
+  cout<<endl<<endl;
   for (int i = 0; i < N; i++) {
+      cout<<' '<<i<<"   ";
     for (int j = 0; j < N; j++) {
       if (isWhite[i * N + j]) {
         if (lastPosition == make_pair(i, j))
-          std::cout << 'G';
+          std::cout << "Q ";
         else
-          std::cout << 'O';
+          std::cout << "O ";
       }
       else if (isBlack[i * N + j]) {
         if (lastPosition == make_pair(i, j))
-          std::cout << '#';
+          std::cout << "W ";
         else
-          std::cout << '@';
+          std::cout << "# ";
       }
 
-      else cout << '-';
+      else cout << "- ";
     }
     cout << endl;
+
+
   }
 }
 
@@ -321,9 +327,9 @@ void GameState::updatePossibleMoves(Color player) {
     int j = move.second;
     assert(!isBlack[i * N + j] && !isWhite[i * N + j]);
     vector<Direction> directions =
-        {Direction::TopLeft, Direction::Top, Direction::TopRight,
-         Direction::Left, Direction::Right,
-         Direction::BottomLeft, Direction::Bottom, Direction::BottomRight};
+    {Direction::TopLeft, Direction::Top, Direction::TopRight,
+     Direction::Left, Direction::Right,
+     Direction::BottomLeft, Direction::Bottom, Direction::BottomRight};
 
     bool isLegalMove = false;
 

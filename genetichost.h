@@ -16,8 +16,6 @@ class GeneticHost {
   //score of AIs during one generation
   std::vector<int> zooScores;
   const int N;
-  void saveAIToFile(std::string file);
-  void loadAIFromFile(std::string file);
  public:
   GeneticHost(int Nsize);
   ~GeneticHost() {

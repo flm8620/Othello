@@ -11,6 +11,7 @@ class GameJudge {
  public:
   int PlayAGame_getScore
       (const OthelloAI &black, const OthelloAI &white, int Nsize, double roundTime, bool showGame = false);
+  int HumanVsAi(const OthelloAI& ai, int Nsize, double roundTime, Color humanColor);
 };
 
 
