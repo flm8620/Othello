@@ -26,6 +26,7 @@ OthelloAI &OthelloAI::operator=(const OthelloAI &other) {
   diskSquare = other.diskSquare;
   ID = this->generateID();
   scoreWeight = other.scoreWeight;
+  return *this;
 }
 
 void OthelloAI::useRecommandedDiskSquare() {

@@ -38,6 +38,7 @@ DiskSquare::DiskSquare(const DiskSquare &other) : N(other.N) {
 
 DiskSquare &DiskSquare::operator=(const DiskSquare &other) {
   this->scores = other.scores;
+  return *this;
 }
 
 std::vector<double> DiskSquare::triangleFormatToFullFormat(std::vector<double> triangle, int N) {
