@@ -986,3 +986,783 @@ AI 343	Win: 34/58	Draw: 2/58
                                        4
 Best Weight:
 MiddleTime:24.6069	EndTime:60.9988	Mobility_begin_middle:0.287971	0.402463	Position_begin_middle:0.254834	0.569913
+Generation 0
+5 Best AIs:
+AI 345	Win: 35/58	Draw: 5/58
+AI 342	Win: 37/58	Draw: 1/58
+AI 354	Win: 36/58	Draw: 0/58
+AI 333	Win: 36/58	Draw: 0/58
+AI 343	Win: 35/58	Draw: 1/58
+        55       -43       -30        44
+                 -53       -29        47
+                            13         7
+                                       3
+Best Weight:
+MiddleTime:23.8225	EndTime: 59.103	Mobility_begin_middle:0.278724	0.439124	Position_begin_middle:0.242492	0.596972
+Generation 1
+5 Best AIs:
+AI 48	Win: 38/58	Draw: 1/58
+AI 36	Win: 36/58	Draw: 3/58
+AI 40	Win: 35/58	Draw: 2/58
+AI 57	Win: 36/58	Draw: 0/58
+AI 31	Win: 35/58	Draw: 0/58
+       102        34       -43        36
+                 -52       -29        47
+                            10         7
+                                       3
+Best Weight:
+MiddleTime:26.1683	EndTime:60.0015	Mobility_begin_middle:0.400098	0.311239	Position_begin_middle:0.221811	0.66484
+Generation 2
+5 Best AIs:
+AI 81	Win: 41/58	Draw: 0/58
+AI 68	Win: 40/58	Draw: 0/58
+AI 64	Win: 38/58	Draw: 2/58
+AI 71	Win: 36/58	Draw: 3/58
+AI 60	Win: 37/58	Draw: 0/58
+        55       -43       -30        44
+                 -53       -32        47
+                            13         7
+                                       3
+Best Weight:
+MiddleTime:25.4249	EndTime:59.2247	Mobility_begin_middle:0.293383	0.407876	Position_begin_middle:0.250945	0.633464
+Generation 3
+5 Best AIs:
+AI 98	Win: 42/58	Draw: 2/58
+AI 109	Win: 40/58	Draw: 2/58
+AI 99	Win: 38/58	Draw: 1/58
+AI 116	Win: 38/58	Draw: 0/58
+AI 117	Win: 35/58	Draw: 2/58
+        55       -45       -25       -44
+                 -58       -34        46
+                            10         7
+                                       4
+Best Weight:
+MiddleTime:27.9009	EndTime:58.7697	Mobility_begin_middle:0.31723	0.385379	Position_begin_middle:0.377767	0.475681
+Generation 4
+5 Best AIs:
+AI 146	Win: 43/58	Draw: 2/58
+AI 127	Win: 43/58	Draw: 0/58
+AI 147	Win: 36/58	Draw: 1/58
+AI 135	Win: 35/58	Draw: 1/58
+AI 137	Win: 35/58	Draw: 1/58
+        55       -45       -25       -44
+                 -58       -34        46
+                            10         5
+                                       4
+Best Weight:
+MiddleTime:29.7451	EndTime:59.7309	Mobility_begin_middle:0.36252	0.329013	Position_begin_middle:0.256194	0.547322
+Generation 5
+5 Best AIs:
+AI 150	Win: 43/58	Draw: 2/58
+AI 160	Win: 39/58	Draw: 4/58
+AI 153	Win: 38/58	Draw: 2/58
+AI 169	Win: 35/58	Draw: 4/58
+AI 174	Win: 37/58	Draw: 0/58
+        55       -45       -25       -44
+                 -58       -34        46
+                            10         5
+                                       4
+Best Weight:
+MiddleTime:29.7451	EndTime:59.7309	Mobility_begin_middle:0.36252	0.329013	Position_begin_middle:0.256194	0.547322
+Generation 6
+5 Best AIs:
+AI 207	Win: 44/58	Draw: 1/58
+AI 209	Win: 40/58	Draw: 1/58
+AI 196	Win: 39/58	Draw: 0/58
+AI 192	Win: 38/58	Draw: 2/58
+AI 185	Win: 38/58	Draw: 2/58
+        55        15        22       -44
+                 -58       -34         0
+                            10        17
+                                     -36
+Best Weight:
+MiddleTime: 28.676	EndTime:59.7309	Mobility_begin_middle:0.36252	0.329013	Position_begin_middle:0.256194	0.547322
+Generation 7
+5 Best AIs:
+AI 215	Win: 50/58	Draw: 0/58
+AI 227	Win: 40/58	Draw: 1/58
+AI 214	Win: 39/58	Draw: 1/58
+AI 234	Win: 38/58	Draw: 2/58
+AI 213	Win: 37/58	Draw: 1/58
+        55        15        22       -44
+                 -58       -34         0
+                            10        17
+                                     -36
+Best Weight:
+MiddleTime: 28.676	EndTime:59.7309	Mobility_begin_middle:0.36252	0.329013	Position_begin_middle:0.256194	0.547322
+Generation 8
+5 Best AIs:
+AI 245	Win: 47/58	Draw: 1/58
+AI 267	Win: 43/58	Draw: 2/58
+AI 250	Win: 39/58	Draw: 1/58
+AI 244	Win: 38/58	Draw: 3/58
+AI 265	Win: 38/58	Draw: 0/58
+        55        15        22       -44
+                 -58       -34         0
+                            10        17
+                                     -36
+Best Weight:
+MiddleTime: 28.676	EndTime:59.7309	Mobility_begin_middle:0.36252	0.329013	Position_begin_middle:0.256194	0.547322
+Generation 9
+5 Best AIs:
+AI 272	Win: 46/58	Draw: 1/58
+AI 294	Win: 43/58	Draw: 1/58
+AI 289	Win: 42/58	Draw: 2/58
+AI 279	Win: 40/58	Draw: 3/58
+AI 295	Win: 38/58	Draw: 3/58
+        55        15        22       -44
+                 -58       -34         0
+                            10        17
+                                     -36
+Best Weight:
+MiddleTime: 28.676	EndTime:59.7309	Mobility_begin_middle:0.36252	0.329013	Position_begin_middle:0.256194	0.547322
+Generation 10
+5 Best AIs:
+AI 308	Win: 45/58	Draw: 0/58
+AI 320	Win: 45/58	Draw: 0/58
+AI 311	Win: 43/58	Draw: 0/58
+AI 309	Win: 42/58	Draw: 2/58
+AI 306	Win: 42/58	Draw: 1/58
+        55        15        22       -44
+                 -58       -34         0
+                            10        17
+                                     -36
+Best Weight:
+MiddleTime: 28.676	EndTime:59.7309	Mobility_begin_middle:0.36252	0.329013	Position_begin_middle:0.256194	0.547322
+Generation 11
+5 Best AIs:
+AI 350	Win: 43/58	Draw: 0/58
+AI 338	Win: 42/58	Draw: 0/58
+AI 336	Win: 41/58	Draw: 1/58
+AI 348	Win: 40/58	Draw: 0/58
+AI 345	Win: 40/58	Draw: 0/58
+        55        15        22       -44
+                 -49       -34         0
+                            10        17
+                                     -36
+Best Weight:
+MiddleTime:29.9849	EndTime:59.7309	Mobility_begin_middle:0.36252	0.329013	Position_begin_middle:0.256194	0.467776
+Generation 12
+5 Best AIs:
+AI 381	Win: 44/58	Draw: 1/58
+AI 365	Win: 43/58	Draw: 0/58
+AI 370	Win: 41/58	Draw: 4/58
+AI 376	Win: 42/58	Draw: 1/58
+AI 360	Win: 40/58	Draw: 3/58
+        68       -20        20         8
+                 -36       -24         0
+                            -5        22
+                                     -31
+Best Weight:
+MiddleTime:27.6589	EndTime:59.5709	Mobility_begin_middle:0.560623	0.346182	Position_begin_middle:0.185879	0.601933
+Generation 13
+5 Best AIs:
+AI 391	Win: 47/58	Draw: 0/58
+AI 398	Win: 43/58	Draw: 2/58
+AI 394	Win: 41/58	Draw: 1/58
+AI 405	Win: 39/58	Draw: 1/58
+AI 415	Win: 39/58	Draw: 1/58
+        55        15        22       -44
+                 -58       -35         0
+                            13        13
+                                     -36
+Best Weight:
+MiddleTime:28.7649	EndTime:60.8468	Mobility_begin_middle:0.379582	0.349259	Position_begin_middle:0.297938	0.527976
+Generation 14
+5 Best AIs:
+AI 446	Win: 47/58	Draw: 1/58
+AI 420	Win: 44/58	Draw: 0/58
+AI 426	Win: 44/58	Draw: 0/58
+AI 442	Win: 38/58	Draw: 0/58
+AI 440	Win: 37/58	Draw: 1/58
+        58        15       -17        10
+                 -52       -31         0
+                            13         5
+                                     -36
+Best Weight:
+MiddleTime:28.0817	EndTime:61.5408	Mobility_begin_middle:0.347425	0.306818	Position_begin_middle:0.188296	0.565909
+Generation 15
+5 Best AIs:
+AI 457	Win: 44/58	Draw: 0/58
+AI 472	Win: 43/58	Draw: 0/58
+AI 473	Win: 38/58	Draw: 2/58
+AI 456	Win: 38/58	Draw: 2/58
+AI 471	Win: 38/58	Draw: 1/58
+        55        15        22       -44
+                 -58       -35         0
+                            13        13
+                                     -36
+Best Weight:
+MiddleTime:28.7649	EndTime:60.8468	Mobility_begin_middle:0.379582	0.349259	Position_begin_middle:0.297938	0.527976
+Generation 16
+5 Best AIs:
+AI 500	Win: 43/58	Draw: 1/58
+AI 489	Win: 43/58	Draw: 0/58
+AI 482	Win: 40/58	Draw: 1/58
+AI 492	Win: 39/58	Draw: 0/58
+AI 486	Win: 37/58	Draw: 4/58
+        65        15        22       -44
+                 -58       -35         0
+                            13        13
+                                     -50
+Best Weight:
+MiddleTime:26.8912	EndTime: 59.697	Mobility_begin_middle:0.351543	0.41234	Position_begin_middle:0.273451	0.488346
+Generation 17
+5 Best AIs:
+AI 535	Win: 42/58	Draw: 2/58
+AI 517	Win: 39/58	Draw: 3/58
+AI 518	Win: 38/58	Draw: 4/58
+AI 537	Win: 37/58	Draw: 2/58
+AI 516	Win: 36/58	Draw: 1/58
+        58        15        30        12
+                 -70       -34       -59
+                           -15        17
+                                     -36
+Best Weight:
+MiddleTime:28.2681	EndTime:61.3693	Mobility_begin_middle:0.324241	0.332535	Position_begin_middle:0.336534	0.557229
+Generation 18
+5 Best AIs:
+AI 557	Win: 44/58	Draw: 1/58
+AI 547	Win: 40/58	Draw: 1/58
+AI 566	Win: 38/58	Draw: 2/58
+AI 544	Win: 36/58	Draw: 3/58
+AI 567	Win: 36/58	Draw: 1/58
+        44        15        30       -40
+                 -70       -34         0
+                            13        14
+                                     -36
+Best Weight:
+MiddleTime:27.9313	EndTime: 59.742	Mobility_begin_middle:0.376121	0.297949	Position_begin_middle:0.222937	0.681899
+Generation 19
+5 Best AIs:
+AI 596	Win: 45/58	Draw: 1/58
+AI 592	Win: 43/58	Draw: 2/58
+AI 587	Win: 43/58	Draw: 1/58
+AI 582	Win: 39/58	Draw: 1/58
+AI 583	Win: 39/58	Draw: 1/58
+        58        15        30        12
+                 -70       -34         0
+                            13        14
+                                     -36
+Best Weight:
+MiddleTime:29.7093	EndTime:61.5396	Mobility_begin_middle:0.403966	0.334768	Position_begin_middle:0.298848	0.636387
+Generation 20
+5 Best AIs:
+AI 606	Win: 47/58	Draw: 1/58
+AI 602	Win: 44/58	Draw: 1/58
+AI 615	Win: 43/58	Draw: 1/58
+AI 620	Win: 42/58	Draw: 2/58
+AI 626	Win: 42/58	Draw: 2/58
+        58        15        22        12
+                 -70       -34         0
+                            10        14
+                                     -36
+Best Weight:
+MiddleTime:29.3377	EndTime:61.3492	Mobility_begin_middle:0.324241	0.345389	Position_begin_middle:0.219766	0.557229
+Generation 21
+5 Best AIs:
+AI 649	Win: 48/58	Draw: 2/58
+AI 641	Win: 46/58	Draw: 0/58
+AI 630	Win: 43/58	Draw: 2/58
+AI 651	Win: 41/58	Draw: 2/58
+AI 640	Win: 40/58	Draw: 2/58
+        58        15        30        12
+                 -67       -34         0
+                            13        14
+                                     -36
+Best Weight:
+MiddleTime:26.3778	EndTime:61.0773	Mobility_begin_middle:0.309956	0.351311	Position_begin_middle:0.174386	0.534615
+Generation 22
+5 Best AIs:
+AI 664	Win: 47/58	Draw: 0/58
+AI 683	Win: 42/58	Draw: 1/58
+AI 675	Win: 41/58	Draw: 1/58
+AI 682	Win: 40/58	Draw: 2/58
+AI 684	Win: 41/58	Draw: 0/58
+        58        15        22        12
+                 -70       -50         0
+                            10        11
+                                     -36
+Best Weight:
+MiddleTime:26.7418	EndTime:     63	Mobility_begin_middle:0.224301	0.328625	Position_begin_middle:0.215971	0.565992
+Generation 23
+5 Best AIs:
+AI 707	Win: 39/58	Draw: 1/58
+AI 692	Win: 39/58	Draw: 0/58
+AI 702	Win: 38/58	Draw: 1/58
+AI 705	Win: 37/58	Draw: 2/58
+AI 693	Win: 36/58	Draw: 3/58
+        58       -11       -25        12
+                 -70       -50         0
+                            10        11
+                                     -36
+Best Weight:
+MiddleTime:27.9442	EndTime:     63	Mobility_begin_middle:0.199772	0.259355	Position_begin_middle:0.193011	0.65295
+Generation 24
+5 Best AIs:
+AI 743	Win: 43/58	Draw: 1/58
+AI 732	Win: 42/58	Draw: 1/58
+AI 747	Win: 39/58	Draw: 0/58
+AI 726	Win: 38/58	Draw: 0/58
+AI 729	Win: 36/58	Draw: 3/58
+        58        15        30        12
+                 -70       -34         0
+                             7        14
+                                     -36
+Best Weight:
+MiddleTime:29.1264	EndTime:60.1925	Mobility_begin_middle:0.425805	0.375103	Position_begin_middle:0.159517	0.596867
+Generation 25
+5 Best AIs:
+AI 751	Win: 47/58	Draw: 2/58
+AI 774	Win: 47/58	Draw: 0/58
+AI 759	Win: 43/58	Draw: 2/58
+AI 764	Win: 44/58	Draw: 0/58
+AI 769	Win: 42/58	Draw: 1/58
+        58       -21        30        17
+                 -94       -34         0
+                            13        14
+                                     -41
+Best Weight:
+MiddleTime:30.5631	EndTime:     63	Mobility_begin_middle:0.425559	0.422699	Position_begin_middle:0.336417	0.55644
+Generation 26
+5 Best AIs:
+AI 787	Win: 46/58	Draw: 0/58
+AI 806	Win: 43/58	Draw: 4/58
+AI 788	Win: 44/58	Draw: 0/58
+AI 782	Win: 41/58	Draw: 1/58
+AI 800	Win: 39/58	Draw: 2/58
+        58        15        30        12
+                 -70       -34         0
+                           -18        14
+                                     -36
+Best Weight:
+MiddleTime:26.7384	EndTime:61.3259	Mobility_begin_middle:0.368662	0.275766	Position_begin_middle:0.23722	0.618073
+Generation 27
+5 Best AIs:
+AI 813	Win: 43/58	Draw: 0/58
+AI 826	Win: 39/58	Draw: 3/58
+AI 823	Win: 40/58	Draw: 0/58
+AI 815	Win: 39/58	Draw: 2/58
+AI 814	Win: 39/58	Draw: 1/58
+        58       -21        30        17
+                 -94       -34         0
+                            13        14
+                                     -41
+Best Weight:
+MiddleTime:30.5631	EndTime:     63	Mobility_begin_middle:0.425559	0.422699	Position_begin_middle:0.336417	0.55644
+Generation 28
+5 Best AIs:
+AI 857	Win: 47/58	Draw: 1/58
+AI 865	Win: 42/58	Draw: 1/58
+AI 863	Win: 42/58	Draw: 0/58
+AI 845	Win: 40/58	Draw: 0/58
+AI 854	Win: 38/58	Draw: 2/58
+        56        15        30        12
+                 -70       -31         0
+                             9       -10
+                                     -36
+Best Weight:
+MiddleTime:31.6448	EndTime:59.1409	Mobility_begin_middle:0.431075	0.32687	Position_begin_middle:0.149368	0.64506
+Generation 29
+5 Best AIs:
+AI 872	Win: 41/58	Draw: 1/58
+AI 876	Win: 41/58	Draw: 0/58
+AI 880	Win: 39/58	Draw: 2/58
+AI 871	Win: 40/58	Draw: 0/58
+AI 877	Win: 40/58	Draw: 0/58
+        56        15        30        12
+                 -70       -31         0
+                             9       -10
+                                     -36
+Best Weight:
+MiddleTime:31.6448	EndTime:59.1409	Mobility_begin_middle:0.431075	0.32687	Position_begin_middle:0.149368	0.64506
+Generation 30
+5 Best AIs:
+AI 913	Win: 49/58	Draw: 0/58
+AI 920	Win: 46/58	Draw: 0/58
+AI 925	Win: 42/58	Draw: 1/58
+AI 912	Win: 38/58	Draw: 2/58
+AI 916	Win: 39/58	Draw: 0/58
+        58        15        20       -14
+                 -63       -34         0
+                             7        18
+                                     -36
+Best Weight:
+MiddleTime:22.6477	EndTime:62.6472	Mobility_begin_middle:0.225667	0.365166	Position_begin_middle:0.339767	0.56793
+Generation 31
+5 Best AIs:
+AI 949	Win: 43/58	Draw: 2/58
+AI 931	Win: 43/58	Draw: 1/58
+AI 941	Win: 38/58	Draw: 0/58
+AI 940	Win: 37/58	Draw: 2/58
+AI 944	Win: 38/58	Draw: 0/58
+        80        15        30        20
+                 -70       -34         0
+                             8        14
+                                     -41
+Best Weight:
+MiddleTime: 31.227	EndTime:58.2724	Mobility_begin_middle:0.440132	0.448989	Position_begin_middle:0.345503	0.52476
+Generation 32
+5 Best AIs:
+AI 971	Win: 42/58	Draw: 2/58
+AI 983	Win: 41/58	Draw: 0/58
+AI 964	Win: 41/58	Draw: 0/58
+AI 960	Win: 40/58	Draw: 0/58
+AI 970	Win: 39/58	Draw: 1/58
+        58        15        30        17
+                 -70       -34         0
+                             7        14
+                                     -36
+Best Weight:
+MiddleTime:31.3444	EndTime:60.1537	Mobility_begin_middle:0.374446	0.438561	Position_begin_middle:0.321557	0.534389
+Generation 33
+5 Best AIs:
+AI 996	Win: 44/58	Draw: 1/58
+AI 1008	Win: 42/58	Draw: 1/58
+AI 998	Win: 41/58	Draw: 1/58
+AI 992	Win: 40/58	Draw: 2/58
+AI 1010	Win: 40/58	Draw: 1/58
+        58        15        30        17
+                 -70       -34         0
+                             7        14
+                                     -36
+Best Weight:
+MiddleTime:31.3444	EndTime:60.1537	Mobility_begin_middle:0.374446	0.438561	Position_begin_middle:0.321557	0.534389
+Generation 34
+5 Best AIs:
+AI 1025	Win: 47/58	Draw: 1/58
+AI 1035	Win: 46/58	Draw: 2/58
+AI 1021	Win: 42/58	Draw: 0/58
+AI 1046	Win: 42/58	Draw: 0/58
+AI 1040	Win: 37/58	Draw: 1/58
+        58        15        30        17
+                 -70       -34         0
+                             7        14
+                                     -36
+Best Weight:
+MiddleTime:31.3444	EndTime:60.1537	Mobility_begin_middle:0.374446	0.438561	Position_begin_middle:0.321557	0.534389
+Generation 35
+5 Best AIs:
+AI 1069	Win: 48/58	Draw: 0/58
+AI 1058	Win: 46/58	Draw: 1/58
+AI 1057	Win: 43/58	Draw: 0/58
+AI 1072	Win: 40/58	Draw: 2/58
+AI 1075	Win: 37/58	Draw: 3/58
+        58        15        28        18
+                 -70       -51         0
+                             7        14
+                                     -36
+Best Weight:
+MiddleTime:29.1325	EndTime:60.0814	Mobility_begin_middle:0.437365	0.377911	Position_begin_middle:0.297212	0.578752
+Generation 36
+5 Best AIs:
+AI 1101	Win: 43/58	Draw: 0/58
+AI 1104	Win: 39/58	Draw: 1/58
+AI 1094	Win: 39/58	Draw: 0/58
+AI 1096	Win: 39/58	Draw: 0/58
+AI 1098	Win: 38/58	Draw: 1/58
+       154        15        22        44
+                 -32       -51         0
+                            -8       -27
+                                     -47
+Best Weight:
+MiddleTime:31.9857	EndTime:     63	Mobility_begin_middle:0.421749	0.26416	Position_begin_middle:0.187835	0.671257
+Generation 37
+5 Best AIs:
+AI 1122	Win: 44/58	Draw: 1/58
+AI 1113	Win: 42/58	Draw: 0/58
+AI 1130	Win: 40/58	Draw: 2/58
+AI 1116	Win: 40/58	Draw: 0/58
+AI 1115	Win: 37/58	Draw: 1/58
+       112        22        25        44
+                 -32       -51         0
+                            -8        34
+                                     -47
+Best Weight:
+MiddleTime:34.1468	EndTime:61.6831	Mobility_begin_middle:0.486818	0.288291	Position_begin_middle:0.192089	0.655572
+Generation 38
+5 Best AIs:
+AI 1144	Win: 43/58	Draw: 4/58
+AI 1166	Win: 40/58	Draw: 0/58
+AI 1146	Win: 39/58	Draw: 0/58
+AI 1151	Win: 38/58	Draw: 2/58
+AI 1164	Win: 37/58	Draw: 1/58
+       112        22        25        44
+                 -32       -51         0
+                            -8        34
+                                     -47
+Best Weight:
+MiddleTime:34.1468	EndTime:61.6831	Mobility_begin_middle:0.486818	0.288291	Position_begin_middle:0.192089	0.655572
+Generation 39
+5 Best AIs:
+AI 1179	Win: 46/58	Draw: 2/58
+AI 1189	Win: 44/58	Draw: 1/58
+AI 1190	Win: 44/58	Draw: 0/58
+AI 1181	Win: 35/58	Draw: 4/58
+AI 1173	Win: 37/58	Draw: 0/58
+       112        22        25        44
+                 -32       -51         0
+                            -8        34
+                                     -47
+Best Weight:
+MiddleTime:34.1468	EndTime:61.6831	Mobility_begin_middle:0.486818	0.288291	Position_begin_middle:0.192089	0.655572
+Generation 40
+5 Best AIs:
+AI 1227	Win: 46/58	Draw: 0/58
+AI 1225	Win: 43/58	Draw: 1/58
+AI 1208	Win: 43/58	Draw: 0/58
+AI 1217	Win: 41/58	Draw: 0/58
+AI 1204	Win: 39/58	Draw: 3/58
+       112        14       -21        44
+                -100       -51         0
+                            -8       -20
+                                     -47
+Best Weight:
+MiddleTime:31.8128	EndTime:61.8701	Mobility_begin_middle:0.370266	0.288291	Position_begin_middle:0.192089	0.568263
+Generation 41
+5 Best AIs:
+AI 1257	Win: 47/58	Draw: 0/58
+AI 1256	Win: 45/58	Draw: 0/58
+AI 1248	Win: 43/58	Draw: 3/58
+AI 1254	Win: 44/58	Draw: 0/58
+AI 1232	Win: 43/58	Draw: 0/58
+       119        14       -21        44
+                 -35       -51         0
+                            -8        14
+                                     -47
+Best Weight:
+MiddleTime:34.7686	EndTime:60.0386	Mobility_begin_middle:0.334139	0.267651	Position_begin_middle:0.315268	0.637837
+Generation 42
+5 Best AIs:
+AI 1263	Win: 46/58	Draw: 1/58
+AI 1286	Win: 42/58	Draw: 1/58
+AI 1280	Win: 42/58	Draw: 0/58
+AI 1272	Win: 42/58	Draw: 0/58
+AI 1275	Win: 39/58	Draw: 2/58
+       119        14       -21        44
+                 -35       -51         0
+                            -8        14
+                                     -47
+Best Weight:
+MiddleTime:34.7686	EndTime:60.0386	Mobility_begin_middle:0.334139	0.267651	Position_begin_middle:0.315268	0.637837
+Generation 43
+5 Best AIs:
+AI 1298	Win: 43/58	Draw: 0/58
+AI 1305	Win: 41/58	Draw: 2/58
+AI 1310	Win: 41/58	Draw: 1/58
+AI 1291	Win: 39/58	Draw: 0/58
+AI 1312	Win: 39/58	Draw: 0/58
+       119        15       -21        44
+                  33       -69         0
+                            -8        14
+                                     -47
+Best Weight:
+MiddleTime:33.2728	EndTime:62.0995	Mobility_begin_middle:0.36243	0.238417	Position_begin_middle:0.23734	0.698564
+Generation 44
+5 Best AIs:
+AI 1347	Win: 43/58	Draw: 1/58
+AI 1335	Win: 43/58	Draw: 1/58
+AI 1333	Win: 43/58	Draw: 0/58
+AI 1320	Win: 41/58	Draw: 1/58
+AI 1325	Win: 39/58	Draw: 1/58
+       112        15       -21        44
+                 -35       -69         0
+                            -8        14
+                                     -47
+Best Weight:
+MiddleTime:33.2728	EndTime:62.0995	Mobility_begin_middle:0.334139	0.238417	Position_begin_middle:0.226668	0.698564
+Generation 45
+5 Best AIs:
+AI 1364	Win: 43/58	Draw: 1/58
+AI 1372	Win: 43/58	Draw: 0/58
+AI 1360	Win: 40/58	Draw: 3/58
+AI 1376	Win: 41/58	Draw: 0/58
+AI 1374	Win: 40/58	Draw: 1/58
+       112        21       -21       -40
+                 -35       -58         0
+                            -8        14
+                                     -47
+Best Weight:
+MiddleTime:33.6716	EndTime:62.3863	Mobility_begin_middle:0.417229	0.269623	Position_begin_middle:0.236813	0.698071
+Generation 46
+5 Best AIs:
+AI 1385	Win: 42/58	Draw: 3/58
+AI 1407	Win: 43/58	Draw: 0/58
+AI 1399	Win: 41/58	Draw: 1/58
+AI 1388	Win: 41/58	Draw: 0/58
+AI 1405	Win: 40/58	Draw: 1/58
+       112        16       -21        57
+                 -35       -69         0
+                           -10        14
+                                     -47
+Best Weight:
+MiddleTime:33.6631	EndTime:     63	Mobility_begin_middle:0.354681	0.260733	Position_begin_middle:0.266996	0.684165
+Generation 47
+5 Best AIs:
+AI 1434	Win: 41/58	Draw: 1/58
+AI 1433	Win: 39/58	Draw: 1/58
+AI 1435	Win: 38/58	Draw: 1/58
+AI 1425	Win: 38/58	Draw: 1/58
+AI 1422	Win: 37/58	Draw: 0/58
+       112        15       -24        44
+                 -26       -51         0
+                            -9         9
+                                     -47
+Best Weight:
+MiddleTime:28.2723	EndTime:62.3031	Mobility_begin_middle:0.547919	0.223098	Position_begin_middle:0.24922	0.656926
+Generation 48
+5 Best AIs:
+AI 1459	Win: 43/58	Draw: 0/58
+AI 1467	Win: 37/58	Draw: 5/58
+AI 1443	Win: 39/58	Draw: 1/58
+AI 1441	Win: 37/58	Draw: 0/58
+AI 1451	Win: 37/58	Draw: 0/58
+       128        11       -21        44
+                 -35       -51         0
+                           -12         8
+                                     -47
+Best Weight:
+MiddleTime: 33.957	EndTime: 59.851	Mobility_begin_middle:0.391174	0.317418	Position_begin_middle:0.213866	0.62329
+Generation 49
+5 Best AIs:
+AI 1470	Win: 45/58	Draw: 0/58
+AI 1473	Win: 42/58	Draw: 2/58
+AI 1480	Win: 42/58	Draw: 0/58
+AI 1472	Win: 41/58	Draw: 1/58
+AI 1484	Win: 41/58	Draw: 1/58
+       119        15       -21        44
+                  33       -71         0
+                            13        15
+                                     -47
+Best Weight:
+MiddleTime:34.3604	EndTime:61.3396	Mobility_begin_middle:0.426127	0.174287	Position_begin_middle:0.208961	0.773852
+Generation 50
+5 Best AIs:
+AI 1511	Win: 45/58	Draw: 1/58
+AI 1521	Win: 42/58	Draw: 2/58
+AI 1505	Win: 43/58	Draw: 0/58
+AI 1507	Win: 41/58	Draw: 0/58
+AI 1523	Win: 36/58	Draw: 0/58
+       148        11       -21        44
+                 -35       -51         0
+                            -9         8
+                                     -41
+Best Weight:
+MiddleTime:30.9342	EndTime:     63	Mobility_begin_middle:0.33293	0.263489	Position_begin_middle:0.184848	0.675797
+Generation 51
+5 Best AIs:
+AI 1535	Win: 50/58	Draw: 1/58
+AI 1553	Win: 42/58	Draw: 3/58
+AI 1539	Win: 42/58	Draw: 3/58
+AI 1534	Win: 42/58	Draw: 2/58
+AI 1556	Win: 41/58	Draw: 1/58
+       148        11       -21        44
+                 -35       -51         0
+                            -9         8
+                                     -41
+Best Weight:
+MiddleTime:30.9342	EndTime:     63	Mobility_begin_middle:0.33293	0.263489	Position_begin_middle:0.184848	0.675797
+Generation 52
+5 Best AIs:
+AI 1584	Win: 45/58	Draw: 1/58
+AI 1578	Win: 43/58	Draw: 1/58
+AI 1564	Win: 41/58	Draw: 3/58
+AI 1574	Win: 39/58	Draw: 0/58
+AI 1573	Win: 38/58	Draw: 1/58
+       148        11       -21        44
+                 -35       -67         0
+                            -9         8
+                                     -47
+Best Weight:
+MiddleTime:32.6236	EndTime:     63	Mobility_begin_middle:0.270481	0.327393	Position_begin_middle:0.264093	0.653295
+Generation 53
+5 Best AIs:
+AI 1614	Win: 44/58	Draw: 0/58
+AI 1602	Win: 40/58	Draw: 3/58
+AI 1598	Win: 41/58	Draw: 0/58
+AI 1601	Win: 40/58	Draw: 1/58
+AI 1610	Win: 37/58	Draw: 4/58
+       120        10       -21        44
+                 -39       -58         0
+                            -9         8
+                                     -47
+Best Weight:
+MiddleTime:32.1909	EndTime: 60.865	Mobility_begin_middle:0.434761	0.29249	Position_begin_middle:0.20044	0.693692
+Generation 0
+5 Best AIs:
+AI 1614	Win: 44/58	Draw: 1/58
+AI 1602	Win: 41/58	Draw: 1/58
+AI 1607	Win: 38/58	Draw: 3/58
+AI 1601	Win: 38/58	Draw: 2/58
+AI 1610	Win: 37/58	Draw: 4/58
+       120        10       -21        44
+                 -39       -58         0
+                            -9         8
+                                     -47
+Best Weight:
+MiddleTime:32.1909	EndTime: 60.865	Mobility_begin_middle:0.434761	0.29249	Position_begin_middle:0.20044	0.693692
+Generation 1
+5 Best AIs:
+AI 32	Win: 44/58	Draw: 0/58
+AI 54	Win: 40/58	Draw: 2/58
+AI 31	Win: 41/58	Draw: 0/58
+AI 57	Win: 39/58	Draw: 4/58
+AI 49	Win: 39/58	Draw: 1/58
+       112        23       -21       -29
+                 -39       -69         0
+                            -8       -28
+                                     -42
+Best Weight:
+MiddleTime: 34.277	EndTime:61.0263	Mobility_begin_middle:0.298467	0.207655	Position_begin_middle:0.197003	0.707867
+Generation 2
+5 Best AIs:
+AI 65	Win: 42/58	Draw: 3/58
+AI 83	Win: 42/58	Draw: 1/58
+AI 75	Win: 41/58	Draw: 0/58
+AI 64	Win: 41/58	Draw: 0/58
+AI 80	Win: 38/58	Draw: 3/58
+       141        23       -21       -29
+                 -39       -69         0
+                           -12       -28
+                                     -41
+Best Weight:
+MiddleTime:33.3765	EndTime:61.5723	Mobility_begin_middle:0.319517	0.189956	Position_begin_middle:0.21353	0.736401
+Generation 3
+5 Best AIs:
+AI 113	Win: 45/58	Draw: 0/58
+AI 94	Win: 43/58	Draw: 0/58
+AI 102	Win: 41/58	Draw: 1/58
+AI 91	Win: 37/58	Draw: 1/58
+AI 105	Win: 36/58	Draw: 0/58
+       119        21        23        44
+                 -39       -48         0
+                            12         8
+                                     -38
+Best Weight:
+MiddleTime:24.1204	EndTime:61.0195	Mobility_begin_middle:0.401767	0.271495	Position_begin_middle:0.206923	0.611111
+Generation 4
+5 Best AIs:
+AI 145	Win: 43/58	Draw: 0/58
+AI 133	Win: 40/58	Draw: 2/58
+AI 123	Win: 39/58	Draw: 1/58
+AI 138	Win: 36/58	Draw: 6/58
+AI 137	Win: 39/58	Draw: 0/58
+       119        37       -21         0
+                 -39       -67         0
+                            -8         6
+                                     -42
+Best Weight:
+MiddleTime:20.7143	EndTime:61.0195	Mobility_begin_middle:0.50795	0.374042	Position_begin_middle:0.308961	0.707867
+Generation 5
+5 Best AIs:
+AI 158	Win: 42/58	Draw: 1/58
+AI 161	Win: 41/58	Draw: 2/58
+AI 156	Win: 42/58	Draw: 0/58
+AI 169	Win: 40/58	Draw: 1/58
+AI 168	Win: 39/58	Draw: 2/58
+       119        21        23        44
+                 -39       -48         0
+                            12         8
+                                     -38
+Best Weight:
+MiddleTime:24.1204	EndTime:61.0195	Mobility_begin_middle:0.401767	0.271495	Position_begin_middle:0.206923	0.611111

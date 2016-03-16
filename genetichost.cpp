@@ -63,20 +63,20 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
       for (int j = 0; j < zoo.size(); j++) {
         if (i == j)continue;
         count++;
-        cout << "AI_" << zoo[i]->getID() << " vs AI_" << zoo[j]->getID() << endl;
+        cout << "AI_" << zoo[i]->getID() << " vs AI_" << zoo[j]->getID() ;
         int score = judge.PlayAGame_getScore(*zoo[i], *zoo[j], N, roundTime, false);
         zooScores[i] += score;
         zooScores[j] -= score;
         if (score > 0) {
           winCount[i]++;
-          //cout<<"AI_"<<zoo[i]->getID()<<" win, score: "<<score<<endl;
+          cout<<"\twin, score: "<<score<<endl;
         } else if (score < 0) {
           winCount[j]++;
-          //cout<<"AI_"<<zoo[j]->getID()<<" win, score: "<<-score<<endl;
+          cout<<"\tlose, score: "<<-score<<endl;
         } else {
           drawCount[i]++;
           drawCount[j]++;
-          //cout<<"Draw"<<endl;
+          cout<<"\tDraw"<<endl;
         }
       }
       cout << double(count) / (zoo.size() * (zoo.size() - 1)) * 100 << "% finished" << endl;

@@ -35,7 +35,7 @@ GameWindow::GameWindow(string aiFile, int Nsize, QWidget *parent) : QWidget(pare
 {
   auto AIs = readAIFile(aiFile,Nsize);
   worker.setAI(*AIs[0]);//best
-  thinkTime=1;
+  thinkTime=1.0;
   auto boardLayout = new QGridLayout;
   for(int i=0;i<Nsize;i++){
     for(int j=0;j<Nsize;j++){
