@@ -6,6 +6,7 @@
 #include <chrono>
 #include <cassert>
 #include <iomanip>
+#include <random>
 using namespace std;
 
 auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();

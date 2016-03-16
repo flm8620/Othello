@@ -32,7 +32,7 @@ public:
   void loadPixmap();
   void sendPosition(){emit clickedWithPos(i,j);}
 signals:
-  clickedWithPos(int i,int j);
+  void clickedWithPos(int i,int j);
 
 
 };

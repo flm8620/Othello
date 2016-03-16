@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <list>
 #include "tools.h"
+#include <random>
 using namespace std;
 
 extern mt19937 generator;
