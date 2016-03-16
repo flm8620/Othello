@@ -8,6 +8,10 @@
 #include "GameState.h"
 #include "piecebutton.h"
 #include "gameworker.h"
+#include <string>
+
+
+
 class GameWindow : public QWidget
 {
   Q_OBJECT
@@ -20,9 +24,9 @@ class GameWindow : public QWidget
   QThread workerThread;
   QLabel *textLabel;
   double thinkTime;
-  void updateButtons();
+  void updateButtons(Color lastColor, int i, int j);
 public:
-  explicit GameWindow(int Nsize,QWidget *parent = 0);
+  explicit GameWindow(std::string aiFile,int Nsize,QWidget *parent = 0);
   void endGame();
   ~GameWindow();
 

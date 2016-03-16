@@ -15,7 +15,7 @@ class GameWorker : public QObject
   void letAIplay();
 public:
   explicit GameWorker(int Nsize, OthelloAI ai,QObject *parent = 0);
-
+  void setAI(const OthelloAI& ai){this->ai=ai;};
 signals:
   void AIplayed(int i,int j);
 public slots:

@@ -3,8 +3,9 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QThread>
+#include "tools.h"
 using namespace std;
-void GameWindow::updateButtons()
+void GameWindow::updateButtons(Color lastColor,int i,int j)
 {
   vector<bool> isWhite = gs.getWhitePosition();
   vector<bool> isBlack = gs.getBlackPosition();
@@ -22,10 +23,18 @@ void GameWindow::updateButtons()
     int index = m.first*Nsize +m.second;
     this->buttons[index]->setColor(c);
   }
+  if(lastColor==Color::Black){
+    this->buttons[i*Nsize+j]->setColor(ButtonColor::b_BlackLast);
+  }
+  if(lastColor==Color::White){
+    this->buttons[i*Nsize+j]->setColor(ButtonColor::b_WhiteLast);
+  }
 }
 
-GameWindow::GameWindow(int Nsize, QWidget *parent) : QWidget(parent),Nsize(Nsize), gs(Nsize),worker(Nsize,OthelloAI(Nsize))
+GameWindow::GameWindow(string aiFile, int Nsize, QWidget *parent) : QWidget(parent),Nsize(Nsize), gs(Nsize),worker(Nsize,OthelloAI(Nsize))
 {
+  auto AIs = readAIFile(aiFile,Nsize);
+  worker.setAI(*AIs[0]);//best
   thinkTime=1;
   auto boardLayout = new QGridLayout;
   for(int i=0;i<Nsize;i++){
@@ -84,7 +93,7 @@ GameWindow::~GameWindow()
 void GameWindow::AIplayed(int i, int j)
 {
   gs.addPiece(i,j,aiColor);
-  this->updateButtons();
+  this->updateButtons(aiColor,i,j);
   this->textLabel->setText(QString("Computer played at %1%2").arg(char('a'+i)).arg(j+1));
   if(gs.gameIsEnd())
     endGame();
@@ -96,10 +105,12 @@ void GameWindow::buttonClicked(int i, int j)
   set<pair<int,int>> moves = gs.getPossibleMovesForNextPlayer();
   if(moves.find(make_pair(i,j))!=moves.end()){
     gs.addPiece(i,j,humanColor);
-    updateButtons();
+    updateButtons(humanColor,i,j);
     emit humanPlayed(i,j);
     this->textLabel->setText(QString("Computer thinking"));
   }
+  if(gs.gameIsEnd())
+    endGame();
 }
 
 void GameWindow::newGameAsBlack()
@@ -107,7 +118,7 @@ void GameWindow::newGameAsBlack()
   this->humanColor=Color::Black;
   this->aiColor = Color::White;
   this->gs.restartGame();
-  this->updateButtons();
+  this->updateButtons(Color::Neither,-1,-1);
   emit startNewGame(humanColor,thinkTime);
 }
 
@@ -116,7 +127,7 @@ void GameWindow::newGameAsWhite()
   this->humanColor=Color::White;
   this->aiColor = Color::Black;
   this->gs.restartGame();
-  this->updateButtons();
+  this->updateButtons(Color::Neither,-1,-1);
   emit startNewGame(humanColor,thinkTime);
 }
 
