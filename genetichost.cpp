@@ -3,17 +3,44 @@
 #include <fstream>
 #include <cmath>
 #include <iomanip>
+#include <list>
 #include "tools.h"
 using namespace std;
 
 extern mt19937 generator;
-string outputFile = srcPath "/record3.txt";
+
 
 GeneticHost::GeneticHost(int Nsize) : N(Nsize) {
 
 }
 
-void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile, string aiFile) {
+vector<int> rouletteWheelSelection(vector<double> fitness, int selectNum){
+  list<pair<int,double> > fitStack;
+  for(int i=0;i<fitness.size();i++){
+    fitStack.push_back(make_pair(i,fitness[i]));
+  }
+  double total=0;
+  for(auto a : fitness) total+=a;
+
+  vector<int> selection;
+  for(int i=0;i<selectNum;i++){
+    uniform_real_distribution<double> randReal(0,total);
+    double random = randReal(generator);
+    double sum=0;
+    for(auto it = fitStack.begin();it!=fitStack.end();it++){
+      sum+=it->second;
+      if(sum>random){
+        selection.push_back(it->first);
+        total-=it->second;
+        fitStack.erase(it);
+        break;
+      }
+    }
+  }
+  return selection;
+}
+
+void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile, string aiFile,string recordFile,double roundTime) {
   //create random AIs
   zoo.clear();
   if (loadAiFile) {
@@ -37,7 +64,7 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
         if (i == j)continue;
         count++;
         cout << "AI_" << zoo[i]->getID() << " vs AI_" << zoo[j]->getID() << endl;
-        int score = judge.PlayAGame_getScore(*zoo[i], *zoo[j], N, 0.02, false);
+        int score = judge.PlayAGame_getScore(*zoo[i], *zoo[j], N, roundTime, false);
         zooScores[i] += score;
         zooScores[j] -= score;
         if (score > 0) {
@@ -59,11 +86,11 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
     for (int i = 0; i < zoo.size(); i++)index[i] = i;
     //sort to get good AIs
     sort(index.begin(), index.end(), [&](int a, int b) {
-      return winCount[a] > winCount[b];
+      return winCount[a] + drawCount[a]/2.0 > winCount[b] + drawCount[b]/2.0;
     });
 
     //output
-    ofstream file(outputFile, ios::app);
+    ofstream file(recordFile, ios::app);
     file << "Generation " << k << endl;
     cout << "5 Best AIs:" << endl;
     file << "5 Best AIs:" << endl;
@@ -89,31 +116,41 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
     file << "Best Weight:" << endl;
     auto sw = zoo[index[0]]->getScoreWeight();
     file << "MiddleTime:" << setw(7) << sw.middleTime << '\t'
-        << "EndTime:" << setw(7) << sw.endTime << '\t'
-        << "Mobility_begin_middle:" << sw.mobility_begin << '\t' << sw.mobility_middle << '\t'
-        << "Position_begin_middle:" << sw.position_begin << '\t' << sw.position_middle;
+         << "EndTime:" << setw(7) << sw.endTime << '\t'
+         << "Mobility_begin_middle:" << sw.mobility_begin << '\t' << sw.mobility_middle << '\t'
+         << "Position_begin_middle:" << sw.position_begin << '\t' << sw.position_middle;
     file << endl;
 
     file.close();
 
     //save AI
     vector<OthelloAI *> sortedZoo;
+    vector<int> sortedWinCount;
+    vector<int> sortedDrawCount;
+    vector<double> fitness;
     for (int i = 0; i < index.size(); i++) {
       sortedZoo.push_back(zoo[index[i]]);
+      sortedWinCount.push_back(winCount[index[i]]);
+      sortedDrawCount.push_back(drawCount[index[i]]);
+      fitness.push_back(sortedWinCount[i]+sortedDrawCount[i]/2.0);
     }
     zoo = sortedZoo;
     saveAIFile(zoo,aiFile,N);
 
     //from now zoo is sorted by performance
 
-    std::vector<OthelloAI *> newZoo;
-    //we take the 1/3 best AIs, throw the 2/3
-    for (int i = 0; i < zoo.size(); i++) {
-      if (i < zoo.size() / 4)
-        newZoo.push_back(zoo[i]);
-      else
-        delete zoo[i];
+    vector<OthelloAI *> newZoo;
+    //we take the 1/3 best AIs with random, throw the 2/3 (always keep the best one)
+    vector<int> selection = rouletteWheelSelection(fitness,zoo.size()/3);
+    bool bestOneIsKept=false;
+    for(auto index : selection){
+      if(index == 0) bestOneIsKept=true;
+      newZoo.push_back(new OthelloAI(*(zoo[index])));
     }
+    if(!bestOneIsKept) newZoo.push_back(new OthelloAI(*(newZoo[0])));
+
+    for (auto z : zoo)
+      delete z;
     if (newZoo.size() < 3)
       throw invalid_argument("too few animals");
 
@@ -126,12 +163,14 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
 
     uniform_int_distribution<int> randi(0, newZoo.size() - 1);
     //marriage between AIs randomly and have babies
-    while (zoo.size() < animalSize) {
+    while (zoo.size() < animalSize-2) {
       int i = randi(generator);
       int j = randi(generator);
       if (i == j) continue;
       zoo.push_back(crossover(newZoo[i], newZoo[j]));
     }
+    zoo.push_back(new OthelloAI(8));
+    zoo.push_back(new OthelloAI(8));
   }
 
 }

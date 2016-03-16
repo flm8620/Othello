@@ -11,10 +11,12 @@
 #include <set>
 #include <map>
 #include <bitset>
+#include <QMetaType>
 enum Color { Black, White, Neither };
+Q_DECLARE_METATYPE(Color)
 enum Direction { TopLeft, TopRight, BottomLeft, BottomRight, Left, Right, Top, Bottom, Center };
 struct DiskSquare {
-  static const double MAXSCORE;
+  static const double INITIAL_SCORE_RANGE;
   const int N;
   std::vector<double> scores;
   DiskSquare(int Nsize);

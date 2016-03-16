@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/myIcons">
+        <file>blackLast.png</file>
+        <file>whiteLast.png</file>
+        <file>blackPossible.png</file>
+        <file>whitePossible.png</file>
+        <file>empty.png</file>
+        <file>white.png</file>
+        <file>black.png</file>
+        <file>piece.png</file>
+    </qresource>
+</RCC>

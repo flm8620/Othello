@@ -11,7 +11,7 @@ using namespace std;
 auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();
 mt19937 generator(seed);
 
-const double DiskSquare::MAXSCORE = 50.0;
+const double DiskSquare::INITIAL_SCORE_RANGE = 50.0;
 
 static map<Direction, pair<int, int>> dirToOffset =
 {{TopLeft, {-1, -1}}, {Top, {-1, 0}}, {TopRight, {-1, 1}},
@@ -86,7 +86,7 @@ void DiskSquare::printOut() {
 }
 
 void DiskSquare::randomizeScore() {
-  uniform_real_distribution<double> randReal(-MAXSCORE, MAXSCORE);
+  uniform_real_distribution<double> randReal(-INITIAL_SCORE_RANGE, INITIAL_SCORE_RANGE);
   //score should be symmetic
   //score(i,j) == score(N-i-1,N-j-1)
   vector<double> triangle;
@@ -193,8 +193,9 @@ void GameState::printBoard() const {
   cout<<"     ";
   for(int i=0;i<N;i++) cout<<(char)('a'+i)<<' ';
   cout<<endl<<endl;
+
   for (int i = 0; i < N; i++) {
-      cout<<' '<<i<<"   ";
+    cout<<' '<<i<<"   ";
     for (int j = 0; j < N; j++) {
       if (isWhite[i * N + j]) {
         if (lastPosition == make_pair(i, j))
@@ -211,10 +212,12 @@ void GameState::printBoard() const {
 
       else cout << "- ";
     }
-    cout << endl;
-
-
+    cout<<"  "<<i<<endl;
   }
+  cout<<endl;
+  cout<<"     ";
+  for(int i=0;i<N;i++) cout<<(char)('a'+i)<<' ';
+  cout<<endl;
 }
 
 void GameState::addPiece(int i, int j, Color player) {

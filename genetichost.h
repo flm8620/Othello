@@ -28,7 +28,7 @@ class GeneticHost {
   }
 
   void startEvolution
-      (int animalSize, int generation, bool loadAiFile = false, std::string aiFile = srcPath "/aiSave.txt");
+      (int animalSize, int generation, bool loadAiFile, std::string aiFile, std::string recordFile, double roundTime);
 
   //mutate a AI to create a new one
   OthelloAI *mutation(const OthelloAI *ai);
@@ -36,4 +36,5 @@ class GeneticHost {
   OthelloAI *crossover(const OthelloAI *ai1, const OthelloAI *ai2);
 };
 
+std::vector<int> rouletteWheelSelection(std::vector<double> fitness, int selectNum);
 #endif // GENETICHOST_H

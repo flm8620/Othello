@@ -5,6 +5,7 @@
 #include "OthelloAI.h"
 #include <cassert>
 #include <random>
+#include <limits>
 
 using namespace std;
 using namespace std::chrono;
@@ -30,7 +31,7 @@ OthelloAI &OthelloAI::operator=(const OthelloAI &other) {
 }
 
 void OthelloAI::useRecommandedDiskSquare() {
-  double M = DiskSquare::MAXSCORE;
+  double M = DiskSquare::INITIAL_SCORE_RANGE;
   vector<double> triangle = {M * 20 / 20, -M * 3 / 20, M * 11 / 20, M * 8 / 20,
                              -M * 7 / 20, -M * 4 / 20, M * 1 / 20,
                              M * 2 / 20, M * 2 / 20,
@@ -42,12 +43,28 @@ OthelloAI *OthelloAI::createNewAIByMutation() const {
   int M = N / 2;
   int MM = M * (1 + M) / 2;
   uniform_int_distribution<int> randi(0, MM - 1);
-  uniform_real_distribution<double> randReal(-DiskSquare::MAXSCORE, DiskSquare::MAXSCORE);
+  uniform_real_distribution<double> randRatio(0.66,1.5);
+  std::bernoulli_distribution takeNegative(0.25);
 
-
-  //pick one element in ChessBoardScore and modify it to a random real number
   auto triangle = this->diskSquare.getTriangleFormat();
-  triangle[randi(generator)] = randReal(generator);
+
+  uniform_int_distribution<int> modifyTimes(1, 4);
+  int times = modifyTimes(generator);
+  for(int i=0;i<times;i++){
+    //pick one element in ChessBoardScore and modify it to a random real number
+    int randomIndex = randi(generator);
+    triangle[randomIndex] *= randRatio(generator);
+    if(takeNegative(generator)) triangle[randomIndex] *=-1;
+    //if one value is larger than the bound, we don't care!
+
+    //  if(abs(triangle[randomIndex])>DiskSquare::MAXSCORE){
+    //    double ratio = DiskSquare::MAXSCORE/triangle[randomIndex];
+    //    for(auto & t : triangle)
+    //      t*=ratio;
+    //  }
+  }
+
+
   DiskSquare ds(N);
   ds.scores = DiskSquare::triangleFormatToFullFormat(triangle, N);
 
@@ -112,11 +129,18 @@ double OthelloAI::max_min(const GameState &gs,
   }
   iter++;
 
-  if (depth == 0 || gs.gameIsEnd()) {
+  if (depth == 0) {
     return evaluateScore(gs, myColor);
   }
+  if(gs.gameIsEnd()){
+    int playerPieceCount = gs.pieceCount(myColor);
+    Color other = myColor == Color::Black ? Color::White : Color::Black;
+    int otherPieceCount = gs.pieceCount(other);
+    double largeNumber = std::numeric_limits<double>::max()/1e10;
+    return largeNumber*(playerPieceCount-otherPieceCount);
+  }
   if (isMyTurn) {
-    double a = -1e10;
+    double a = -std::numeric_limits<double>::max();
     assert(gs.nextPlayer() == myColor);
     auto moves = gs.getPossibleMovesForNextPlayer();
 
@@ -148,7 +172,7 @@ double OthelloAI::max_min(const GameState &gs,
     }
     return a;
   } else {
-    double a = 1e10;
+    double a = std::numeric_limits<double>::max();
     Color otherPlayer = gs.nextPlayer();
     assert(gs.nextPlayer() != myColor);
     auto moves = gs.getPossibleMovesForNextPlayer();
@@ -221,13 +245,13 @@ pair<int, int> OthelloAI::startMaxMin(const GameState &gs,
                                       int &iteration,
                                       int maxDepth,
                                       bool limitTime) const {
-  double maxScore = -1e10;
+  double maxScore = -std::numeric_limits<double>::max();
   pair<int, int> bestMove = make_pair(-1, -1);
   const auto &moves = gs.getPossibleMovesForNextPlayer();
 
   //start minimax algo
-  double alpha = -1e10;
-  double beta = 1e10;
+  double alpha = -std::numeric_limits<double>::max();
+  double beta = std::numeric_limits<double>::max();
   for (const auto &move : moves) {
     GameState gsBranch = gs;
     gsBranch.addPiece(move.first, move.second, myColor);
@@ -366,4 +390,5 @@ OthelloAI::ScoreWeight OthelloAI::ScoreWeight::crossover(OthelloAI::ScoreWeight 
   newScoreWeight.mobility_middle = randi(generator) == 1 ? mobility_middle : other.mobility_middle;
   newScoreWeight.position_begin = randi(generator) == 1 ? position_begin : other.position_begin;
   newScoreWeight.position_middle = randi(generator) == 1 ? position_middle : other.position_middle;
+  return newScoreWeight;
 }

@@ -20,8 +20,11 @@ int GameJudge::PlayAGame_getScore(const OthelloAI &black,
     pair<int, int> move = nextPlayer.giveNextMove(gs, gs.nextPlayer(), thinkStepsCount, reachedDepth, roundTime);
     gs.addPiece(move.first, move.second, gs.nextPlayer());
     if (showGame) {
+
       cout << " Round " << count << " " << thinkStepsCount << " steps of think, depth: " << reachedDepth << endl;
       gs.printBoard();
+      string color = gs.nextPlayer() == Color::Black ? "Black" : "White";
+      cout<<"Next player: "<<color<<endl;
       //cout<<endl;
     }
     count++;
@@ -38,8 +41,17 @@ int GameJudge::HumanVsAi(const OthelloAI &ai, int Nsize, double roundTime, Color
   gs.printBoard();
   int count = 1;
   do {
+    auto possibleMoves=gs.getPossibleMovesForNextPlayer();
     if(gs.nextPlayer()==humanColor){
+      //      if(possibleMoves.size()>1){
       do{
+        cout<<"Your possible moves: ";
+        for(auto move : possibleMoves){
+          char alpha = move.second+'a';
+          char number = move.first + '0';
+          cout<<alpha<<number<<' ';
+        }
+        cout<<endl;
         cout<<"Please type in a move(such as 'a3'):";
         string s;
         cin>>s;
@@ -57,6 +69,15 @@ int GameJudge::HumanVsAi(const OthelloAI &ai, int Nsize, double roundTime, Color
         }
         cout<<"Input is invalid!"<<endl;
       }while(true);
+      //}
+      //      else{
+      //        auto move = *(possibleMoves.begin());
+      //        char alpha = move.second+'a';
+      //        char number = move.first + '0';
+      //        cout<<"You have only one move : "<<alpha<<number<<endl;
+      //        cout<<"automatic move for you."<<endl;
+      //        gs.addPiece(move.first,move.second,gs.nextPlayer());
+      //      }
     }else{
       cout << "Computer thinking ... "<<endl;
       int thinkStepsCount = 0;

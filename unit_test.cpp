@@ -272,11 +272,17 @@ go_bandit([]() {
       whitePos[i] = false;
     }
     gs.setColorPositionPlayer(blackPos, whitePos, Color::Black);
-
-
     cout << iter << endl;
     cout << reachedDepth << endl;
   });
+
+  describe("Roulette Wheel Selection", []() {
+    vector<double> fitness = {10,10,10,10,1,1,1,1};
+    vector<int> selected = rouletteWheelSelection(fitness,4);
+    for(auto s:selected)cout<<s<<' ';
+    cout<<endl;
+  });
+
 });
 
 int main(int argc, char *argv[]) {
