@@ -146,9 +146,13 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
     bool bestOneIsKept=false;
     for(auto index : selection){
       if(index == 0) bestOneIsKept=true;
-      newZoo.push_back(new OthelloAI(*(zoo[index])));
+      newZoo.push_back(zoo[index]);
+      zoo[index]=0;
     }
-    if(!bestOneIsKept) newZoo.push_back(new OthelloAI(*(newZoo[0])));
+    if(!bestOneIsKept){
+      newZoo.push_back(zoo[0]);
+      zoo[0]=0;
+    }
 
     for (auto z : zoo)
       delete z;
@@ -162,16 +166,19 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
       zoo.push_back(mutation(animal));
     }
 
-    uniform_int_distribution<int> randi(0, newZoo.size() - 1);
+    zoo.push_back(new OthelloAI(8));
+    zoo.push_back(new OthelloAI(8));
+
+
+    uniform_int_distribution<int> randi(0, zoo.size() - 1);
     //marriage between AIs randomly and have babies
-    while (zoo.size() < animalSize-2) {
+    while (zoo.size() < animalSize) {
       int i = randi(generator);
       int j = randi(generator);
       if (i == j) continue;
-      zoo.push_back(crossover(newZoo[i], newZoo[j]));
+      zoo.push_back(crossover(zoo[i], zoo[j]));
     }
-    zoo.push_back(new OthelloAI(8));
-    zoo.push_back(new OthelloAI(8));
+
   }
 
 }

@@ -22,9 +22,9 @@ int GameJudge::PlayAGame_getScore(const OthelloAI &black,
     if (showGame) {
 
       cout << " Round " << count << " " << thinkStepsCount << " steps of think, depth: " << reachedDepth << endl;
-      gs.printBoard();
-      string color = gs.nextPlayer() == Color::Black ? "Black" : "White";
-      cout<<"Next player: "<<color<<endl;
+      //gs.printBoard();
+      //string color = gs.nextPlayer() == Color::Black ? "Black" : "White";
+      //cout<<"Next player: "<<color<<endl;
       //cout<<endl;
     }
     count++;

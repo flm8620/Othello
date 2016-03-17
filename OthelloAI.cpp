@@ -108,7 +108,8 @@ OthelloAI *OthelloAI::createNewAIByCrossOver(const OthelloAI *other) const {
 }
 
 int OthelloAI::generateID() {
-  static int staticID = -1;
+  static uniform_int_distribution<int> prefix(1,100);
+  static int staticID = prefix(generator)*10000-1;
   staticID++;
   return staticID;
 }
@@ -278,7 +279,6 @@ std::pair<int, int> OthelloAI::giveNextMove(const GameState &gs,
                                             double thinkTime,
                                             int thinkDepth) const {
   this->thinkTime = thinkTime;
-
   assert(gs.nextPlayer() == myColor);
   startTime = std::chrono::high_resolution_clock::now();
   pair<int, int> bestMove = make_pair(-1, -1);
@@ -293,13 +293,13 @@ std::pair<int, int> OthelloAI::giveNextMove(const GameState &gs,
     iteration = iter;
   } else {
     iteration = 0;
-    int maxDepth = 2;
+    int maxDepth = 3;
     int iter = 0;
     bestMove = startMaxMin(gs, myColor, iter, maxDepth, false);
     reachedDepth = maxDepth;
     iteration = iter;
 
-    for (int maxDepth = 3; maxDepth < 20; maxDepth++) {
+    for (int maxDepth = 4; maxDepth < 20; maxDepth++) {
       int iter = 0;
       try {
         bestMove = startMaxMin(gs, myColor, iter, maxDepth, true);

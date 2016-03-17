@@ -14,7 +14,7 @@ string aiFile = srcPath "/aiSave4.txt";
 int main() {
   GeneticHost host(8);
   bool loadAiFile=true;
-  double roundTime = 0.001;
+  double roundTime = 0.01;
   int numIndividual = 30;
   int numGeneration=1000;
   host.startEvolution(numIndividual,numGeneration,loadAiFile,aiFile,recordFile,roundTime);
