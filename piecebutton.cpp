@@ -7,9 +7,12 @@ PieceButton::PieceButton(int i, int j, QWidget *parent) : QPushButton(parent),i(
   iconLoader.loadImage();
   this->setColor(ButtonColor::b_Empty);
   this->setStyleSheet("QPushButton { border: none; }");
-  this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+  auto policy = QSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
+  this->setSizePolicy(policy);
   this->setMinimumHeight(40);
   this->setMinimumWidth(40);
+  this->setMaximumHeight(40);
+  this->setMaximumWidth(40);
   this->setIconSize(QSize(40,40));
   connect(this,&PieceButton::clicked,this,&PieceButton::sendPosition);
 }

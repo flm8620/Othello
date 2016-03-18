@@ -2156,3 +2156,2325 @@ AI 200493	Win: 42/58	Draw: 1/58
                                      -42
 Best Weight:
 MiddleTime:26.3121	EndTime:     63	Mobility_begin_middle:0.570832	0.282255	Position_begin_middle:0.222511	0.69454
+Generation 0
+5 Best AIs:
+AI 200461	Win: 47/58	Draw: 0/58
+AI 200497	Win: 46/58	Draw: 0/58
+AI 200491	Win: 45/58	Draw: 1/58
+AI 200495	Win: 44/58	Draw: 1/58
+AI 200479	Win: 41/58	Draw: 0/58
+       241        31        24        70
+                 -62       -28         1
+                            -2       -17
+                                     -42
+Best Weight:
+MiddleTime:26.3121	EndTime:     63	Mobility_begin_middle:0.570832	0.282255	Position_begin_middle:0.222511	0.69454
+Generation 1
+5 Best AIs:
+AI 200491	Win: 45/58	Draw: 1/58
+AI 320032	Win: 44/58	Draw: 2/58
+AI 200461	Win: 43/58	Draw: 1/58
+AI 200493	Win: 41/58	Draw: 4/58
+AI 320042	Win: 41/58	Draw: 3/58
+       241        32       -27        70
+                 -27       -31         1
+                            19       -17
+                                     -42
+Best Weight:
+MiddleTime:26.3121	EndTime:61.8559	Mobility_begin_middle:0.570832	0.220271	Position_begin_middle:0.255234	0.466699
+Generation 2
+5 Best AIs:
+AI 320069	Win: 43/58	Draw: 1/58
+AI 320050	Win: 40/58	Draw: 2/58
+AI 320032	Win: 41/58	Draw: 0/58
+AI 320052	Win: 39/58	Draw: 2/58
+AI 320064	Win: 39/58	Draw: 1/58
+       241        31       -27        70
+                 -62       -40         0
+                            -2       -19
+                                     -46
+Best Weight:
+MiddleTime:31.9658	EndTime:61.8513	Mobility_begin_middle:0.548503	0.203815	Position_begin_middle:0.219168	0.670854
+Generation 3
+5 Best AIs:
+AI 320073	Win: 44/58	Draw: 3/58
+AI 320034	Win: 43/58	Draw: 3/58
+AI 320079	Win: 41/58	Draw: 3/58
+AI 320032	Win: 40/58	Draw: 4/58
+AI 320069	Win: 41/58	Draw: 1/58
+       220        30        28        67
+                 -38       -40         1
+                            19       -14
+                                     -40
+Best Weight:
+MiddleTime:29.7357	EndTime:61.6845	Mobility_begin_middle:0.294708	0.212123	Position_begin_middle:0.278381	0.731729
+Generation 0
+5 Best AIs:
+AI 320032	Score: 1040
+AI 320073	Score: 965
+AI 320077	Score: 874
+AI 320065	Score: 844
+AI 200491	Score: 844
+       241        31        24        70
+                 -62       -35         1
+                            -2       -17
+                                     -42
+Best Weight:
+MiddleTime:27.8844	EndTime:61.8513	Mobility_begin_middle:0.548503	0.309795	Position_begin_middle:0.219168	0.670854
+Generation 1
+5 Best AIs:
+AI 320068	Score: 1959
+AI 200491	Score: 1768
+AI 1000030	Score: 1737
+AI 320042	Score: 1624
+AI 320085	Score: 1406
+       296        30       -25       143
+                 -29       -40         0
+                           -27       -19
+                                     -31
+Best Weight:
+MiddleTime:30.0146	EndTime:62.0999	Mobility_begin_middle:0.391716	0.262458	Position_begin_middle:0.193226	0.67923
+Generation 2
+5 Best AIs:
+AI 1000037	Score: 2907
+AI 1000054	Score: 2542
+AI 1000040	Score: 2453
+AI 1000055	Score: 1898
+AI 1000045	Score: 1859
+       241        34        24        70
+                 -62       -35         1
+                            -2       -17
+                                     -49
+Best Weight:
+MiddleTime:24.4476	EndTime: 61.083	Mobility_begin_middle:0.59297	0.348863	Position_begin_middle:0.189113	0.630053
+Generation 3
+5 Best AIs:
+AI 1000037	Score: 3767
+AI 1000074	Score: 3135
+AI 1000075	Score: 2427
+AI 1000040	Score: 2223
+AI 1000056	Score: 2060
+       241        34        24        70
+                 -62       -35         1
+                            -2       -17
+                                     -49
+Best Weight:
+MiddleTime:24.4476	EndTime: 61.083	Mobility_begin_middle:0.59297	0.348863	Position_begin_middle:0.189113	0.630053
+Generation 0
+AI rank:
+AI 1000037	Score: 946
+AI 1000040	Score: 920
+AI 1000081	Score: 864
+AI 1000074	Score: 569
+AI 1000084	Score: 497
+AI 1000053	Score: 471
+AI 1000078	Score: 470
+AI 1000087	Score: 429
+AI 320085	Score: 395
+AI 1000075	Score: 350
+AI 1000072	Score: 271
+AI 1000083	Score: 245
+AI 1000069	Score: 220
+AI 1000077	Score: 205
+AI 1000082	Score: 204
+AI 1000076	Score: 179
+AI 1000033	Score: 139
+AI 1000086	Score: 21
+AI 1000057	Score: -124
+AI 1000088	Score: -162
+AI 1000046	Score: -329
+AI 1000056	Score: -338
+AI 1000085	Score: -347
+AI 1000058	Score: -409
+AI 1000070	Score: -562
+AI 1000073	Score: -570
+AI 1000044	Score: -695
+AI 1000071	Score: -712
+AI 1000080	Score: -1470
+AI 1000079	Score: -1677
+       241        34        24        70
+                 -62       -35         1
+                            -2       -17
+                                     -49
+Best Weight:
+MiddleTime:24.4476	EndTime: 61.083	Mobility_begin_middle:0.59297	0.348863	Position_begin_middle:0.189113	0.630053
+Generation 0
+AI rank:
+AI 1000040	Win: 40/58	Draw: 0/58
+	Score: 916
+	Chosen
+AI 1000074	Win: 40/58	Draw: 0/58
+	Score: 880
+	Not Chosen
+AI 1000081	Win: 38/58	Draw: 1/58
+	Score: 613
+	Chosen
+AI 1000037	Win: 36/58	Draw: 0/58
+	Score: 506
+	Chosen
+AI 1000077	Win: 34/58	Draw: 3/58
+	Score: 474
+	Not Chosen
+AI 1000078	Win: 35/58	Draw: 1/58
+	Score: 425
+	Not Chosen
+AI 320085	Win: 32/58	Draw: 3/58
+	Score: 416
+	Chosen
+AI 1000084	Win: 38/58	Draw: 2/58
+	Score: 397
+	Not Chosen
+AI 1000053	Win: 33/58	Draw: 1/58
+	Score: 388
+	Chosen
+AI 1000072	Win: 36/58	Draw: 2/58
+	Score: 374
+	Chosen
+AI 1000087	Win: 30/58	Draw: 1/58
+	Score: 317
+	Chosen
+AI 1000083	Win: 33/58	Draw: 1/58
+	Score: 310
+	Not Chosen
+AI 1000088	Win: 29/58	Draw: 1/58
+	Score: 220
+	Not Chosen
+AI 1000075	Win: 32/58	Draw: 1/58
+	Score: 141
+	Chosen
+AI 1000082	Win: 31/58	Draw: 1/58
+	Score: 86
+	Chosen
+AI 1000076	Win: 29/58	Draw: 0/58
+	Score: 56
+	Not Chosen
+AI 1000069	Win: 33/58	Draw: 1/58
+	Score: 44
+	Not Chosen
+AI 1000086	Win: 30/58	Draw: 1/58
+	Score: 18
+	Not Chosen
+AI 1000057	Win: 24/58	Draw: 2/58
+	Score: -64
+	Not Chosen
+AI 1000033	Win: 23/58	Draw: 2/58
+	Score: -108
+	Not Chosen
+AI 1000046	Win: 29/58	Draw: 0/58
+	Score: -112
+	Not Chosen
+AI 1000056	Win: 28/58	Draw: 0/58
+	Score: -154
+	Not Chosen
+AI 1000085	Win: 24/58	Draw: 1/58
+	Score: -269
+	Not Chosen
+AI 1000058	Win: 23/58	Draw: 2/58
+	Score: -348
+	Chosen
+AI 1000070	Win: 23/58	Draw: 0/58
+	Score: -401
+	Not Chosen
+AI 1000073	Win: 24/58	Draw: 3/58
+	Score: -435
+	Not Chosen
+AI 1000044	Win: 20/58	Draw: 1/58
+	Score: -682
+	Not Chosen
+AI 1000071	Win: 14/58	Draw: 0/58
+	Score: -711
+	Not Chosen
+AI 1000080	Win: 7/58	Draw: 2/58
+	Score: -1524
+	Not Chosen
+AI 1000079	Win: 5/58	Draw: 1/58
+	Score: -1773
+	Not Chosen
+       241        22        24        70
+                 -62       -35         1
+                            -2       -19
+                                     -50
+Best Weight:
+MiddleTime:29.8335	EndTime:61.0959	Mobility_begin_middle:0.521777	0.317499	Position_begin_middle:0.250671	0.659626
+Generation 1
+AI rank:
+AI 1000074	Win: 38/58	Draw: 2/58
+	Score: 1643
+	Chosen
+AI 490030	Win: 43/58	Draw: 2/58
+	Score: 1363
+	Chosen
+AI 1000081	Win: 37/58	Draw: 2/58
+	Score: 1206
+	Chosen
+AI 1000084	Win: 36/58	Draw: 1/58
+	Score: 1109
+	Chosen
+AI 490047	Win: 42/58	Draw: 4/58
+	Score: 960
+	Chosen
+AI 490036	Win: 31/58	Draw: 1/58
+	Score: 865
+	Chosen
+AI 490045	Win: 35/58	Draw: 0/58
+	Score: 836
+	Not Chosen
+AI 1000053	Win: 37/58	Draw: 0/58
+	Score: 781
+	Chosen
+AI 1000040	Win: 36/58	Draw: 2/58
+	Score: 759
+	Not Chosen
+AI 1000078	Win: 36/58	Draw: 3/58
+	Score: 702
+	Chosen
+AI 490034	Win: 29/58	Draw: 2/58
+	Score: 573
+	Not Chosen
+AI 1000087	Win: 35/58	Draw: 1/58
+	Score: 522
+	Not Chosen
+AI 1000083	Win: 31/58	Draw: 0/58
+	Score: 494
+	Not Chosen
+AI 490033	Win: 26/58	Draw: 3/58
+	Score: 249
+	Not Chosen
+AI 490035	Win: 32/58	Draw: 2/58
+	Score: 191
+	Not Chosen
+AI 490032	Win: 16/58	Draw: 0/58
+	Score: 171
+	Chosen
+AI 1000077	Win: 29/58	Draw: 0/58
+	Score: 158
+	Not Chosen
+AI 490031	Win: 30/58	Draw: 1/58
+	Score: 68
+	Not Chosen
+AI 1000058	Win: 32/58	Draw: 3/58
+	Score: -323
+	Chosen
+AI 490037	Win: 21/58	Draw: 0/58
+	Score: -425
+	Not Chosen
+AI 490038	Win: 22/58	Draw: 1/58
+	Score: -464
+	Not Chosen
+AI 490044	Win: 24/58	Draw: 2/58
+	Score: -511
+	Not Chosen
+AI 490042	Win: 20/58	Draw: 2/58
+	Score: -678
+	Not Chosen
+AI 490049	Win: 22/58	Draw: 2/58
+	Score: -1115
+	Not Chosen
+AI 490048	Win: 35/58	Draw: 3/58
+	Score: -1227
+	Chosen
+AI 490040	Win: 16/58	Draw: 0/58
+	Score: -1424
+	Not Chosen
+AI 490046	Win: 19/58	Draw: 0/58
+	Score: -1433
+	Not Chosen
+AI 490039	Win: 9/58	Draw: 2/58
+	Score: -1508
+	Not Chosen
+AI 490043	Win: 10/58	Draw: 1/58
+	Score: -1599
+	Not Chosen
+AI 490041	Win: 20/58	Draw: 0/58
+	Score: -1943
+	Not Chosen
+       241        34        24        70
+                 -62       -35         1
+                            -2       -11
+                                     -49
+Best Weight:
+MiddleTime: 25.586	EndTime:60.0104	Mobility_begin_middle:0.601432	0.319975	Position_begin_middle:0.162579	0.659932
+Generation 2
+AI rank:
+AI 1000074	Win: 38/58	Draw: 3/58
+	Score: 2350
+	Chosen
+AI 490050	Win: 36/58	Draw: 1/58
+	Score: 1765
+	Not Chosen
+AI 1000081	Win: 37/58	Draw: 2/58
+	Score: 1717
+	Not Chosen
+AI 490030	Win: 39/58	Draw: 5/58
+	Score: 1687
+	Not Chosen
+AI 490033	Win: 39/58	Draw: 0/58
+	Score: 1563
+	Chosen
+AI 490052	Win: 36/58	Draw: 1/58
+	Score: 1443
+	Not Chosen
+AI 490032	Win: 38/58	Draw: 2/58
+	Score: 1214
+	Not Chosen
+AI 490067	Win: 31/58	Draw: 2/58
+	Score: 1165
+	Chosen
+AI 1000084	Win: 33/58	Draw: 3/58
+	Score: 1122
+	Chosen
+AI 490064	Win: 29/58	Draw: 0/58
+	Score: 930
+	Not Chosen
+AI 490051	Win: 35/58	Draw: 0/58
+	Score: 813
+	Chosen
+AI 490055	Win: 33/58	Draw: 1/58
+	Score: 612
+	Not Chosen
+AI 1000078	Win: 29/58	Draw: 4/58
+	Score: 412
+	Not Chosen
+AI 490056	Win: 31/58	Draw: 1/58
+	Score: 409
+	Chosen
+AI 490045	Win: 33/58	Draw: 0/58
+	Score: 353
+	Chosen
+AI 490057	Win: 22/58	Draw: 2/58
+	Score: 142
+	Not Chosen
+AI 490031	Win: 19/58	Draw: 1/58
+	Score: -87
+	Not Chosen
+AI 490054	Win: 36/58	Draw: 5/58
+	Score: -531
+	Not Chosen
+AI 490068	Win: 23/58	Draw: 3/58
+	Score: -727
+	Not Chosen
+AI 490065	Win: 32/58	Draw: 2/58
+	Score: -791
+	Chosen
+AI 490059	Win: 26/58	Draw: 2/58
+	Score: -999
+	Not Chosen
+AI 490042	Win: 34/58	Draw: 3/58
+	Score: -1165
+	Chosen
+AI 490060	Win: 32/58	Draw: 1/58
+	Score: -1219
+	Not Chosen
+AI 490063	Win: 14/58	Draw: 1/58
+	Score: -1259
+	Not Chosen
+AI 490053	Win: 2/58	Draw: 0/58
+	Score: -1371
+	Not Chosen
+AI 490062	Win: 34/58	Draw: 1/58
+	Score: -1538
+	Not Chosen
+AI 490066	Win: 6/58	Draw: 2/58
+	Score: -1728
+	Not Chosen
+AI 490049	Win: 26/58	Draw: 0/58
+	Score: -1756
+	Not Chosen
+AI 490058	Win: 6/58	Draw: 0/58
+	Score: -2146
+	Not Chosen
+AI 490061	Win: 16/58	Draw: 2/58
+	Score: -2380
+	Chosen
+       241        34        24        70
+                 -62       -35         1
+                            -2       -11
+                                     -49
+Best Weight:
+MiddleTime: 25.586	EndTime:60.0104	Mobility_begin_middle:0.601432	0.319975	Position_begin_middle:0.162579	0.659932
+Generation 3
+AI rank:
+AI 1000074	Win: 41/58	Draw: 0/58
+	Score: 3118
+	Chosen
+AI 490069	Win: 41/58	Draw: 0/58
+	Score: 2418
+	Chosen
+AI 1000084	Win: 36/58	Draw: 4/58
+	Score: 2240
+	Chosen
+AI 490064	Win: 29/58	Draw: 4/58
+	Score: 2078
+	Not Chosen
+AI 490070	Win: 33/58	Draw: 1/58
+	Score: 2073
+	Not Chosen
+AI 490071	Win: 34/58	Draw: 3/58
+	Score: 2026
+	Not Chosen
+AI 490030	Win: 37/58	Draw: 2/58
+	Score: 1898
+	Not Chosen
+AI 490078	Win: 38/58	Draw: 0/58
+	Score: 1790
+	Not Chosen
+AI 490057	Win: 34/58	Draw: 0/58
+	Score: 1623
+	Not Chosen
+AI 490049	Win: 36/58	Draw: 3/58
+	Score: 1334
+	Chosen
+AI 490033	Win: 37/58	Draw: 2/58
+	Score: 825
+	Chosen
+AI 490074	Win: 31/58	Draw: 1/58
+	Score: 773
+	Chosen
+AI 490051	Win: 28/58	Draw: 1/58
+	Score: 764
+	Not Chosen
+AI 490072	Win: 34/58	Draw: 2/58
+	Score: 719
+	Chosen
+AI 490077	Win: 31/58	Draw: 3/58
+	Score: 269
+	Chosen
+AI 490084	Win: 15/58	Draw: 4/58
+	Score: 69
+	Chosen
+AI 490086	Win: 41/58	Draw: 3/58
+	Score: -400
+	Not Chosen
+AI 490079	Win: 39/58	Draw: 2/58
+	Score: -522
+	Not Chosen
+AI 490080	Win: 41/58	Draw: 0/58
+	Score: -722
+	Chosen
+AI 490076	Win: 14/58	Draw: 0/58
+	Score: -978
+	Not Chosen
+AI 490065	Win: 22/58	Draw: 2/58
+	Score: -1065
+	Not Chosen
+AI 490068	Win: 26/58	Draw: 1/58
+	Score: -1357
+	Not Chosen
+AI 490081	Win: 34/58	Draw: 1/58
+	Score: -1373
+	Not Chosen
+AI 490085	Win: 20/58	Draw: 2/58
+	Score: -1379
+	Not Chosen
+AI 490087	Win: 15/58	Draw: 4/58
+	Score: -2028
+	Not Chosen
+AI 490075	Win: 7/58	Draw: 0/58
+	Score: -2051
+	Not Chosen
+AI 490088	Win: 26/58	Draw: 0/58
+	Score: -2135
+	Not Chosen
+AI 490083	Win: 7/58	Draw: 0/58
+	Score: -2962
+	Not Chosen
+AI 490073	Win: 6/58	Draw: 2/58
+	Score: -3356
+	Chosen
+AI 490082	Win: 13/58	Draw: 1/58
+	Score: -3689
+	Not Chosen
+       241        34        24        70
+                 -62       -35         1
+                            -2       -11
+                                     -49
+Best Weight:
+MiddleTime: 25.586	EndTime:60.0104	Mobility_begin_middle:0.601432	0.319975	Position_begin_middle:0.162579	0.659932
+Generation 4
+AI rank:
+AI 1000074	Win: 41/58	Draw: 0/58
+	Score: 3959
+	Chosen
+AI 490103	Win: 36/58	Draw: 0/58
+	Score: 2967
+	Chosen
+AI 490104	Win: 48/58	Draw: 1/58
+	Score: 2869
+	Chosen
+AI 490089	Win: 41/58	Draw: 0/58
+	Score: 2757
+	Chosen
+AI 490076	Win: 34/58	Draw: 1/58
+	Score: 2541
+	Not Chosen
+AI 490069	Win: 35/58	Draw: 0/58
+	Score: 2388
+	Not Chosen
+AI 490051	Win: 34/58	Draw: 1/58
+	Score: 2188
+	Not Chosen
+AI 490096	Win: 36/58	Draw: 1/58
+	Score: 1896
+	Not Chosen
+AI 1000084	Win: 19/58	Draw: 0/58
+	Score: 1652
+	Not Chosen
+AI 490070	Win: 38/58	Draw: 1/58
+	Score: 1444
+	Not Chosen
+AI 490092	Win: 35/58	Draw: 2/58
+	Score: 1203
+	Chosen
+AI 490094	Win: 31/58	Draw: 2/58
+	Score: 1018
+	Not Chosen
+AI 490049	Win: 38/58	Draw: 1/58
+	Score: 840
+	Not Chosen
+AI 490068	Win: 5/58	Draw: 0/58
+	Score: 268
+	Not Chosen
+AI 490102	Win: 19/58	Draw: 3/58
+	Score: 56
+	Chosen
+AI 490107	Win: 39/58	Draw: 1/58
+	Score: -66
+	Not Chosen
+AI 490101	Win: 30/58	Draw: 0/58
+	Score: -186
+	Chosen
+AI 490080	Win: 31/58	Draw: 1/58
+	Score: -495
+	Chosen
+AI 490091	Win: 38/58	Draw: 0/58
+	Score: -530
+	Not Chosen
+AI 490105	Win: 19/58	Draw: 2/58
+	Score: -644
+	Not Chosen
+AI 490090	Win: 37/58	Draw: 0/58
+	Score: -786
+	Chosen
+AI 490095	Win: 41/58	Draw: 0/58
+	Score: -1222
+	Chosen
+AI 490106	Win: 18/58	Draw: 0/58
+	Score: -1384
+	Not Chosen
+AI 490097	Win: 16/58	Draw: 1/58
+	Score: -2277
+	Not Chosen
+AI 490099	Win: 11/58	Draw: 1/58
+	Score: -2498
+	Not Chosen
+AI 490098	Win: 46/58	Draw: 0/58
+	Score: -2696
+	Not Chosen
+AI 490072	Win: 17/58	Draw: 0/58
+	Score: -2853
+	Not Chosen
+AI 490100	Win: 7/58	Draw: 1/58
+	Score: -3525
+	Not Chosen
+AI 490093	Win: 9/58	Draw: 0/58
+	Score: -4336
+	Not Chosen
+AI 490087	Win: 11/58	Draw: 0/58
+	Score: -4548
+	Not Chosen
+       241        34        24        70
+                 -62       -35         1
+                            -2       -11
+                                     -49
+Best Weight:
+MiddleTime: 25.586	EndTime:60.0104	Mobility_begin_middle:0.601432	0.319975	Position_begin_middle:0.162579	0.659932
+Generation 5
+AI rank:
+AI 1000074	Win: 36/58	Draw: 2/58
+	Score: 4436
+	Chosen
+AI 490117	Win: 35/58	Draw: 1/58
+	Score: 3360
+	Chosen
+AI 490096	Win: 36/58	Draw: 0/58
+	Score: 3329
+	Not Chosen
+AI 490076	Win: 37/58	Draw: 0/58
+	Score: 3286
+	Chosen
+AI 490106	Win: 39/58	Draw: 0/58
+	Score: 2976
+	Not Chosen
+AI 490070	Win: 41/58	Draw: 0/58
+	Score: 2939
+	Not Chosen
+AI 490122	Win: 33/58	Draw: 0/58
+	Score: 2169
+	Not Chosen
+AI 490123	Win: 33/58	Draw: 1/58
+	Score: 1893
+	Chosen
+AI 490110	Win: 16/58	Draw: 0/58
+	Score: 1693
+	Chosen
+AI 1000084	Win: 26/58	Draw: 0/58
+	Score: 1208
+	Not Chosen
+AI 490103	Win: 44/58	Draw: 0/58
+	Score: 1191
+	Not Chosen
+AI 490111	Win: 26/58	Draw: 1/58
+	Score: 1167
+	Not Chosen
+AI 490108	Win: 30/58	Draw: 2/58
+	Score: 850
+	Chosen
+AI 490093	Win: 32/58	Draw: 1/58
+	Score: 394
+	Chosen
+AI 490124	Win: 28/58	Draw: 0/58
+	Score: -299
+	Chosen
+AI 490125	Win: 34/58	Draw: 0/58
+	Score: -315
+	Chosen
+AI 490121	Win: 19/58	Draw: 2/58
+	Score: -516
+	Not Chosen
+AI 490115	Win: 27/58	Draw: 1/58
+	Score: -518
+	Not Chosen
+AI 490105	Win: 6/58	Draw: 1/58
+	Score: -670
+	Not Chosen
+AI 490113	Win: 34/58	Draw: 0/58
+	Score: -794
+	Not Chosen
+AI 490114	Win: 34/58	Draw: 1/58
+	Score: -885
+	Chosen
+AI 490109	Win: 25/58	Draw: 1/58
+	Score: -1028
+	Not Chosen
+AI 490118	Win: 13/58	Draw: 0/58
+	Score: -1627
+	Not Chosen
+AI 490126	Win: 37/58	Draw: 1/58
+	Score: -1887
+	Not Chosen
+AI 490127	Win: 38/58	Draw: 0/58
+	Score: -2046
+	Not Chosen
+AI 490087	Win: 33/58	Draw: 3/58
+	Score: -2519
+	Not Chosen
+AI 490119	Win: 25/58	Draw: 1/58
+	Score: -2661
+	Not Chosen
+AI 490120	Win: 33/58	Draw: 2/58
+	Score: -3068
+	Not Chosen
+AI 490116	Win: 4/58	Draw: 1/58
+	Score: -5938
+	Not Chosen
+AI 490112	Win: 5/58	Draw: 0/58
+	Score: -6120
+	Not Chosen
+       241        34        24        70
+                 -62       -35         1
+                            -2       -11
+                                     -49
+Best Weight:
+MiddleTime: 25.586	EndTime:60.0104	Mobility_begin_middle:0.601432	0.319975	Position_begin_middle:0.162579	0.659932
+Generation 6
+AI rank:
+AI 1000074	Win: 40/58	Draw: 1/58
+	Score: 5314
+	Chosen
+AI 490140	Win: 40/58	Draw: 1/58
+	Score: 4265
+	Chosen
+AI 490108	Win: 47/58	Draw: 0/58
+	Score: 3979
+	Chosen
+AI 1000084	Win: 35/58	Draw: 1/58
+	Score: 3833
+	Not Chosen
+AI 490096	Win: 39/58	Draw: 0/58
+	Score: 3723
+	Not Chosen
+AI 490133	Win: 38/58	Draw: 0/58
+	Score: 2825
+	Chosen
+AI 490111	Win: 21/58	Draw: 1/58
+	Score: 2613
+	Chosen
+AI 490143	Win: 33/58	Draw: 0/58
+	Score: 2259
+	Not Chosen
+AI 490130	Win: 33/58	Draw: 0/58
+	Score: 1987
+	Not Chosen
+AI 490131	Win: 38/58	Draw: 3/58
+	Score: 1925
+	Chosen
+AI 490122	Win: 36/58	Draw: 1/58
+	Score: 1717
+	Not Chosen
+AI 490129	Win: 36/58	Draw: 2/58
+	Score: 989
+	Not Chosen
+AI 490128	Win: 31/58	Draw: 0/58
+	Score: 919
+	Not Chosen
+AI 490134	Win: 42/58	Draw: 1/58
+	Score: 667
+	Not Chosen
+AI 490135	Win: 40/58	Draw: 2/58
+	Score: 144
+	Not Chosen
+AI 490123	Win: 9/58	Draw: 1/58
+	Score: -236
+	Chosen
+AI 490093	Win: 32/58	Draw: 0/58
+	Score: -283
+	Chosen
+AI 490146	Win: 26/58	Draw: 2/58
+	Score: -368
+	Not Chosen
+AI 490116	Win: 29/58	Draw: 0/58
+	Score: -460
+	Not Chosen
+AI 490142	Win: 28/58	Draw: 0/58
+	Score: -1014
+	Chosen
+AI 490141	Win: 13/58	Draw: 1/58
+	Score: -1546
+	Not Chosen
+AI 490137	Win: 38/58	Draw: 0/58
+	Score: -1600
+	Chosen
+AI 490115	Win: 20/58	Draw: 2/58
+	Score: -1733
+	Not Chosen
+AI 490139	Win: 39/58	Draw: 1/58
+	Score: -2105
+	Chosen
+AI 490138	Win: 21/58	Draw: 1/58
+	Score: -2192
+	Not Chosen
+AI 490132	Win: 16/58	Draw: 0/58
+	Score: -2807
+	Not Chosen
+AI 490136	Win: 13/58	Draw: 0/58
+	Score: -3523
+	Not Chosen
+AI 490147	Win: 13/58	Draw: 0/58
+	Score: -4116
+	Not Chosen
+AI 490145	Win: 7/58	Draw: 1/58
+	Score: -7382
+	Not Chosen
+AI 490144	Win: 6/58	Draw: 0/58
+	Score: -7794
+	Not Chosen
+       241        34        24        70
+                 -62       -35         1
+                            -2       -11
+                                     -49
+Best Weight:
+MiddleTime: 25.586	EndTime:60.0104	Mobility_begin_middle:0.601432	0.319975	Position_begin_middle:0.162579	0.659932
+Generation 7
+AI rank:
+AI 1000074	Win: 45/58	Draw: 0/58
+	Score: 6418
+	Chosen
+AI 490162	Win: 42/58	Draw: 1/58
+	Score: 4954
+	Chosen
+AI 490143	Win: 38/58	Draw: 0/58
+	Score: 4524
+	Not Chosen
+AI 490134	Win: 37/58	Draw: 0/58
+	Score: 4328
+	Not Chosen
+AI 490157	Win: 25/58	Draw: 1/58
+	Score: 4133
+	Chosen
+AI 1000084	Win: 45/58	Draw: 0/58
+	Score: 3443
+	Chosen
+AI 490153	Win: 32/58	Draw: 1/58
+	Score: 3211
+	Chosen
+AI 490155	Win: 37/58	Draw: 1/58
+	Score: 2632
+	Not Chosen
+AI 490148	Win: 42/58	Draw: 1/58
+	Score: 2525
+	Not Chosen
+AI 490150	Win: 12/58	Draw: 0/58
+	Score: 1306
+	Chosen
+AI 490144	Win: 33/58	Draw: 0/58
+	Score: 1229
+	Not Chosen
+AI 490136	Win: 14/58	Draw: 0/58
+	Score: 684
+	Not Chosen
+AI 490149	Win: 29/58	Draw: 0/58
+	Score: 560
+	Chosen
+AI 490115	Win: 24/58	Draw: 0/58
+	Score: 402
+	Not Chosen
+AI 490129	Win: 30/58	Draw: 0/58
+	Score: 27
+	Not Chosen
+AI 490156	Win: 38/58	Draw: 0/58
+	Score: -52
+	Not Chosen
+AI 490122	Win: 26/58	Draw: 2/58
+	Score: -110
+	Not Chosen
+AI 490163	Win: 24/58	Draw: 1/58
+	Score: -440
+	Chosen
+AI 490161	Win: 31/58	Draw: 1/58
+	Score: -759
+	Not Chosen
+AI 490160	Win: 40/58	Draw: 1/58
+	Score: -863
+	Chosen
+AI 490147	Win: 36/58	Draw: 0/58
+	Score: -1560
+	Not Chosen
+AI 490158	Win: 33/58	Draw: 1/58
+	Score: -1709
+	Not Chosen
+AI 490151	Win: 7/58	Draw: 0/58
+	Score: -1845
+	Not Chosen
+AI 490096	Win: 17/58	Draw: 3/58
+	Score: -2119
+	Not Chosen
+AI 490159	Win: 10/58	Draw: 0/58
+	Score: -3033
+	Not Chosen
+AI 490164	Win: 33/58	Draw: 1/58
+	Score: -3214
+	Not Chosen
+AI 490154	Win: 6/58	Draw: 0/58
+	Score: -4415
+	Not Chosen
+AI 490152	Win: 8/58	Draw: 1/58
+	Score: -5621
+	Not Chosen
+AI 490165	Win: 33/58	Draw: 1/58
+	Score: -7173
+	Chosen
+AI 490166	Win: 34/58	Draw: 1/58
+	Score: -7463
+	Chosen
+       241        34        24        70
+                 -62       -35         1
+                            -2       -11
+                                     -49
+Best Weight:
+MiddleTime: 25.586	EndTime:60.0104	Mobility_begin_middle:0.601432	0.319975	Position_begin_middle:0.162579	0.659932
+Generation 8
+AI rank:
+AI 1000074	Win: 44/58	Draw: 2/58
+	Score: 7595
+	Chosen
+AI 490161	Win: 46/58	Draw: 1/58
+	Score: 5542
+	Chosen
+AI 1000084	Win: 38/58	Draw: 3/58
+	Score: 5303
+	Chosen
+AI 490181	Win: 27/58	Draw: 2/58
+	Score: 5043
+	Not Chosen
+AI 490182	Win: 28/58	Draw: 2/58
+	Score: 3983
+	Not Chosen
+AI 490148	Win: 24/58	Draw: 1/58
+	Score: 3488
+	Not Chosen
+AI 490136	Win: 32/58	Draw: 1/58
+	Score: 3469
+	Chosen
+AI 490096	Win: 31/58	Draw: 1/58
+	Score: 1654
+	Not Chosen
+AI 490174	Win: 15/58	Draw: 2/58
+	Score: 1515
+	Not Chosen
+AI 490175	Win: 44/58	Draw: 0/58
+	Score: 1480
+	Chosen
+AI 490168	Win: 30/58	Draw: 2/58
+	Score: 1469
+	Chosen
+AI 490134	Win: 36/58	Draw: 1/58
+	Score: 1068
+	Chosen
+AI 490167	Win: 2/58	Draw: 4/58
+	Score: 559
+	Not Chosen
+AI 490180	Win: 38/58	Draw: 1/58
+	Score: 482
+	Not Chosen
+AI 490169	Win: 24/58	Draw: 1/58
+	Score: 390
+	Not Chosen
+AI 490162	Win: 31/58	Draw: 1/58
+	Score: 210
+	Chosen
+AI 490183	Win: 32/58	Draw: 3/58
+	Score: -390
+	Not Chosen
+AI 490179	Win: 30/58	Draw: 1/58
+	Score: -771
+	Not Chosen
+AI 490176	Win: 23/58	Draw: 1/58
+	Score: -807
+	Chosen
+AI 490170	Win: 16/58	Draw: 1/58
+	Score: -930
+	Not Chosen
+AI 490177	Win: 40/58	Draw: 0/58
+	Score: -1207
+	Chosen
+AI 490158	Win: 30/58	Draw: 2/58
+	Score: -1317
+	Not Chosen
+AI 490147	Win: 28/58	Draw: 1/58
+	Score: -1724
+	Not Chosen
+AI 490164	Win: 32/58	Draw: 0/58
+	Score: -1850
+	Not Chosen
+AI 490172	Win: 28/58	Draw: 0/58
+	Score: -3299
+	Chosen
+AI 490178	Win: 22/58	Draw: 2/58
+	Score: -3692
+	Not Chosen
+AI 490173	Win: 5/58	Draw: 0/58
+	Score: -6185
+	Not Chosen
+AI 490171	Win: 13/58	Draw: 0/58
+	Score: -6642
+	Not Chosen
+AI 490185	Win: 34/58	Draw: 1/58
+	Score: -6850
+	Not Chosen
+AI 490184	Win: 28/58	Draw: 1/58
+	Score: -7586
+	Not Chosen
+       241        34        24        70
+                 -62       -35         1
+                            -2       -11
+                                     -49
+Best Weight:
+MiddleTime: 25.586	EndTime:60.0104	Mobility_begin_middle:0.601432	0.319975	Position_begin_middle:0.162579	0.659932
+Generation 9
+AI rank:
+AI 1000074	Win: 30/58	Draw: 4/58
+	Score: 7959
+	Chosen
+AI 490186	Win: 40/58	Draw: 0/58
+	Score: 5793
+	Chosen
+AI 490168	Win: 30/58	Draw: 1/58
+	Score: 5711
+	Chosen
+AI 490161	Win: 28/58	Draw: 2/58
+	Score: 5580
+	Not Chosen
+AI 1000084	Win: 35/58	Draw: 1/58
+	Score: 4053
+	Not Chosen
+AI 490195	Win: 23/58	Draw: 1/58
+	Score: 3737
+	Not Chosen
+AI 490185	Win: 26/58	Draw: 2/58
+	Score: 3656
+	Chosen
+AI 490193	Win: 42/58	Draw: 0/58
+	Score: 2444
+	Not Chosen
+AI 490199	Win: 41/58	Draw: 0/58
+	Score: 2073
+	Not Chosen
+AI 490164	Win: 39/58	Draw: 2/58
+	Score: 1550
+	Chosen
+AI 490174	Win: 23/58	Draw: 4/58
+	Score: 1305
+	Not Chosen
+AI 490194	Win: 23/58	Draw: 3/58
+	Score: 1221
+	Not Chosen
+AI 490200	Win: 33/58	Draw: 1/58
+	Score: 1027
+	Not Chosen
+AI 490188	Win: 34/58	Draw: 3/58
+	Score: 871
+	Chosen
+AI 490190	Win: 33/58	Draw: 1/58
+	Score: 287
+	Chosen
+AI 490201	Win: 37/58	Draw: 2/58
+	Score: -77
+	Chosen
+AI 490204	Win: 25/58	Draw: 1/58
+	Score: -756
+	Not Chosen
+AI 490196	Win: 33/58	Draw: 0/58
+	Score: -866
+	Chosen
+AI 490189	Win: 45/58	Draw: 1/58
+	Score: -876
+	Not Chosen
+AI 490197	Win: 22/58	Draw: 0/58
+	Score: -1031
+	Not Chosen
+AI 490198	Win: 32/58	Draw: 1/58
+	Score: -1141
+	Chosen
+AI 490148	Win: 5/58	Draw: 0/58
+	Score: -1401
+	Not Chosen
+AI 490170	Win: 28/58	Draw: 1/58
+	Score: -1508
+	Not Chosen
+AI 490180	Win: 19/58	Draw: 2/58
+	Score: -1544
+	Not Chosen
+AI 490176	Win: 37/58	Draw: 3/58
+	Score: -3164
+	Not Chosen
+AI 490202	Win: 32/58	Draw: 0/58
+	Score: -3294
+	Not Chosen
+AI 490203	Win: 27/58	Draw: 1/58
+	Score: -7175
+	Chosen
+AI 490192	Win: 2/58	Draw: 0/58
+	Score: -7884
+	Not Chosen
+AI 490191	Win: 8/58	Draw: 1/58
+	Score: -8202
+	Not Chosen
+AI 490187	Win: 18/58	Draw: 2/58
+	Score: -8348
+	Not Chosen
+       241        34        24        70
+                 -62       -35         1
+                            -2       -11
+                                     -49
+Best Weight:
+MiddleTime: 25.586	EndTime:60.0104	Mobility_begin_middle:0.601432	0.319975	Position_begin_middle:0.162579	0.659932
+Generation 10
+AI rank:
+AI 1000074	Win: 41/58	Draw: 1/58
+	Score: 8709
+	Chosen
+AI 490189	Win: 39/58	Draw: 1/58
+	Score: 6198
+	Not Chosen
+AI 490205	Win: 34/58	Draw: 0/58
+	Score: 6189
+	Chosen
+AI 490161	Win: 34/58	Draw: 1/58
+	Score: 6099
+	Not Chosen
+AI 490168	Win: 36/58	Draw: 0/58
+	Score: 4432
+	Chosen
+AI 490208	Win: 33/58	Draw: 1/58
+	Score: 4094
+	Chosen
+AI 490170	Win: 30/58	Draw: 3/58
+	Score: 2650
+	Not Chosen
+AI 490214	Win: 12/58	Draw: 1/58
+	Score: 2576
+	Not Chosen
+AI 490212	Win: 37/58	Draw: 0/58
+	Score: 1991
+	Not Chosen
+AI 490218	Win: 34/58	Draw: 1/58
+	Score: 1695
+	Chosen
+AI 490213	Win: 15/58	Draw: 1/58
+	Score: 1213
+	Not Chosen
+AI 490199	Win: 28/58	Draw: 1/58
+	Score: 1131
+	Not Chosen
+AI 490185	Win: 33/58	Draw: 3/58
+	Score: 1056
+	Not Chosen
+AI 490209	Win: 33/58	Draw: 1/58
+	Score: 465
+	Chosen
+AI 490219	Win: 12/58	Draw: 1/58
+	Score: 380
+	Chosen
+AI 490223	Win: 44/58	Draw: 0/58
+	Score: 288
+	Not Chosen
+AI 490220	Win: 35/58	Draw: 0/58
+	Score: 279
+	Not Chosen
+AI 490217	Win: 33/58	Draw: 1/58
+	Score: -578
+	Chosen
+AI 490204	Win: 34/58	Draw: 0/58
+	Score: -655
+	Not Chosen
+AI 490207	Win: 38/58	Draw: 2/58
+	Score: -965
+	Not Chosen
+AI 1000084	Win: 30/58	Draw: 2/58
+	Score: -987
+	Chosen
+AI 490203	Win: 26/58	Draw: 1/58
+	Score: -1664
+	Chosen
+AI 490215	Win: 16/58	Draw: 2/58
+	Score: -1807
+	Not Chosen
+AI 490216	Win: 18/58	Draw: 1/58
+	Score: -1867
+	Not Chosen
+AI 490176	Win: 36/58	Draw: 2/58
+	Score: -2672
+	Not Chosen
+AI 490210	Win: 36/58	Draw: 1/58
+	Score: -2807
+	Not Chosen
+AI 490206	Win: 18/58	Draw: 1/58
+	Score: -7880
+	Not Chosen
+AI 490222	Win: 14/58	Draw: 0/58
+	Score: -8812
+	Not Chosen
+AI 490211	Win: 18/58	Draw: 0/58
+	Score: -9139
+	Not Chosen
+AI 490221	Win: 8/58	Draw: 1/58
+	Score: -9612
+	Not Chosen
+       241        34        24        70
+                 -62       -35         1
+                            -2       -11
+                                     -49
+Best Weight:
+MiddleTime: 25.586	EndTime:60.0104	Mobility_begin_middle:0.601432	0.319975	Position_begin_middle:0.162579	0.659932
+Generation 0
+AI rank:
+AI 490207	Win: 46/58	Draw: 1/58	Score: 1008	Chosen
+AI 490161	Win: 39/58	Draw: 0/58	Score: 802	Not Chosen
+AI 490170	Win: 38/58	Draw: 1/58	Score: 706	Chosen
+AI 490199	Win: 37/58	Draw: 1/58	Score: 651	Not Chosen
+AI 490211	Win: 39/58	Draw: 1/58	Score: 579	Not Chosen
+AI 490218	Win: 37/58	Draw: 1/58	Score: 557	Not Chosen
+AI 490185	Win: 37/58	Draw: 2/58	Score: 556	Chosen
+AI 490212	Win: 35/58	Draw: 2/58	Score: 535	Not Chosen
+AI 490203	Win: 39/58	Draw: 0/58	Score: 533	Not Chosen
+AI 490216	Win: 31/58	Draw: 0/58	Score: 523	Not Chosen
+AI 1000084	Win: 34/58	Draw: 2/58	Score: 436	Chosen
+AI 490209	Win: 35/58	Draw: 2/58	Score: 398	Not Chosen
+AI 490214	Win: 31/58	Draw: 1/58	Score: 391	Not Chosen
+AI 490210	Win: 35/58	Draw: 3/58	Score: 354	Chosen
+AI 490213	Win: 32/58	Draw: 0/58	Score: 292	Not Chosen
+AI 490189	Win: 31/58	Draw: 1/58	Score: 280	Not Chosen
+AI 490205	Win: 31/58	Draw: 0/58	Score: 220	Chosen
+AI 490223	Win: 30/58	Draw: 1/58	Score: 217	Not Chosen
+AI 490204	Win: 28/58	Draw: 2/58	Score: 129	Chosen
+AI 490222	Win: 27/58	Draw: 2/58	Score: -185	Not Chosen
+AI 490206	Win: 27/58	Draw: 2/58	Score: -214	Not Chosen
+AI 490215	Win: 24/58	Draw: 3/58	Score: -423	Not Chosen
+AI 490219	Win: 21/58	Draw: 0/58	Score: -616	Chosen
+AI 490221	Win: 16/58	Draw: 2/58	Score: -746	Not Chosen
+AI 490168	Win: 17/58	Draw: 1/58	Score: -832	Chosen
+AI 490208	Win: 15/58	Draw: 1/58	Score: -1016	Not Chosen
+AI 490176	Win: 12/58	Draw: 0/58	Score: -1143	Not Chosen
+AI 1000074	Win: 10/58	Draw: 2/58	Score: -1253	Chosen
+AI 490220	Win: 11/58	Draw: 0/58	Score: -1341	Not Chosen
+AI 490217	Win: 8/58	Draw: 0/58	Score: -1398	Not Chosen
+       220       -17       -27        67
+                 -36       -64        37
+                           -12       -21
+                                     -60
+Best Weight:
+MiddleTime:25.6798	EndTime:62.0105	Mobility_begin_middle:0.468625	0.239901	Position_begin_middle:0.342411	0.508166
+Generation 1
+AI rank:
+AI 490213	Win: 44/58	Draw: 1/58	Score: 1472	Chosen
+AI 490209	Win: 42/58	Draw: 0/58	Score: 1451	Chosen
+AI 490205	Win: 41/58	Draw: 1/58	Score: 1412	Not Chosen
+AI 110031	Win: 39/58	Draw: 0/58	Score: 1285	Not Chosen
+AI 110030	Win: 37/58	Draw: 1/58	Score: 1091	Not Chosen
+AI 110037	Win: 37/58	Draw: 3/58	Score: 1040	Chosen
+AI 490168	Win: 38/58	Draw: 2/58	Score: 931	Chosen
+AI 110034	Win: 34/58	Draw: 0/58	Score: 911	Not Chosen
+AI 490199	Win: 32/58	Draw: 0/58	Score: 780	Not Chosen
+AI 490212	Win: 23/58	Draw: 3/58	Score: 422	Not Chosen
+AI 110042	Win: 32/58	Draw: 1/58	Score: 394	Chosen
+AI 110045	Win: 29/58	Draw: 2/58	Score: 223	Not Chosen
+AI 110047	Win: 36/58	Draw: 1/58	Score: 197	Not Chosen
+AI 110048	Win: 21/58	Draw: 1/58	Score: -6	Not Chosen
+AI 490203	Win: 28/58	Draw: 0/58	Score: -57	Not Chosen
+AI 110039	Win: 16/58	Draw: 1/58	Score: -121	Chosen
+AI 110046	Win: 20/58	Draw: 0/58	Score: -172	Not Chosen
+AI 490185	Win: 38/58	Draw: 2/58	Score: -199	Not Chosen
+AI 490208	Win: 18/58	Draw: 2/58	Score: -264	Not Chosen
+AI 110040	Win: 37/58	Draw: 0/58	Score: -318	Not Chosen
+AI 110036	Win: 18/58	Draw: 0/58	Score: -372	Not Chosen
+AI 110049	Win: 13/58	Draw: 1/58	Score: -536	Chosen
+AI 110033	Win: 29/58	Draw: 2/58	Score: -637	Not Chosen
+AI 110043	Win: 35/58	Draw: 1/58	Score: -756	Chosen
+AI 490215	Win: 39/58	Draw: 1/58	Score: -759	Not Chosen
+AI 110041	Win: 16/58	Draw: 2/58	Score: -1260	Chosen
+AI 110035	Win: 5/58	Draw: 0/58	Score: -1356	Not Chosen
+AI 110032	Win: 28/58	Draw: 0/58	Score: -1396	Not Chosen
+AI 110044	Win: 7/58	Draw: 0/58	Score: -1567	Not Chosen
+AI 110038	Win: 24/58	Draw: 0/58	Score: -1833	Chosen
+       332        38        24        67
+                 -62       -35         1
+                            -2       -14
+                                     -60
+Best Weight:
+MiddleTime:  26.39	EndTime:61.9241	Mobility_begin_middle:0.654647	0.206619	Position_begin_middle:0.170626	0.564202
+Generation 2
+AI rank:
+AI 490213	Win: 44/58	Draw: 0/58	Score: 2589	Chosen
+AI 110050	Win: 41/58	Draw: 0/58	Score: 2144	Chosen
+AI 490205	Win: 40/58	Draw: 2/58	Score: 1996	Chosen
+AI 110057	Win: 33/58	Draw: 2/58	Score: 1883	Chosen
+AI 110034	Win: 45/58	Draw: 1/58	Score: 1862	Chosen
+AI 110052	Win: 42/58	Draw: 1/58	Score: 1823	Not Chosen
+AI 110051	Win: 36/58	Draw: 1/58	Score: 1559	Chosen
+AI 110054	Win: 39/58	Draw: 0/58	Score: 1424	Not Chosen
+AI 110069	Win: 37/58	Draw: 1/58	Score: 1009	Not Chosen
+AI 490185	Win: 26/58	Draw: 0/58	Score: 1009	Not Chosen
+AI 110068	Win: 34/58	Draw: 0/58	Score: 403	Not Chosen
+AI 110048	Win: 43/58	Draw: 0/58	Score: 318	Chosen
+AI 110066	Win: 29/58	Draw: 1/58	Score: 270	Chosen
+AI 110043	Win: 28/58	Draw: 0/58	Score: -59	Not Chosen
+AI 110053	Win: 35/58	Draw: 1/58	Score: -259	Chosen
+AI 110061	Win: 35/58	Draw: 1/58	Score: -336	Not Chosen
+AI 490212	Win: 16/58	Draw: 0/58	Score: -596	Not Chosen
+AI 110044	Win: 24/58	Draw: 0/58	Score: -627	Not Chosen
+AI 110056	Win: 15/58	Draw: 1/58	Score: -684	Not Chosen
+AI 110064	Win: 27/58	Draw: 0/58	Score: -720	Not Chosen
+AI 110055	Win: 21/58	Draw: 3/58	Score: -737	Chosen
+AI 490215	Win: 18/58	Draw: 0/58	Score: -783	Not Chosen
+AI 110065	Win: 18/58	Draw: 1/58	Score: -799	Not Chosen
+AI 490168	Win: 35/58	Draw: 1/58	Score: -858	Not Chosen
+AI 110062	Win: 16/58	Draw: 0/58	Score: -949	Not Chosen
+AI 110060	Win: 27/58	Draw: 1/58	Score: -1652	Not Chosen
+AI 110063	Win: 29/58	Draw: 0/58	Score: -1685	Not Chosen
+AI 110067	Win: 6/58	Draw: 2/58	Score: -2178	Not Chosen
+AI 110059	Win: 13/58	Draw: 1/58	Score: -2307	Not Chosen
+AI 110058	Win: 7/58	Draw: 1/58	Score: -3060	Not Chosen
+       332        38        24        67
+                 -62       -35         1
+                            -2       -14
+                                     -60
+Best Weight:
+MiddleTime:  26.39	EndTime:61.9241	Mobility_begin_middle:0.654647	0.206619	Position_begin_middle:0.170626	0.564202
+Generation 3
+AI rank:
+AI 490213	Win: 43/58	Draw: 0/58	Score: 3546	Chosen
+AI 110070	Win: 44/58	Draw: 0/58	Score: 3152	Not Chosen
+AI 110050	Win: 39/58	Draw: 0/58	Score: 2846	Chosen
+AI 110074	Win: 39/58	Draw: 0/58	Score: 2532	Chosen
+AI 110077	Win: 42/58	Draw: 0/58	Score: 2480	Chosen
+AI 110084	Win: 46/58	Draw: 0/58	Score: 2402	Chosen
+AI 110052	Win: 39/58	Draw: 0/58	Score: 2294	Not Chosen
+AI 490205	Win: 35/58	Draw: 2/58	Score: 1957	Not Chosen
+AI 110054	Win: 27/58	Draw: 0/58	Score: 1019	Not Chosen
+AI 110056	Win: 37/58	Draw: 0/58	Score: 790	Not Chosen
+AI 110082	Win: 43/58	Draw: 0/58	Score: 494	Chosen
+AI 110089	Win: 33/58	Draw: 1/58	Score: 383	Not Chosen
+AI 110064	Win: 26/58	Draw: 0/58	Score: 107	Not Chosen
+AI 110076	Win: 39/58	Draw: 0/58	Score: 28	Chosen
+AI 110072	Win: 6/58	Draw: 1/58	Score: -342	Not Chosen
+AI 110083	Win: 36/58	Draw: 0/58	Score: -343	Not Chosen
+AI 110087	Win: 20/58	Draw: 0/58	Score: -371	Not Chosen
+AI 110086	Win: 24/58	Draw: 0/58	Score: -851	Not Chosen
+AI 110085	Win: 25/58	Draw: 1/58	Score: -993	Not Chosen
+AI 490185	Win: 29/58	Draw: 0/58	Score: -1009	Not Chosen
+AI 110080	Win: 35/58	Draw: 1/58	Score: -1048	Not Chosen
+AI 110073	Win: 22/58	Draw: 0/58	Score: -1192	Chosen
+AI 110063	Win: 19/58	Draw: 3/58	Score: -1245	Not Chosen
+AI 110059	Win: 15/58	Draw: 1/58	Score: -1411	Not Chosen
+AI 110071	Win: 30/58	Draw: 0/58	Score: -1680	Chosen
+AI 110078	Win: 34/58	Draw: 1/58	Score: -1850	Chosen
+AI 110081	Win: 6/58	Draw: 1/58	Score: -1870	Not Chosen
+AI 110075	Win: 3/58	Draw: 0/58	Score: -2463	Not Chosen
+AI 110088	Win: 16/58	Draw: 2/58	Score: -3083	Not Chosen
+AI 110079	Win: 10/58	Draw: 2/58	Score: -4279	Not Chosen
+       332        38        24        67
+                 -62       -35         1
+                            -2       -14
+                                     -60
+Best Weight:
+MiddleTime:  26.39	EndTime:61.9241	Mobility_begin_middle:0.654647	0.206619	Position_begin_middle:0.170626	0.564202
+Generation 4
+AI rank:
+AI 490213	Win: 36/58	Draw: 0/58	Score: 4078	Chosen
+AI 110104	Win: 48/58	Draw: 0/58	Score: 3853	Chosen
+AI 110074	Win: 39/58	Draw: 0/58	Score: 3756	Not Chosen
+AI 110090	Win: 39/58	Draw: 0/58	Score: 3638	Not Chosen
+AI 110106	Win: 38/58	Draw: 2/58	Score: 3174	Not Chosen
+AI 110094	Win: 39/58	Draw: 2/58	Score: 2996	Chosen
+AI 110052	Win: 37/58	Draw: 2/58	Score: 2421	Not Chosen
+AI 110072	Win: 24/58	Draw: 0/58	Score: 2417	Chosen
+AI 110079	Win: 35/58	Draw: 0/58	Score: 1338	Chosen
+AI 110098	Win: 39/58	Draw: 0/58	Score: 1090	Not Chosen
+AI 110083	Win: 41/58	Draw: 1/58	Score: 537	Chosen
+AI 110064	Win: 21/58	Draw: 1/58	Score: 426	Not Chosen
+AI 110109	Win: 26/58	Draw: 1/58	Score: 397	Not Chosen
+AI 110050	Win: 38/58	Draw: 0/58	Score: 284	Not Chosen
+AI 110093	Win: 35/58	Draw: 0/58	Score: 211	Chosen
+AI 110103	Win: 29/58	Draw: 0/58	Score: 65	Not Chosen
+AI 110097	Win: 36/58	Draw: 2/58	Score: -458	Not Chosen
+AI 110099	Win: 38/58	Draw: 1/58	Score: -694	Chosen
+AI 110100	Win: 30/58	Draw: 2/58	Score: -1092	Chosen
+AI 110091	Win: 8/58	Draw: 2/58	Score: -1214	Not Chosen
+AI 110095	Win: 19/58	Draw: 3/58	Score: -1489	Not Chosen
+AI 110108	Win: 25/58	Draw: 1/58	Score: -1508	Not Chosen
+AI 110096	Win: 23/58	Draw: 1/58	Score: -1512	Not Chosen
+AI 110101	Win: 28/58	Draw: 2/58	Score: -1808	Chosen
+AI 110105	Win: 26/58	Draw: 1/58	Score: -2002	Not Chosen
+AI 110092	Win: 11/58	Draw: 0/58	Score: -2334	Not Chosen
+AI 110102	Win: 24/58	Draw: 0/58	Score: -2933	Not Chosen
+AI 110107	Win: 12/58	Draw: 0/58	Score: -3152	Not Chosen
+AI 110056	Win: 6/58	Draw: 0/58	Score: -4804	Not Chosen
+AI 110087	Win: 8/58	Draw: 0/58	Score: -5681	Not Chosen
+       332        38        24        67
+                 -62       -35         1
+                            -2       -14
+                                     -60
+Best Weight:
+MiddleTime:  26.39	EndTime:61.9241	Mobility_begin_middle:0.654647	0.206619	Position_begin_middle:0.170626	0.564202
+Generation 0
+AI rank:
+AI 110074	Win: 47/58	Draw: 0/58	Score: 1208	Chosen
+AI 110050	Win: 45/58	Draw: 0/58	Score: 1160	Chosen
+AI 110105	Win: 43/58	Draw: 0/58	Score: 954	Not Chosen
+AI 110087	Win: 44/58	Draw: 3/58	Score: 844	Chosen
+AI 110083	Win: 39/58	Draw: 1/58	Score: 698	Not Chosen
+AI 110109	Win: 35/58	Draw: 0/58	Score: 697	Not Chosen
+AI 110090	Win: 35/58	Draw: 0/58	Score: 650	Chosen
+AI 110095	Win: 37/58	Draw: 2/58	Score: 646	Chosen
+AI 110072	Win: 35/58	Draw: 0/58	Score: 625	Not Chosen
+AI 110094	Win: 37/58	Draw: 0/58	Score: 604	Chosen
+AI 110102	Win: 34/58	Draw: 3/58	Score: 557	Not Chosen
+AI 490213	Win: 38/58	Draw: 3/58	Score: 453	Chosen
+AI 110052	Win: 35/58	Draw: 1/58	Score: 445	Not Chosen
+AI 110104	Win: 37/58	Draw: 1/58	Score: 440	Not Chosen
+AI 110056	Win: 31/58	Draw: 0/58	Score: 279	Chosen
+AI 110092	Win: 34/58	Draw: 1/58	Score: 180	Not Chosen
+AI 110064	Win: 25/58	Draw: 0/58	Score: -32	Not Chosen
+AI 110099	Win: 26/58	Draw: 0/58	Score: -88	Not Chosen
+AI 110091	Win: 22/58	Draw: 1/58	Score: -149	Not Chosen
+AI 110103	Win: 22/58	Draw: 1/58	Score: -414	Not Chosen
+AI 110093	Win: 24/58	Draw: 2/58	Score: -415	Not Chosen
+AI 110079	Win: 22/58	Draw: 0/58	Score: -435	Chosen
+AI 110097	Win: 23/58	Draw: 2/58	Score: -510	Not Chosen
+AI 110098	Win: 23/58	Draw: 1/58	Score: -538	Chosen
+AI 110106	Win: 15/58	Draw: 0/58	Score: -877	Not Chosen
+AI 110101	Win: 16/58	Draw: 0/58	Score: -1134	Chosen
+AI 110107	Win: 12/58	Draw: 0/58	Score: -1210	Not Chosen
+AI 110100	Win: 11/58	Draw: 0/58	Score: -1420	Not Chosen
+AI 110108	Win: 6/58	Draw: 0/58	Score: -1530	Not Chosen
+AI 110096	Win: 6/58	Draw: 0/58	Score: -1688	Not Chosen
+       427        47       -11        98
+                 -62       -36        -1
+                            -2        16
+                                     -49
+Best Weight:
+MiddleTime:29.8172	EndTime:     63	Mobility_begin_middle:0.62957	0.270617	Position_begin_middle:0.13616	0.688949
+Generation 1
+AI rank:
+AI 490213	Win: 42/58	Draw: 1/58	Score: 2115	Chosen
+AI 710031	Win: 45/58	Draw: 1/58	Score: 1979	Not Chosen
+AI 110083	Win: 42/58	Draw: 1/58	Score: 1566	Not Chosen
+AI 110102	Win: 44/58	Draw: 0/58	Score: 1512	Chosen
+AI 710030	Win: 33/58	Draw: 1/58	Score: 1460	Not Chosen
+AI 110094	Win: 41/58	Draw: 1/58	Score: 1455	Chosen
+AI 110099	Win: 36/58	Draw: 0/58	Score: 1438	Chosen
+AI 710034	Win: 32/58	Draw: 1/58	Score: 1170	Not Chosen
+AI 110106	Win: 36/58	Draw: 0/58	Score: 1120	Not Chosen
+AI 710033	Win: 34/58	Draw: 1/58	Score: 1007	Not Chosen
+AI 710032	Win: 30/58	Draw: 1/58	Score: 920	Chosen
+AI 710037	Win: 32/58	Draw: 0/58	Score: 886	Chosen
+AI 110109	Win: 33/58	Draw: 2/58	Score: 873	Not Chosen
+AI 710038	Win: 36/58	Draw: 0/58	Score: 632	Not Chosen
+AI 110064	Win: 40/58	Draw: 2/58	Score: 541	Not Chosen
+AI 710043	Win: 29/58	Draw: 0/58	Score: 98	Not Chosen
+AI 110107	Win: 34/58	Draw: 2/58	Score: -127	Not Chosen
+AI 710036	Win: 19/58	Draw: 0/58	Score: -458	Not Chosen
+AI 710041	Win: 21/58	Draw: 1/58	Score: -819	Not Chosen
+AI 710045	Win: 21/58	Draw: 2/58	Score: -882	Not Chosen
+AI 110104	Win: 27/58	Draw: 5/58	Score: -935	Not Chosen
+AI 710040	Win: 17/58	Draw: 1/58	Score: -1000	Chosen
+AI 710039	Win: 36/58	Draw: 2/58	Score: -1042	Not Chosen
+AI 710042	Win: 9/58	Draw: 1/58	Score: -1071	Chosen
+AI 710035	Win: 15/58	Draw: 0/58	Score: -1398	Not Chosen
+AI 710044	Win: 24/58	Draw: 0/58	Score: -1691	Not Chosen
+AI 710047	Win: 9/58	Draw: 1/58	Score: -1797	Chosen
+AI 710046	Win: 18/58	Draw: 1/58	Score: -2292	Chosen
+AI 110056	Win: 18/58	Draw: 0/58	Score: -2400	Not Chosen
+AI 710048	Win: 3/58	Draw: 0/58	Score: -2860	Not Chosen
+       332        38        24        67
+                 -62       -35         1
+                            -2       -14
+                                     -60
+Best Weight:
+MiddleTime:  26.39	EndTime:61.9241	Mobility_begin_middle:0.654647	0.206619	Position_begin_middle:0.170626	0.564202
+Generation 2
+AI rank:
+AI 110094	Win: 41/58	Draw: 0/58	Score: 2995	Chosen
+AI 710031	Win: 47/58	Draw: 5/58	Score: 2747	Not Chosen
+AI 710050	Win: 41/58	Draw: 1/58	Score: 2548	Not Chosen
+AI 710055	Win: 36/58	Draw: 0/58	Score: 2247	Chosen
+AI 710051	Win: 35/58	Draw: 1/58	Score: 1925	Not Chosen
+AI 110104	Win: 37/58	Draw: 5/58	Score: 1916	Chosen
+AI 710037	Win: 41/58	Draw: 1/58	Score: 1912	Not Chosen
+AI 710049	Win: 41/58	Draw: 0/58	Score: 1448	Not Chosen
+AI 110102	Win: 31/58	Draw: 2/58	Score: 1238	Chosen
+AI 710030	Win: 28/58	Draw: 0/58	Score: 598	Not Chosen
+AI 710063	Win: 25/58	Draw: 1/58	Score: 501	Not Chosen
+AI 710040	Win: 11/58	Draw: 3/58	Score: 204	Chosen
+AI 710060	Win: 41/58	Draw: 1/58	Score: 118	Not Chosen
+AI 710059	Win: 30/58	Draw: 1/58	Score: 64	Chosen
+AI 710056	Win: 37/58	Draw: 2/58	Score: -89	Chosen
+AI 710065	Win: 18/58	Draw: 1/58	Score: -106	Not Chosen
+AI 710054	Win: 8/58	Draw: 1/58	Score: -224	Not Chosen
+AI 710057	Win: 10/58	Draw: 1/58	Score: -280	Not Chosen
+AI 710048	Win: 37/58	Draw: 4/58	Score: -373	Chosen
+AI 710052	Win: 24/58	Draw: 2/58	Score: -649	Not Chosen
+AI 710061	Win: 39/58	Draw: 1/58	Score: -963	Not Chosen
+AI 710068	Win: 31/58	Draw: 0/58	Score: -1050	Not Chosen
+AI 710042	Win: 14/58	Draw: 1/58	Score: -1157	Not Chosen
+AI 710062	Win: 17/58	Draw: 2/58	Score: -1356	Not Chosen
+AI 710064	Win: 28/58	Draw: 1/58	Score: -1456	Chosen
+AI 710041	Win: 21/58	Draw: 1/58	Score: -2128	Not Chosen
+AI 710067	Win: 9/58	Draw: 2/58	Score: -2317	Not Chosen
+AI 710066	Win: 29/58	Draw: 1/58	Score: -2761	Not Chosen
+AI 710058	Win: 21/58	Draw: 2/58	Score: -2770	Chosen
+AI 710053	Win: 20/58	Draw: 1/58	Score: -2782	Not Chosen
+       427        47       -11       127
+                 -62       -36        -1
+                            -2        16
+                                     -49
+Best Weight:
+MiddleTime:29.2218	EndTime:     63	Mobility_begin_middle:0.606303	0.227625	Position_begin_middle:0.164692	0.740922
+Generation 3
+AI rank:
+AI 110104	Win: 39/58	Draw: 0/58	Score: 3581	Chosen
+AI 710050	Win: 35/58	Draw: 1/58	Score: 3126	Not Chosen
+AI 710049	Win: 39/58	Draw: 1/58	Score: 2995	Chosen
+AI 710070	Win: 36/58	Draw: 2/58	Score: 2622	Chosen
+AI 710071	Win: 35/58	Draw: 1/58	Score: 2621	Chosen
+AI 710063	Win: 36/58	Draw: 0/58	Score: 2415	Chosen
+AI 710076	Win: 27/58	Draw: 0/58	Score: 2394	Not Chosen
+AI 710031	Win: 45/58	Draw: 1/58	Score: 2180	Not Chosen
+AI 710081	Win: 42/58	Draw: 2/58	Score: 1006	Not Chosen
+AI 710069	Win: 32/58	Draw: 0/58	Score: 852	Not Chosen
+AI 710062	Win: 40/58	Draw: 0/58	Score: 806	Not Chosen
+AI 710056	Win: 30/58	Draw: 0/58	Score: 652	Not Chosen
+AI 710054	Win: 39/58	Draw: 0/58	Score: 608	Chosen
+AI 710083	Win: 14/58	Draw: 0/58	Score: 559	Not Chosen
+AI 710075	Win: 37/58	Draw: 2/58	Score: 488	Not Chosen
+AI 710074	Win: 38/58	Draw: 2/58	Score: 356	Not Chosen
+AI 710080	Win: 47/58	Draw: 1/58	Score: 39	Not Chosen
+AI 710079	Win: 37/58	Draw: 1/58	Score: -281	Chosen
+AI 710084	Win: 22/58	Draw: 1/58	Score: -653	Chosen
+AI 710088	Win: 10/58	Draw: 1/58	Score: -1096	Not Chosen
+AI 710087	Win: 22/58	Draw: 2/58	Score: -1388	Not Chosen
+AI 710073	Win: 14/58	Draw: 1/58	Score: -1441	Chosen
+AI 710077	Win: 18/58	Draw: 1/58	Score: -1871	Not Chosen
+AI 710072	Win: 6/58	Draw: 3/58	Score: -2039	Not Chosen
+AI 710068	Win: 28/58	Draw: 1/58	Score: -2349	Chosen
+AI 710059	Win: 17/58	Draw: 1/58	Score: -2438	Not Chosen
+AI 710086	Win: 33/58	Draw: 0/58	Score: -2543	Not Chosen
+AI 710085	Win: 20/58	Draw: 0/58	Score: -3511	Not Chosen
+AI 710082	Win: 10/58	Draw: 2/58	Score: -3562	Not Chosen
+AI 710078	Win: 8/58	Draw: 1/58	Score: -4128	Not Chosen
+       332        38        24        93
+                 -62       -35         1
+                            -2       -14
+                                     -60
+Best Weight:
+MiddleTime:26.7716	EndTime:60.1142	Mobility_begin_middle:0.635118	0.246599	Position_begin_middle:0.170394	0.501474
+Generation 4
+AI rank:
+AI 710089	Win: 33/58	Draw: 1/58	Score: 4023	Chosen
+AI 710070	Win: 35/58	Draw: 0/58	Score: 3582	Chosen
+AI 710092	Win: 46/58	Draw: 2/58	Score: 3526	Chosen
+AI 710071	Win: 38/58	Draw: 0/58	Score: 3033	Not Chosen
+AI 710050	Win: 43/58	Draw: 2/58	Score: 3020	Not Chosen
+AI 110104	Win: 35/58	Draw: 1/58	Score: 2993	Chosen
+AI 710054	Win: 32/58	Draw: 1/58	Score: 2810	Not Chosen
+AI 710090	Win: 15/58	Draw: 3/58	Score: 2098	Not Chosen
+AI 710095	Win: 43/58	Draw: 0/58	Score: 1358	Not Chosen
+AI 710049	Win: 36/58	Draw: 0/58	Score: 1271	Not Chosen
+AI 710091	Win: 31/58	Draw: 3/58	Score: 1135	Not Chosen
+AI 710104	Win: 32/58	Draw: 0/58	Score: 965	Not Chosen
+AI 710094	Win: 30/58	Draw: 1/58	Score: 623	Not Chosen
+AI 710099	Win: 39/58	Draw: 4/58	Score: 286	Chosen
+AI 710077	Win: 22/58	Draw: 4/58	Score: 131	Not Chosen
+AI 710082	Win: 10/58	Draw: 1/58	Score: -142	Not Chosen
+AI 710101	Win: 40/58	Draw: 0/58	Score: -196	Not Chosen
+AI 710103	Win: 13/58	Draw: 1/58	Score: -235	Not Chosen
+AI 710098	Win: 18/58	Draw: 1/58	Score: -578	Not Chosen
+AI 710108	Win: 32/58	Draw: 3/58	Score: -1129	Not Chosen
+AI 710084	Win: 35/58	Draw: 2/58	Score: -1537	Chosen
+AI 710107	Win: 33/58	Draw: 0/58	Score: -1608	Chosen
+AI 710096	Win: 12/58	Draw: 0/58	Score: -1719	Chosen
+AI 710100	Win: 40/58	Draw: 0/58	Score: -1889	Not Chosen
+AI 710105	Win: 11/58	Draw: 1/58	Score: -2572	Chosen
+AI 710093	Win: 13/58	Draw: 2/58	Score: -3495	Not Chosen
+AI 710097	Win: 10/58	Draw: 3/58	Score: -3537	Chosen
+AI 710106	Win: 35/58	Draw: 2/58	Score: -3693	Chosen
+AI 710102	Win: 20/58	Draw: 1/58	Score: -4117	Not Chosen
+AI 710081	Win: 18/58	Draw: 1/58	Score: -4407	Not Chosen
+       427       -36       -11      -179
+                 -62       -36        -1
+                             2        16
+                                     -49
+Best Weight:
+MiddleTime:28.6419	EndTime:61.2658	Mobility_begin_middle:0.604153	0.223965	Position_begin_middle:0.153021	0.746978
+Generation 5
+AI rank:
+AI 710109	Win: 47/58	Draw: 1/58	Score: 5229	Chosen
+AI 710054	Win: 41/58	Draw: 2/58	Score: 4493	Chosen
+AI 710081	Win: 30/58	Draw: 1/58	Score: 3862	Not Chosen
+AI 710110	Win: 37/58	Draw: 1/58	Score: 3583	Not Chosen
+AI 710070	Win: 31/58	Draw: 2/58	Score: 3480	Chosen
+AI 710093	Win: 38/58	Draw: 1/58	Score: 3404	Chosen
+AI 710090	Win: 32/58	Draw: 2/58	Score: 3302	Not Chosen
+AI 710050	Win: 46/58	Draw: 1/58	Score: 3212	Not Chosen
+AI 710111	Win: 40/58	Draw: 0/58	Score: 1820	Chosen
+AI 710104	Win: 37/58	Draw: 1/58	Score: 1806	Chosen
+AI 710123	Win: 27/58	Draw: 3/58	Score: 1362	Not Chosen
+AI 710112	Win: 42/58	Draw: 0/58	Score: 1288	Not Chosen
+AI 710082	Win: 36/58	Draw: 2/58	Score: 665	Not Chosen
+AI 710125	Win: 42/58	Draw: 0/58	Score: 295	Chosen
+AI 710124	Win: 17/58	Draw: 1/58	Score: 294	Chosen
+AI 710120	Win: 31/58	Draw: 3/58	Score: -240	Not Chosen
+AI 710115	Win: 14/58	Draw: 1/58	Score: -659	Chosen
+AI 710106	Win: 19/58	Draw: 1/58	Score: -696	Not Chosen
+AI 710118	Win: 37/58	Draw: 1/58	Score: -1265	Not Chosen
+AI 710114	Win: 31/58	Draw: 2/58	Score: -1475	Not Chosen
+AI 710126	Win: 8/58	Draw: 0/58	Score: -1556	Not Chosen
+AI 710117	Win: 16/58	Draw: 1/58	Score: -1977	Not Chosen
+AI 710127	Win: 14/58	Draw: 4/58	Score: -2511	Not Chosen
+AI 710122	Win: 13/58	Draw: 2/58	Score: -2769	Not Chosen
+AI 710116	Win: 34/58	Draw: 3/58	Score: -3157	Not Chosen
+AI 710097	Win: 13/58	Draw: 1/58	Score: -3631	Not Chosen
+AI 710119	Win: 14/58	Draw: 1/58	Score: -4453	Chosen
+AI 710121	Win: 29/58	Draw: 2/58	Score: -4463	Not Chosen
+AI 710101	Win: 15/58	Draw: 1/58	Score: -4487	Not Chosen
+AI 710113	Win: 17/58	Draw: 3/58	Score: -4756	Not Chosen
+       334        38        24        93
+                 -62       -35         1
+                            -2       -21
+                                     -60
+Best Weight:
+MiddleTime:28.2815	EndTime: 60.329	Mobility_begin_middle:0.580365	0.209357	Position_begin_middle:0.176686	0.444753
+Generation 6
+AI rank:
+AI 710129	Win: 40/58	Draw: 1/58	Score: 6025	Chosen
+AI 710109	Win: 38/58	Draw: 1/58	Score: 5229	Not Chosen
+AI 710124	Win: 37/58	Draw: 1/58	Score: 4532	Not Chosen
+AI 710114	Win: 41/58	Draw: 0/58	Score: 4447	Chosen
+AI 710070	Win: 33/58	Draw: 1/58	Score: 4141	Not Chosen
+AI 710054	Win: 34/58	Draw: 0/58	Score: 3805	Chosen
+AI 710050	Win: 36/58	Draw: 1/58	Score: 3656	Chosen
+AI 710128	Win: 36/58	Draw: 1/58	Score: 3636	Not Chosen
+AI 710130	Win: 37/58	Draw: 0/58	Score: 2407	Chosen
+AI 710145	Win: 44/58	Draw: 0/58	Score: 1695	Chosen
+AI 710133	Win: 32/58	Draw: 2/58	Score: 1658	Chosen
+AI 710131	Win: 31/58	Draw: 2/58	Score: 1580	Not Chosen
+AI 710112	Win: 25/58	Draw: 2/58	Score: 1542	Not Chosen
+AI 710138	Win: 37/58	Draw: 2/58	Score: 832	Not Chosen
+AI 710144	Win: 38/58	Draw: 0/58	Score: 785	Not Chosen
+AI 710140	Win: 28/58	Draw: 0/58	Score: -703	Not Chosen
+AI 710139	Win: 16/58	Draw: 0/58	Score: -904	Not Chosen
+AI 710143	Win: 37/58	Draw: 2/58	Score: -925	Chosen
+AI 710134	Win: 20/58	Draw: 0/58	Score: -1321	Not Chosen
+AI 710136	Win: 37/58	Draw: 0/58	Score: -1591	Not Chosen
+AI 710142	Win: 24/58	Draw: 0/58	Score: -1941	Not Chosen
+AI 710137	Win: 5/58	Draw: 0/58	Score: -2860	Not Chosen
+AI 710115	Win: 19/58	Draw: 0/58	Score: -3304	Not Chosen
+AI 710132	Win: 20/58	Draw: 0/58	Score: -3531	Not Chosen
+AI 710125	Win: 34/58	Draw: 1/58	Score: -4010	Chosen
+AI 710097	Win: 29/58	Draw: 1/58	Score: -4228	Not Chosen
+AI 710135	Win: 16/58	Draw: 0/58	Score: -4232	Not Chosen
+AI 710146	Win: 12/58	Draw: 1/58	Score: -4703	Not Chosen
+AI 710147	Win: 9/58	Draw: 1/58	Score: -5793	Not Chosen
+AI 710141	Win: 15/58	Draw: 0/58	Score: -5924	Chosen
+       334        55        24        93
+                 -62       -35         1
+                            -2       -14
+                                     -60
+Best Weight:
+MiddleTime:28.8979	EndTime: 59.594	Mobility_begin_middle:0.59345	0.185975	Position_begin_middle:0.179348	0.474704
+Generation 7
+AI rank:
+AI 710148	Win: 29/58	Draw: 1/58	Score: 6204	Chosen
+AI 710128	Win: 31/58	Draw: 1/58	Score: 5594	Not Chosen
+AI 710070	Win: 36/58	Draw: 4/58	Score: 5235	Chosen
+AI 710151	Win: 33/58	Draw: 0/58	Score: 4796	Chosen
+AI 710109	Win: 44/58	Draw: 0/58	Score: 4771	Not Chosen
+AI 710150	Win: 39/58	Draw: 0/58	Score: 4311	Chosen
+AI 710050	Win: 34/58	Draw: 2/58	Score: 4115	Not Chosen
+AI 710143	Win: 12/58	Draw: 1/58	Score: 2976	Chosen
+AI 710140	Win: 42/58	Draw: 0/58	Score: 2591	Chosen
+AI 710124	Win: 41/58	Draw: 1/58	Score: 2477	Not Chosen
+AI 710149	Win: 25/58	Draw: 1/58	Score: 2250	Not Chosen
+AI 710131	Win: 33/58	Draw: 5/58	Score: 1975	Not Chosen
+AI 710163	Win: 32/58	Draw: 4/58	Score: 1790	Not Chosen
+AI 710154	Win: 42/58	Draw: 1/58	Score: 1550	Chosen
+AI 710159	Win: 40/58	Draw: 1/58	Score: -139	Chosen
+AI 710137	Win: 11/58	Draw: 1/58	Score: -531	Not Chosen
+AI 710166	Win: 33/58	Draw: 2/58	Score: -999	Not Chosen
+AI 710153	Win: 21/58	Draw: 0/58	Score: -1570	Not Chosen
+AI 710165	Win: 26/58	Draw: 2/58	Score: -1592	Not Chosen
+AI 710164	Win: 29/58	Draw: 1/58	Score: -1861	Not Chosen
+AI 710167	Win: 8/58	Draw: 3/58	Score: -1876	Not Chosen
+AI 710152	Win: 29/58	Draw: 3/58	Score: -3318	Chosen
+AI 710160	Win: 36/58	Draw: 0/58	Score: -3531	Not Chosen
+AI 710158	Win: 39/58	Draw: 2/58	Score: -3612	Not Chosen
+AI 710157	Win: 11/58	Draw: 3/58	Score: -3968	Not Chosen
+AI 710132	Win: 41/58	Draw: 0/58	Score: -4150	Chosen
+AI 710161	Win: 17/58	Draw: 1/58	Score: -4162	Chosen
+AI 710162	Win: 6/58	Draw: 1/58	Score: -5810	Not Chosen
+AI 710156	Win: 17/58	Draw: 2/58	Score: -6546	Not Chosen
+AI 710155	Win: 11/58	Draw: 1/58	Score: -6970	Not Chosen
+       334        38        15        93
+                 -62       -35         1
+                            -2       -21
+                                     -60
+Best Weight:
+MiddleTime:28.7176	EndTime:  61.71	Mobility_begin_middle:0.594601	0.208051	Position_begin_middle:0.163233	0.393981
+Generation 8
+AI rank:
+AI 710150	Win: 44/58	Draw: 0/58	Score: 7429	Chosen
+AI 710143	Win: 41/58	Draw: 2/58	Score: 6653	Not Chosen
+AI 710070	Win: 41/58	Draw: 0/58	Score: 6129	Not Chosen
+AI 710154	Win: 40/58	Draw: 0/58	Score: 5733	Not Chosen
+AI 710169	Win: 43/58	Draw: 1/58	Score: 5077	Chosen
+AI 710128	Win: 19/58	Draw: 0/58	Score: 4224	Not Chosen
+AI 710163	Win: 43/58	Draw: 0/58	Score: 4087	Not Chosen
+AI 710168	Win: 14/58	Draw: 0/58	Score: 3418	Not Chosen
+AI 710174	Win: 35/58	Draw: 1/58	Score: 2976	Not Chosen
+AI 710170	Win: 33/58	Draw: 0/58	Score: 2703	Not Chosen
+AI 710182	Win: 36/58	Draw: 2/58	Score: 2451	Chosen
+AI 710149	Win: 43/58	Draw: 2/58	Score: 2444	Not Chosen
+AI 710176	Win: 16/58	Draw: 0/58	Score: 1882	Not Chosen
+AI 710173	Win: 16/58	Draw: 1/58	Score: 953	Not Chosen
+AI 710186	Win: 35/58	Draw: 2/58	Score: -219	Chosen
+AI 710183	Win: 33/58	Draw: 2/58	Score: -539	Not Chosen
+AI 710137	Win: 13/58	Draw: 0/58	Score: -1156	Chosen
+AI 710156	Win: 41/58	Draw: 1/58	Score: -1207	Chosen
+AI 710166	Win: 37/58	Draw: 2/58	Score: -1302	Not Chosen
+AI 710184	Win: 15/58	Draw: 0/58	Score: -2732	Not Chosen
+AI 710171	Win: 6/58	Draw: 0/58	Score: -3268	Not Chosen
+AI 710175	Win: 37/58	Draw: 2/58	Score: -3744	Chosen
+AI 710179	Win: 22/58	Draw: 3/58	Score: -3894	Not Chosen
+AI 710177	Win: 29/58	Draw: 0/58	Score: -3899	Chosen
+AI 710185	Win: 29/58	Draw: 1/58	Score: -3917	Chosen
+AI 710181	Win: 20/58	Draw: 1/58	Score: -3953	Not Chosen
+AI 710178	Win: 12/58	Draw: 0/58	Score: -5208	Not Chosen
+AI 710180	Win: 40/58	Draw: 0/58	Score: -6475	Chosen
+AI 710172	Win: 12/58	Draw: 1/58	Score: -6991	Not Chosen
+AI 710140	Win: 13/58	Draw: 0/58	Score: -7655	Not Chosen
+       332        46        24        93
+                 -62       -28         0
+                            -5       -15
+                                     -60
+Best Weight:
+MiddleTime:25.4436	EndTime:57.7236	Mobility_begin_middle:0.656371	0.282177	Position_begin_middle:0.177278	0.457983
+Generation 9
+AI rank:
+AI 710183	Win: 34/58	Draw: 1/58	Score: 7668	Chosen
+AI 710154	Win: 40/58	Draw: 2/58	Score: 7403	Not Chosen
+AI 710150	Win: 44/58	Draw: 1/58	Score: 7319	Not Chosen
+AI 710192	Win: 33/58	Draw: 0/58	Score: 5832	Not Chosen
+AI 710188	Win: 34/58	Draw: 5/58	Score: 5512	Chosen
+AI 710143	Win: 44/58	Draw: 0/58	Score: 5363	Chosen
+AI 710181	Win: 36/58	Draw: 1/58	Score: 4829	Not Chosen
+AI 710187	Win: 28/58	Draw: 2/58	Score: 3296	Chosen
+AI 710189	Win: 40/58	Draw: 1/58	Score: 3239	Not Chosen
+AI 710202	Win: 32/58	Draw: 2/58	Score: 2768	Chosen
+AI 710193	Win: 28/58	Draw: 1/58	Score: 2646	Not Chosen
+AI 710203	Win: 28/58	Draw: 3/58	Score: 2434	Not Chosen
+AI 710204	Win: 16/58	Draw: 1/58	Score: 933	Not Chosen
+AI 710206	Win: 39/58	Draw: 0/58	Score: 670	Chosen
+AI 710190	Win: 11/58	Draw: 2/58	Score: 49	Not Chosen
+AI 710195	Win: 31/58	Draw: 1/58	Score: -977	Not Chosen
+AI 710185	Win: 20/58	Draw: 2/58	Score: -1097	Chosen
+AI 710197	Win: 22/58	Draw: 0/58	Score: -1402	Not Chosen
+AI 710201	Win: 25/58	Draw: 1/58	Score: -1844	Not Chosen
+AI 710156	Win: 25/58	Draw: 0/58	Score: -2817	Not Chosen
+AI 710194	Win: 37/58	Draw: 1/58	Score: -3302	Not Chosen
+AI 710191	Win: 29/58	Draw: 0/58	Score: -3888	Chosen
+AI 710140	Win: 18/58	Draw: 1/58	Score: -3919	Not Chosen
+AI 710184	Win: 29/58	Draw: 3/58	Score: -3980	Chosen
+AI 710205	Win: 24/58	Draw: 0/58	Score: -4201	Chosen
+AI 710196	Win: 20/58	Draw: 3/58	Score: -4281	Not Chosen
+AI 710198	Win: 31/58	Draw: 1/58	Score: -4771	Not Chosen
+AI 710200	Win: 36/58	Draw: 0/58	Score: -6090	Not Chosen
+AI 710177	Win: 6/58	Draw: 2/58	Score: -8544	Not Chosen
+AI 710199	Win: 11/58	Draw: 1/58	Score: -8848	Chosen
+       334        69        24      -179
+                 -88       -35         1
+                            -2       -14
+                                     -60
+Best Weight:
+MiddleTime:27.4935	EndTime:     63	Mobility_begin_middle:0.807903	0.227366	Position_begin_middle:0.199208	0.746667
+Generation 10
+AI rank:
+AI 710189	Win: 42/58	Draw: 0/58	Score: 8632	Chosen
+AI 710154	Win: 36/58	Draw: 2/58	Score: 7742	Chosen
+AI 710187	Win: 33/58	Draw: 1/58	Score: 7550	Not Chosen
+AI 710213	Win: 47/58	Draw: 1/58	Score: 7408	Not Chosen
+AI 710209	Win: 34/58	Draw: 0/58	Score: 5834	Not Chosen
+AI 710203	Win: 35/58	Draw: 1/58	Score: 5123	Not Chosen
+AI 710208	Win: 36/58	Draw: 1/58	Score: 4025	Chosen
+AI 710184	Win: 43/58	Draw: 2/58	Score: 3888	Not Chosen
+AI 710183	Win: 1/58	Draw: 1/58	Score: 3597	Not Chosen
+AI 710212	Win: 31/58	Draw: 2/58	Score: 3345	Not Chosen
+AI 710221	Win: 26/58	Draw: 1/58	Score: 2361	Chosen
+AI 710222	Win: 18/58	Draw: 1/58	Score: 2079	Not Chosen
+AI 710225	Win: 42/58	Draw: 1/58	Score: 1802	Chosen
+AI 710218	Win: 31/58	Draw: 0/58	Score: 1394	Not Chosen
+AI 710207	Win: 38/58	Draw: 1/58	Score: 713	Not Chosen
+AI 710215	Win: 29/58	Draw: 1/58	Score: -969	Not Chosen
+AI 710140	Win: 30/58	Draw: 0/58	Score: -1055	Not Chosen
+AI 710220	Win: 30/58	Draw: 2/58	Score: -1943	Chosen
+AI 710198	Win: 13/58	Draw: 0/58	Score: -2705	Not Chosen
+AI 710156	Win: 21/58	Draw: 0/58	Score: -3465	Chosen
+AI 710216	Win: 41/58	Draw: 1/58	Score: -3557	Not Chosen
+AI 710210	Win: 34/58	Draw: 1/58	Score: -3586	Chosen
+AI 710224	Win: 24/58	Draw: 0/58	Score: -3755	Chosen
+AI 710199	Win: 29/58	Draw: 0/58	Score: -3842	Not Chosen
+AI 710214	Win: 27/58	Draw: 1/58	Score: -4366	Chosen
+AI 710195	Win: 5/58	Draw: 2/58	Score: -5288	Not Chosen
+AI 710217	Win: 23/58	Draw: 3/58	Score: -5342	Not Chosen
+AI 710219	Win: 21/58	Draw: 3/58	Score: -6631	Not Chosen
+AI 710223	Win: 16/58	Draw: 2/58	Score: -9353	Not Chosen
+AI 710211	Win: 18/58	Draw: 1/58	Score: -9636	Chosen
+       400        58         7      -239
+                 -88       -36        -1
+                             3       -17
+                                     -49
+Best Weight:
+MiddleTime:27.5085	EndTime:62.4225	Mobility_begin_middle:0.772482	0.265214	Position_begin_middle:0.0620652	0.70308
+Generation 11
+AI rank:
+AI 710227	Win: 42/58	Draw: 0/58	Score: 9536	Chosen
+AI 710209	Win: 46/58	Draw: 0/58	Score: 8728	Chosen
+AI 710183	Win: 43/58	Draw: 1/58	Score: 8425	Chosen
+AI 710232	Win: 29/58	Draw: 1/58	Score: 7424	Not Chosen
+AI 710214	Win: 39/58	Draw: 0/58	Score: 5786	Chosen
+AI 710231	Win: 24/58	Draw: 1/58	Score: 5528	Not Chosen
+AI 710241	Win: 41/58	Draw: 0/58	Score: 4836	Chosen
+AI 710213	Win: 38/58	Draw: 0/58	Score: 4709	Chosen
+AI 710187	Win: 34/58	Draw: 1/58	Score: 3911	Not Chosen
+AI 710228	Win: 23/58	Draw: 3/58	Score: 2934	Chosen
+AI 710219	Win: 29/58	Draw: 0/58	Score: 2241	Not Chosen
+AI 710237	Win: 31/58	Draw: 2/58	Score: 2167	Not Chosen
+AI 710226	Win: 41/58	Draw: 0/58	Score: 2000	Not Chosen
+AI 710222	Win: 22/58	Draw: 0/58	Score: 1826	Not Chosen
+AI 710238	Win: 20/58	Draw: 1/58	Score: 1007	Not Chosen
+AI 710240	Win: 34/58	Draw: 2/58	Score: -475	Not Chosen
+AI 710230	Win: 34/58	Draw: 1/58	Score: -523	Chosen
+AI 710217	Win: 45/58	Draw: 0/58	Score: -1637	Chosen
+AI 710211	Win: 33/58	Draw: 0/58	Score: -1837	Not Chosen
+AI 710233	Win: 32/58	Draw: 2/58	Score: -3651	Chosen
+AI 710239	Win: 25/58	Draw: 2/58	Score: -4092	Not Chosen
+AI 710243	Win: 20/58	Draw: 1/58	Score: -4709	Not Chosen
+AI 710235	Win: 15/58	Draw: 1/58	Score: -4757	Not Chosen
+AI 710236	Win: 36/58	Draw: 3/58	Score: -4921	Not Chosen
+AI 710229	Win: 8/58	Draw: 0/58	Score: -5006	Not Chosen
+AI 710244	Win: 4/58	Draw: 0/58	Score: -5099	Not Chosen
+AI 710242	Win: 12/58	Draw: 0/58	Score: -6473	Chosen
+AI 710215	Win: 19/58	Draw: 1/58	Score: -7560	Not Chosen
+AI 710195	Win: 21/58	Draw: 0/58	Score: -9979	Not Chosen
+AI 710234	Win: 18/58	Draw: 1/58	Score: -10339	Not Chosen
+       334        69        24      -173
+                 -88       -35         1
+                            -2       -14
+                                     -60
+Best Weight:
+MiddleTime:26.3508	EndTime:     63	Mobility_begin_middle:0.804229	0.232259	Position_begin_middle:0.20242	0.737798
+Generation 12
+AI rank:
+AI 710246	Win: 36/58	Draw: 4/58	Score: 10149	Chosen
+AI 710209	Win: 45/58	Draw: 3/58	Score: 9711	Not Chosen
+AI 710183	Win: 39/58	Draw: 0/58	Score: 9603	Not Chosen
+AI 710231	Win: 34/58	Draw: 0/58	Score: 7926	Chosen
+AI 710228	Win: 36/58	Draw: 0/58	Score: 6368	Chosen
+AI 710248	Win: 36/58	Draw: 0/58	Score: 5640	Chosen
+AI 710227	Win: 30/58	Draw: 0/58	Score: 5616	Not Chosen
+AI 710250	Win: 39/58	Draw: 0/58	Score: 5195	Not Chosen
+AI 710187	Win: 25/58	Draw: 1/58	Score: 3743	Not Chosen
+AI 710254	Win: 36/58	Draw: 3/58	Score: 2384	Not Chosen
+AI 710245	Win: 33/58	Draw: 0/58	Score: 2343	Chosen
+AI 710247	Win: 20/58	Draw: 0/58	Score: 2337	Not Chosen
+AI 710229	Win: 26/58	Draw: 1/58	Score: 1611	Not Chosen
+AI 710251	Win: 15/58	Draw: 0/58	Score: 1275	Not Chosen
+AI 710257	Win: 29/58	Draw: 0/58	Score: 1034	Not Chosen
+AI 710259	Win: 24/58	Draw: 0/58	Score: -648	Chosen
+AI 710237	Win: 44/58	Draw: 1/58	Score: -728	Chosen
+AI 710263	Win: 15/58	Draw: 0/58	Score: -1448	Chosen
+AI 710239	Win: 35/58	Draw: 0/58	Score: -1521	Not Chosen
+AI 710262	Win: 42/58	Draw: 1/58	Score: -3384	Not Chosen
+AI 710252	Win: 25/58	Draw: 1/58	Score: -3665	Chosen
+AI 710258	Win: 40/58	Draw: 0/58	Score: -4211	Not Chosen
+AI 710260	Win: 36/58	Draw: 1/58	Score: -4470	Not Chosen
+AI 710256	Win: 29/58	Draw: 0/58	Score: -4764	Not Chosen
+AI 710255	Win: 25/58	Draw: 0/58	Score: -5153	Not Chosen
+AI 710261	Win: 12/58	Draw: 0/58	Score: -6202	Not Chosen
+AI 710243	Win: 24/58	Draw: 1/58	Score: -7848	Not Chosen
+AI 710249	Win: 4/58	Draw: 0/58	Score: -8188	Not Chosen
+AI 710215	Win: 14/58	Draw: 0/58	Score: -11088	Not Chosen
+AI 710253	Win: 13/58	Draw: 1/58	Score: -11617	Chosen
+       334        38        24        93
+                  91       -30         0
+                            -3       -21
+                                     -60
+Best Weight:
+MiddleTime:29.5141	EndTime:     63	Mobility_begin_middle:0.463273	0.189814	Position_begin_middle:0.208862	0.491736
+Generation 13
+AI rank:
+AI 710265	Win: 40/58	Draw: 0/58	Score: 10944	Chosen
+AI 710183	Win: 36/58	Draw: 1/58	Score: 10206	Not Chosen
+AI 710246	Win: 38/58	Draw: 1/58	Score: 9997	Chosen
+AI 710231	Win: 33/58	Draw: 0/58	Score: 8202	Not Chosen
+AI 710239	Win: 33/58	Draw: 1/58	Score: 6659	Chosen
+AI 710266	Win: 42/58	Draw: 0/58	Score: 6630	Not Chosen
+AI 710250	Win: 37/58	Draw: 0/58	Score: 5840	Chosen
+AI 710262	Win: 26/58	Draw: 0/58	Score: 5618	Not Chosen
+AI 710228	Win: 42/58	Draw: 0/58	Score: 4315	Not Chosen
+AI 710269	Win: 40/58	Draw: 0/58	Score: 3391	Chosen
+AI 710264	Win: 41/58	Draw: 0/58	Score: 3180	Not Chosen
+AI 710280	Win: 43/58	Draw: 2/58	Score: 2769	Not Chosen
+AI 710273	Win: 28/58	Draw: 1/58	Score: 2337	Not Chosen
+AI 710270	Win: 43/58	Draw: 1/58	Score: 2167	Not Chosen
+AI 710274	Win: 40/58	Draw: 1/58	Score: 66	Not Chosen
+AI 710277	Win: 11/58	Draw: 1/58	Score: 33	Chosen
+AI 710281	Win: 25/58	Draw: 0/58	Score: -1499	Not Chosen
+AI 710282	Win: 18/58	Draw: 0/58	Score: -1591	Chosen
+AI 710279	Win: 22/58	Draw: 0/58	Score: -2162	Chosen
+AI 710278	Win: 26/58	Draw: 1/58	Score: -3459	Not Chosen
+AI 710267	Win: 40/58	Draw: 3/58	Score: -3741	Chosen
+AI 710258	Win: 27/58	Draw: 0/58	Score: -4182	Not Chosen
+AI 710271	Win: 13/58	Draw: 1/58	Score: -4878	Not Chosen
+AI 710275	Win: 27/58	Draw: 3/58	Score: -5024	Not Chosen
+AI 710276	Win: 19/58	Draw: 0/58	Score: -5550	Not Chosen
+AI 710283	Win: 18/58	Draw: 0/58	Score: -6929	Chosen
+AI 710215	Win: 15/58	Draw: 0/58	Score: -9069	Not Chosen
+AI 710255	Win: 15/58	Draw: 0/58	Score: -9248	Chosen
+AI 710268	Win: 16/58	Draw: 0/58	Score: -12021	Not Chosen
+AI 710272	Win: 7/58	Draw: 1/58	Score: -13001	Not Chosen
+       334       -40        28       179
+                  45       -28         1
+                            -4       -21
+                                     -84
+Best Weight:
+MiddleTime:27.1734	EndTime:     63	Mobility_begin_middle:0.506138	0.177681	Position_begin_middle:0.145141	0.453926
+Generation 14
+AI rank:
+AI 710266	Win: 41/58	Draw: 1/58	Score: 11892	Chosen
+AI 710265	Win: 40/58	Draw: 2/58	Score: 10970	Chosen
+AI 710183	Win: 41/58	Draw: 0/58	Score: 10833	Not Chosen
+AI 710285	Win: 49/58	Draw: 1/58	Score: 7689	Chosen
+AI 710284	Win: 41/58	Draw: 0/58	Score: 7605	Chosen
+AI 710289	Win: 14/58	Draw: 0/58	Score: 7187	Not Chosen
+AI 710246	Win: 36/58	Draw: 0/58	Score: 5139	Not Chosen
+AI 710279	Win: 15/58	Draw: 0/58	Score: 4872	Not Chosen
+AI 710286	Win: 41/58	Draw: 0/58	Score: 4400	Not Chosen
+AI 710287	Win: 43/58	Draw: 0/58	Score: 4292	Chosen
+AI 710258	Win: 9/58	Draw: 0/58	Score: 4144	Not Chosen
+AI 710299	Win: 19/58	Draw: 0/58	Score: 2133	Chosen
+AI 710293	Win: 17/58	Draw: 0/58	Score: 1696	Not Chosen
+AI 710290	Win: 17/58	Draw: 1/58	Score: 1572	Not Chosen
+AI 710276	Win: 31/58	Draw: 2/58	Score: 12	Not Chosen
+AI 710296	Win: 31/58	Draw: 1/58	Score: -113	Chosen
+AI 710277	Win: 37/58	Draw: 0/58	Score: -730	Not Chosen
+AI 710267	Win: 41/58	Draw: 0/58	Score: -2606	Chosen
+AI 710297	Win: 41/58	Draw: 1/58	Score: -2626	Chosen
+AI 710301	Win: 17/58	Draw: 0/58	Score: -2690	Not Chosen
+AI 710298	Win: 17/58	Draw: 1/58	Score: -2921	Not Chosen
+AI 710288	Win: 40/58	Draw: 0/58	Score: -3592	Not Chosen
+AI 710294	Win: 41/58	Draw: 0/58	Score: -3979	Chosen
+AI 710295	Win: 38/58	Draw: 0/58	Score: -5281	Not Chosen
+AI 710268	Win: 17/58	Draw: 0/58	Score: -5786	Not Chosen
+AI 710300	Win: 9/58	Draw: 0/58	Score: -8210	Not Chosen
+AI 710271	Win: 21/58	Draw: 1/58	Score: -9739	Not Chosen
+AI 710302	Win: 21/58	Draw: 1/58	Score: -9795	Not Chosen
+AI 710291	Win: 15/58	Draw: 0/58	Score: -12893	Not Chosen
+AI 710292	Win: 23/58	Draw: 2/58	Score: -13475	Not Chosen
+       334        38        24        93
+                  91       -30        -1
+                            -2       -21
+                                     -60
+Best Weight:
+MiddleTime:30.3567	EndTime:     63	Mobility_begin_middle:0.490263	0.174191	Position_begin_middle:0.17269	0.463269
+Generation 15
+AI rank:
+AI 710304	Win: 41/58	Draw: 0/58	Score: 12582	Chosen
+AI 710265	Win: 36/58	Draw: 1/58	Score: 11603	Not Chosen
+AI 710285	Win: 35/58	Draw: 1/58	Score: 11580	Chosen
+AI 710303	Win: 38/58	Draw: 0/58	Score: 8467	Not Chosen
+AI 710266	Win: 29/58	Draw: 3/58	Score: 8008	Not Chosen
+AI 710308	Win: 11/58	Draw: 0/58	Score: 5903	Chosen
+AI 710246	Win: 39/58	Draw: 1/58	Score: 5869	Chosen
+AI 710306	Win: 36/58	Draw: 1/58	Score: 5056	Not Chosen
+AI 710267	Win: 38/58	Draw: 0/58	Score: 4957	Not Chosen
+AI 710258	Win: 15/58	Draw: 2/58	Score: 4247	Chosen
+AI 710298	Win: 15/58	Draw: 2/58	Score: 3048	Not Chosen
+AI 710319	Win: 11/58	Draw: 2/58	Score: 1113	Not Chosen
+AI 710316	Win: 22/58	Draw: 0/58	Score: 1048	Chosen
+AI 710309	Win: 20/58	Draw: 1/58	Score: 688	Chosen
+AI 710312	Win: 36/58	Draw: 1/58	Score: 413	Not Chosen
+AI 710313	Win: 37/58	Draw: 0/58	Score: 268	Not Chosen
+AI 710320	Win: 41/58	Draw: 0/58	Score: 144	Not Chosen
+AI 710305	Win: 37/58	Draw: 2/58	Score: -1673	Not Chosen
+AI 710318	Win: 39/58	Draw: 1/58	Score: -1833	Chosen
+AI 710317	Win: 43/58	Draw: 0/58	Score: -1972	Not Chosen
+AI 710321	Win: 37/58	Draw: 1/58	Score: -2095	Not Chosen
+AI 710307	Win: 35/58	Draw: 1/58	Score: -3069	Chosen
+AI 710288	Win: 45/58	Draw: 1/58	Score: -4767	Chosen
+AI 710314	Win: 15/58	Draw: 0/58	Score: -5151	Not Chosen
+AI 710315	Win: 13/58	Draw: 0/58	Score: -6496	Not Chosen
+AI 710268	Win: 36/58	Draw: 0/58	Score: -9307	Chosen
+AI 710322	Win: 15/58	Draw: 0/58	Score: -9337	Not Chosen
+AI 710302	Win: 27/58	Draw: 0/58	Score: -9765	Not Chosen
+AI 710310	Win: 8/58	Draw: 0/58	Score: -14575	Not Chosen
+AI 710311	Win: 9/58	Draw: 1/58	Score: -14954	Not Chosen
+       334        38        17       101
+                 130       -30         0
+                            -3       -21
+                                     -60
+Best Weight:
+MiddleTime:28.4916	EndTime:61.3799	Mobility_begin_middle:0.479546	0.192362	Position_begin_middle:0.16304	0.487309
+Generation 16
+AI rank:
+AI 710258	Win: 37/58	Draw: 1/58	Score: 12274	Chosen
+AI 710265	Win: 37/58	Draw: 2/58	Score: 12151	Chosen
+AI 710324	Win: 14/58	Draw: 0/58	Score: 11363	Not Chosen
+AI 710326	Win: 34/58	Draw: 0/58	Score: 9004	Chosen
+AI 710303	Win: 33/58	Draw: 2/58	Score: 8421	Not Chosen
+AI 710285	Win: 40/58	Draw: 2/58	Score: 6510	Chosen
+AI 710319	Win: 38/58	Draw: 0/58	Score: 5747	Not Chosen
+AI 710328	Win: 21/58	Draw: 2/58	Score: 5422	Not Chosen
+AI 710305	Win: 22/58	Draw: 0/58	Score: 4536	Not Chosen
+AI 710323	Win: 14/58	Draw: 1/58	Score: 3267	Not Chosen
+AI 710337	Win: 25/58	Draw: 2/58	Score: 2852	Not Chosen
+AI 710335	Win: 41/58	Draw: 2/58	Score: 1413	Chosen
+AI 710339	Win: 38/58	Draw: 1/58	Score: 786	Not Chosen
+AI 710336	Win: 22/58	Draw: 0/58	Score: 544	Not Chosen
+AI 710334	Win: 21/58	Draw: 1/58	Score: 470	Not Chosen
+AI 710309	Win: 20/58	Draw: 1/58	Score: -65	Not Chosen
+AI 710312	Win: 14/58	Draw: 0/58	Score: -695	Not Chosen
+AI 710338	Win: 44/58	Draw: 0/58	Score: -776	Not Chosen
+AI 710329	Win: 43/58	Draw: 1/58	Score: -1101	Not Chosen
+AI 710340	Win: 31/58	Draw: 1/58	Score: -1779	Chosen
+AI 710288	Win: 41/58	Draw: 2/58	Score: -2343	Not Chosen
+AI 710325	Win: 17/58	Draw: 3/58	Score: -2415	Not Chosen
+AI 710330	Win: 42/58	Draw: 1/58	Score: -3603	Chosen
+AI 710333	Win: 36/58	Draw: 1/58	Score: -4587	Chosen
+AI 710332	Win: 26/58	Draw: 0/58	Score: -6636	Chosen
+AI 710341	Win: 11/58	Draw: 1/58	Score: -10609	Not Chosen
+AI 710302	Win: 16/58	Draw: 0/58	Score: -10829	Chosen
+AI 710311	Win: 3/58	Draw: 0/58	Score: -11132	Not Chosen
+AI 710331	Win: 37/58	Draw: 1/58	Score: -13814	Chosen
+AI 710327	Win: 38/58	Draw: 0/58	Score: -14376	Not Chosen
+        23      -108        24        78
+                 -62       -36        -5
+                           -18        23
+                                      28
+Best Weight:
+MiddleTime:27.4275	EndTime:47.1786	Mobility_begin_middle:0.482402	0.309223	Position_begin_middle:0.223222	0.466695
+Generation 17
+AI rank:
+AI 710303	Win: 39/58	Draw: 0/58	Score: 13021	Chosen
+AI 710285	Win: 37/58	Draw: 3/58	Score: 12734	Chosen
+AI 710343	Win: 36/58	Draw: 3/58	Score: 12014	Not Chosen
+AI 710311	Win: 38/58	Draw: 1/58	Score: 9416	Not Chosen
+AI 710323	Win: 43/58	Draw: 1/58	Score: 9359	Not Chosen
+AI 710265	Win: 35/58	Draw: 1/58	Score: 7125	Not Chosen
+AI 710347	Win: 33/58	Draw: 1/58	Score: 5814	Not Chosen
+AI 710345	Win: 34/58	Draw: 1/58	Score: 5304	Not Chosen
+AI 710337	Win: 3/58	Draw: 0/58	Score: 3932	Not Chosen
+AI 710342	Win: 36/58	Draw: 2/58	Score: 3869	Chosen
+AI 710302	Win: 38/58	Draw: 2/58	Score: 3415	Not Chosen
+AI 710357	Win: 37/58	Draw: 2/58	Score: 1430	Not Chosen
+AI 710354	Win: 39/58	Draw: 1/58	Score: 1177	Chosen
+AI 710348	Win: 43/58	Draw: 0/58	Score: 813	Chosen
+AI 710353	Win: 17/58	Draw: 3/58	Score: 573	Not Chosen
+AI 710358	Win: 13/58	Draw: 2/58	Score: -172	Not Chosen
+AI 710356	Win: 35/58	Draw: 3/58	Score: -414	Not Chosen
+AI 710355	Win: 35/58	Draw: 1/58	Score: -932	Chosen
+AI 710312	Win: 20/58	Draw: 0/58	Score: -1299	Not Chosen
+AI 710344	Win: 30/58	Draw: 2/58	Score: -1986	Chosen
+AI 710341	Win: 25/58	Draw: 2/58	Score: -2002	Not Chosen
+AI 710349	Win: 9/58	Draw: 1/58	Score: -3811	Chosen
+AI 710352	Win: 30/58	Draw: 0/58	Score: -4173	Not Chosen
+AI 710359	Win: 11/58	Draw: 1/58	Score: -4838	Not Chosen
+AI 710351	Win: 9/58	Draw: 1/58	Score: -8023	Not Chosen
+AI 710360	Win: 22/58	Draw: 1/58	Score: -11388	Not Chosen
+AI 710334	Win: 12/58	Draw: 2/58	Score: -11999	Not Chosen
+AI 710346	Win: 13/58	Draw: 1/58	Score: -12383	Chosen
+AI 710339	Win: 39/58	Draw: 0/58	Score: -13174	Not Chosen
+AI 710350	Win: 40/58	Draw: 0/58	Score: -13402	Chosen
+       410       -40        28       133
+                  45       -28         1
+                            -4       -21
+                                     -57
+Best Weight:
+MiddleTime:27.0383	EndTime:     63	Mobility_begin_middle:0.524698	0.201831	Position_begin_middle:0.139913	0.45898
+Generation 18
+AI rank:
+AI 710344	Win: 40/58	Draw: 1/58	Score: 13877	Chosen
+AI 710265	Win: 40/58	Draw: 2/58	Score: 13451	Chosen
+AI 710362	Win: 30/58	Draw: 1/58	Score: 12570	Chosen
+AI 710348	Win: 34/58	Draw: 2/58	Score: 9764	Not Chosen
+AI 710357	Win: 29/58	Draw: 1/58	Score: 9679	Not Chosen
+AI 710285	Win: 38/58	Draw: 2/58	Score: 7855	Not Chosen
+AI 710364	Win: 49/58	Draw: 0/58	Score: 6717	Not Chosen
+AI 710366	Win: 35/58	Draw: 0/58	Score: 6111	Not Chosen
+AI 710349	Win: 33/58	Draw: 3/58	Score: 4363	Not Chosen
+AI 710361	Win: 37/58	Draw: 1/58	Score: 4359	Chosen
+AI 710346	Win: 20/58	Draw: 3/58	Score: 2814	Not Chosen
+AI 710377	Win: 26/58	Draw: 2/58	Score: 1315	Chosen
+AI 710370	Win: 30/58	Draw: 0/58	Score: 1298	Chosen
+AI 710373	Win: 37/58	Draw: 1/58	Score: 1286	Chosen
+AI 710376	Win: 27/58	Draw: 3/58	Score: 730	Not Chosen
+AI 710371	Win: 39/58	Draw: 0/58	Score: -379	Not Chosen
+AI 710378	Win: 12/58	Draw: 1/58	Score: -1469	Not Chosen
+AI 710363	Win: 34/58	Draw: 0/58	Score: -1536	Chosen
+AI 710367	Win: 11/58	Draw: 2/58	Score: -1557	Not Chosen
+AI 710379	Win: 7/58	Draw: 1/58	Score: -2490	Not Chosen
+AI 710375	Win: 15/58	Draw: 0/58	Score: -3258	Not Chosen
+AI 710350	Win: 41/58	Draw: 0/58	Score: -3999	Chosen
+AI 710365	Win: 13/58	Draw: 1/58	Score: -5091	Not Chosen
+AI 710372	Win: 12/58	Draw: 2/58	Score: -5286	Not Chosen
+AI 710374	Win: 23/58	Draw: 2/58	Score: -8259	Not Chosen
+AI 710369	Win: 44/58	Draw: 1/58	Score: -10284	Not Chosen
+AI 710368	Win: 41/58	Draw: 0/58	Score: -11350	Not Chosen
+AI 710380	Win: 33/58	Draw: 0/58	Score: -11701	Chosen
+AI 710351	Win: 13/58	Draw: 1/58	Score: -14630	Not Chosen
+AI 710352	Win: 10/58	Draw: 1/58	Score: -14900	Chosen
+       496       -28        28       133
+                  45       -28         1
+                            -4       -21
+                                     -57
+Best Weight:
+MiddleTime:25.7533	EndTime:62.1733	Mobility_begin_middle:0.517571	0.196099	Position_begin_middle:0.144127	0.470289
+Generation 19
+AI rank:
+AI 710265	Win: 41/58	Draw: 0/58	Score: 14483	Chosen
+AI 710344	Win: 38/58	Draw: 1/58	Score: 14406	Not Chosen
+AI 710363	Win: 31/58	Draw: 2/58	Score: 12962	Chosen
+AI 710382	Win: 38/58	Draw: 4/58	Score: 10084	Not Chosen
+AI 710346	Win: 31/58	Draw: 1/58	Score: 9980	Not Chosen
+AI 710285	Win: 38/58	Draw: 2/58	Score: 8557	Chosen
+AI 710383	Win: 28/58	Draw: 1/58	Score: 6841	Not Chosen
+AI 710395	Win: 29/58	Draw: 0/58	Score: 6090	Not Chosen
+AI 710381	Win: 37/58	Draw: 1/58	Score: 4930	Chosen
+AI 710377	Win: 29/58	Draw: 1/58	Score: 4477	Chosen
+AI 710390	Win: 36/58	Draw: 0/58	Score: 2099	Not Chosen
+AI 710386	Win: 33/58	Draw: 3/58	Score: 1774	Chosen
+AI 710376	Win: 5/58	Draw: 1/58	Score: 1174	Not Chosen
+AI 710387	Win: 28/58	Draw: 4/58	Score: 668	Not Chosen
+AI 710392	Win: 14/58	Draw: 0/58	Score: 115	Not Chosen
+AI 710397	Win: 33/58	Draw: 1/58	Score: -987	Not Chosen
+AI 710396	Win: 35/58	Draw: 0/58	Score: -1228	Not Chosen
+AI 710372	Win: 17/58	Draw: 0/58	Score: -1327	Not Chosen
+AI 710384	Win: 27/58	Draw: 1/58	Score: -1728	Chosen
+AI 710394	Win: 41/58	Draw: 4/58	Score: -1852	Chosen
+AI 710365	Win: 41/58	Draw: 1/58	Score: -2427	Not Chosen
+AI 710385	Win: 40/58	Draw: 1/58	Score: -3064	Not Chosen
+AI 710398	Win: 41/58	Draw: 2/58	Score: -4172	Chosen
+AI 710391	Win: 16/58	Draw: 0/58	Score: -6121	Not Chosen
+AI 710393	Win: 39/58	Draw: 0/58	Score: -7611	Not Chosen
+AI 710388	Win: 32/58	Draw: 1/58	Score: -10808	Chosen
+AI 710389	Win: 10/58	Draw: 1/58	Score: -11596	Not Chosen
+AI 710399	Win: 10/58	Draw: 0/58	Score: -13169	Not Chosen
+AI 710352	Win: 7/58	Draw: 3/58	Score: -16072	Not Chosen
+AI 710374	Win: 7/58	Draw: 0/58	Score: -16478	Not Chosen
+       334       -40        28       179
+                  45       -28         1
+                            -4       -21
+                                     -84
+Best Weight:
+MiddleTime:27.1734	EndTime:     63	Mobility_begin_middle:0.506138	0.177681	Position_begin_middle:0.145141	0.453926
+Generation 20
+AI rank:
+AI 710265	Win: 37/58	Draw: 2/58	Score: 15131	Chosen
+AI 710381	Win: 34/58	Draw: 1/58	Score: 14835	Not Chosen
+AI 710383	Win: 35/58	Draw: 1/58	Score: 13402	Not Chosen
+AI 710401	Win: 42/58	Draw: 1/58	Score: 10985	Chosen
+AI 710384	Win: 30/58	Draw: 2/58	Score: 10175	Not Chosen
+AI 710344	Win: 29/58	Draw: 1/58	Score: 8584	Not Chosen
+AI 710403	Win: 19/58	Draw: 2/58	Score: 6486	Chosen
+AI 710415	Win: 28/58	Draw: 1/58	Score: 6060	Not Chosen
+AI 710376	Win: 40/58	Draw: 0/58	Score: 5682	Chosen
+AI 710400	Win: 34/58	Draw: 0/58	Score: 5149	Not Chosen
+AI 710409	Win: 29/58	Draw: 0/58	Score: 2080	Not Chosen
+AI 710405	Win: 28/58	Draw: 1/58	Score: 1159	Not Chosen
+AI 710385	Win: 18/58	Draw: 0/58	Score: 862	Chosen
+AI 710406	Win: 23/58	Draw: 0/58	Score: 382	Not Chosen
+AI 710417	Win: 37/58	Draw: 0/58	Score: -318	Not Chosen
+AI 710412	Win: 16/58	Draw: 1/58	Score: -856	Not Chosen
+AI 710416	Win: 43/58	Draw: 3/58	Score: -1046	Chosen
+AI 710414	Win: 31/58	Draw: 3/58	Score: -1123	Not Chosen
+AI 710410	Win: 31/58	Draw: 2/58	Score: -1189	Chosen
+AI 710402	Win: 23/58	Draw: 2/58	Score: -1962	Not Chosen
+AI 710418	Win: 38/58	Draw: 2/58	Score: -2367	Not Chosen
+AI 710407	Win: 28/58	Draw: 0/58	Score: -2421	Not Chosen
+AI 710388	Win: 27/58	Draw: 0/58	Score: -4076	Not Chosen
+AI 710411	Win: 41/58	Draw: 1/58	Score: -5274	Chosen
+AI 710413	Win: 18/58	Draw: 0/58	Score: -8585	Not Chosen
+AI 710404	Win: 24/58	Draw: 0/58	Score: -11089	Not Chosen
+AI 710408	Win: 23/58	Draw: 2/58	Score: -12143	Not Chosen
+AI 710419	Win: 29/58	Draw: 0/58	Score: -13242	Chosen
+AI 710390	Win: 10/58	Draw: 0/58	Score: -17430	Chosen
+AI 710389	Win: 11/58	Draw: 0/58	Score: -17851	Not Chosen
+       334       -40        28       179
+                  45       -28         1
+                            -4       -21
+                                     -84
+Best Weight:
+MiddleTime:27.1734	EndTime:     63	Mobility_begin_middle:0.506138	0.177681	Position_begin_middle:0.145141	0.453926
+Generation 21
+AI rank:
+AI 710384	Win: 42/58	Draw: 0/58	Score: 15946	Chosen
+AI 710401	Win: 36/58	Draw: 1/58	Score: 15553	Chosen
+AI 710421	Win: 28/58	Draw: 3/58	Score: 13331	Not Chosen
+AI 710407	Win: 44/58	Draw: 0/58	Score: 11315	Chosen
+AI 710403	Win: 32/58	Draw: 0/58	Score: 11261	Chosen
+AI 710265	Win: 40/58	Draw: 0/58	Score: 9260	Not Chosen
+AI 710425	Win: 38/58	Draw: 0/58	Score: 6956	Not Chosen
+AI 710423	Win: 44/58	Draw: 0/58	Score: 6826	Chosen
+AI 710385	Win: 24/58	Draw: 1/58	Score: 6034	Not Chosen
+AI 710420	Win: 25/58	Draw: 0/58	Score: 4930	Not Chosen
+AI 710426	Win: 50/58	Draw: 0/58	Score: 2574	Not Chosen
+AI 710435	Win: 37/58	Draw: 0/58	Score: 1229	Chosen
+AI 710418	Win: 31/58	Draw: 2/58	Score: 1212	Chosen
+AI 710429	Win: 12/58	Draw: 0/58	Score: 814	Not Chosen
+AI 710419	Win: 44/58	Draw: 0/58	Score: -91	Not Chosen
+AI 710427	Win: 36/58	Draw: 2/58	Score: -343	Not Chosen
+AI 710437	Win: 27/58	Draw: 1/58	Score: -507	Not Chosen
+AI 710433	Win: 31/58	Draw: 2/58	Score: -579	Not Chosen
+AI 710430	Win: 33/58	Draw: 1/58	Score: -1097	Chosen
+AI 710434	Win: 33/58	Draw: 2/58	Score: -1976	Not Chosen
+AI 710422	Win: 21/58	Draw: 0/58	Score: -2726	Not Chosen
+AI 710438	Win: 12/58	Draw: 1/58	Score: -3615	Not Chosen
+AI 710431	Win: 34/58	Draw: 4/58	Score: -4658	Not Chosen
+AI 710436	Win: 2/58	Draw: 1/58	Score: -6066	Not Chosen
+AI 710432	Win: 7/58	Draw: 0/58	Score: -10261	Not Chosen
+AI 710413	Win: 12/58	Draw: 0/58	Score: -12453	Chosen
+AI 710428	Win: 37/58	Draw: 0/58	Score: -12660	Chosen
+AI 710439	Win: 14/58	Draw: 2/58	Score: -13129	Not Chosen
+AI 710424	Win: 19/58	Draw: 4/58	Score: -18095	Not Chosen
+AI 710410	Win: 11/58	Draw: 1/58	Score: -18985	Not Chosen
+       496       -31       -28       107
+                  64       -29         1
+                            -4       -25
+                                     -57
+Best Weight:
+MiddleTime:26.4409	EndTime:62.3289	Mobility_begin_middle:0.565281	0.14295	Position_begin_middle:0.120899	0.454567
+Generation 22
+AI rank:
+AI 710401	Win: 40/58	Draw: 0/58	Score: 16385	Chosen
+AI 710403	Win: 31/58	Draw: 0/58	Score: 16257	Chosen
+AI 710441	Win: 40/58	Draw: 2/58	Score: 14239	Chosen
+AI 710426	Win: 35/58	Draw: 1/58	Score: 11776	Not Chosen
+AI 710421	Win: 31/58	Draw: 0/58	Score: 11534	Not Chosen
+AI 710265	Win: 44/58	Draw: 1/58	Score: 10372	Chosen
+AI 710445	Win: 39/58	Draw: 1/58	Score: 7663	Not Chosen
+AI 710443	Win: 35/58	Draw: 2/58	Score: 6836	Chosen
+AI 710423	Win: 10/58	Draw: 0/58	Score: 5331	Not Chosen
+AI 710440	Win: 11/58	Draw: 0/58	Score: 3546	Not Chosen
+AI 710455	Win: 33/58	Draw: 1/58	Score: 2974	Not Chosen
+AI 710453	Win: 41/58	Draw: 0/58	Score: 1717	Not Chosen
+AI 710418	Win: 35/58	Draw: 2/58	Score: 1643	Not Chosen
+AI 710446	Win: 38/58	Draw: 1/58	Score: 1623	Chosen
+AI 710438	Win: 44/58	Draw: 1/58	Score: 733	Chosen
+AI 710447	Win: 37/58	Draw: 1/58	Score: 627	Not Chosen
+AI 710452	Win: 18/58	Draw: 0/58	Score: -1392	Not Chosen
+AI 710457	Win: 14/58	Draw: 1/58	Score: -1696	Chosen
+AI 710442	Win: 39/58	Draw: 1/58	Score: -1873	Not Chosen
+AI 710450	Win: 15/58	Draw: 2/58	Score: -2035	Not Chosen
+AI 710456	Win: 22/58	Draw: 1/58	Score: -2473	Chosen
+AI 710444	Win: 36/58	Draw: 1/58	Score: -3078	Not Chosen
+AI 710451	Win: 40/58	Draw: 0/58	Score: -3806	Not Chosen
+AI 710454	Win: 16/58	Draw: 3/58	Score: -6875	Not Chosen
+AI 710449	Win: 19/58	Draw: 0/58	Score: -11000	Not Chosen
+AI 710448	Win: 42/58	Draw: 0/58	Score: -11902	Chosen
+AI 710459	Win: 24/58	Draw: 0/58	Score: -13434	Not Chosen
+AI 710458	Win: 3/58	Draw: 1/58	Score: -14334	Not Chosen
+AI 710429	Win: 13/58	Draw: 1/58	Score: -19393	Not Chosen
+AI 710433	Win: 13/58	Draw: 0/58	Score: -19965	Not Chosen
+       496       -28        48       133
+                  45       -28         1
+                            -4        17
+                                     -57
+Best Weight:
+MiddleTime:27.0578	EndTime:     63	Mobility_begin_middle:0.514548	0.198457	Position_begin_middle:0.180782	0.525401
+Generation 23
+AI rank:
+AI 710401	Win: 35/58	Draw: 1/58	Score: 16750	Chosen
+AI 710403	Win: 32/58	Draw: 1/58	Score: 16554	Not Chosen
+AI 710461	Win: 35/58	Draw: 1/58	Score: 14817	Not Chosen
+AI 710418	Win: 43/58	Draw: 1/58	Score: 12714	Not Chosen
+AI 710440	Win: 32/58	Draw: 2/58	Score: 11930	Not Chosen
+AI 710265	Win: 48/58	Draw: 1/58	Score: 11733	Chosen
+AI 710465	Win: 35/58	Draw: 1/58	Score: 8241	Chosen
+AI 710463	Win: 37/58	Draw: 0/58	Score: 7541	Not Chosen
+AI 710423	Win: 44/58	Draw: 0/58	Score: 6328	Chosen
+AI 710460	Win: 40/58	Draw: 1/58	Score: 4456	Not Chosen
+AI 710466	Win: 24/58	Draw: 1/58	Score: 2664	Not Chosen
+AI 710475	Win: 38/58	Draw: 1/58	Score: 2532	Chosen
+AI 710447	Win: 38/58	Draw: 1/58	Score: 2379	Chosen
+AI 710473	Win: 25/58	Draw: 2/58	Score: 1233	Not Chosen
+AI 710454	Win: 13/58	Draw: 0/58	Score: -279	Not Chosen
+AI 710467	Win: 8/58	Draw: 0/58	Score: -603	Not Chosen
+AI 710470	Win: 40/58	Draw: 1/58	Score: -1094	Not Chosen
+AI 710462	Win: 34/58	Draw: 2/58	Score: -1372	Not Chosen
+AI 710477	Win: 30/58	Draw: 1/58	Score: -1942	Chosen
+AI 710474	Win: 39/58	Draw: 1/58	Score: -2263	Chosen
+AI 710469	Win: 11/58	Draw: 1/58	Score: -2690	Not Chosen
+AI 710478	Win: 13/58	Draw: 0/58	Score: -3536	Not Chosen
+AI 710471	Win: 10/58	Draw: 2/58	Score: -5158	Chosen
+AI 710464	Win: 14/58	Draw: 0/58	Score: -8094	Not Chosen
+AI 710472	Win: 35/58	Draw: 0/58	Score: -10723	Not Chosen
+AI 710468	Win: 25/58	Draw: 3/58	Score: -12258	Not Chosen
+AI 710453	Win: 39/58	Draw: 0/58	Score: -13558	Chosen
+AI 710479	Win: 17/58	Draw: 1/58	Score: -14345	Chosen
+AI 710476	Win: 10/58	Draw: 0/58	Score: -20804	Not Chosen
+AI 710429	Win: 13/58	Draw: 0/58	Score: -21153	Not Chosen
+       496       -28        48       133
+                  45       -28         1
+                            -4        17
+                                     -57
+Best Weight:
+MiddleTime:27.0578	EndTime:     63	Mobility_begin_middle:0.514548	0.198457	Position_begin_middle:0.180782	0.525401

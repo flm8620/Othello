@@ -3,6 +3,8 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QThread>
+#include <QMessageBox>
+
 #include "tools.h"
 using namespace std;
 void GameWindow::updateButtons(Color lastColor,int i,int j)
@@ -35,7 +37,7 @@ GameWindow::GameWindow(string aiFile, int Nsize, QWidget *parent) : QWidget(pare
 {
   auto AIs = readAIFile(aiFile,Nsize);
   worker.setAI(*AIs[0]);//best
-  thinkTime=1.0;
+  this->gameSeriesID = 0;
   auto boardLayout = new QGridLayout;
   for(int i=0;i<Nsize;i++){
     for(int j=0;j<Nsize;j++){
@@ -44,12 +46,21 @@ GameWindow::GameWindow(string aiFile, int Nsize, QWidget *parent) : QWidget(pare
       connect(buttons.back(),&PieceButton::clickedWithPos,this,&GameWindow::buttonClicked);
     }
   }
+  boardLayout->setHorizontalSpacing(2);
+  boardLayout->setVerticalSpacing(2);
 
   auto buttonLayout = new QHBoxLayout;
   auto playWhite = new QPushButton("Play as white");
   auto playBlack = new QPushButton("Play as black");
+  this->spinBox = new QDoubleSpinBox();
+  this->spinBox->setRange(0.1,10);
+  this->spinBox->setValue(1.0);
   buttonLayout->addWidget(playWhite);
   buttonLayout->addWidget(playBlack);
+
+  auto timeLayout = new QHBoxLayout;
+  timeLayout->addWidget(new QLabel("Thinking Time(second):"));
+  timeLayout->addWidget(this->spinBox);
   connect(playWhite,&PieceButton::clicked,this,&GameWindow::newGameAsWhite);
   connect(playBlack,&PieceButton::clicked,this,&GameWindow::newGameAsBlack);
 
@@ -59,6 +70,7 @@ GameWindow::GameWindow(string aiFile, int Nsize, QWidget *parent) : QWidget(pare
   totalLayout->addWidget(textLabel);
   totalLayout->addLayout(boardLayout);
   totalLayout->addLayout(buttonLayout);
+  totalLayout->addLayout(timeLayout);
   this->setLayout(totalLayout);
 
   //Worker
@@ -90,11 +102,17 @@ GameWindow::~GameWindow()
   this->workerThread.exit();
 }
 
-void GameWindow::AIplayed(int i, int j)
+void GameWindow::AIplayed(int i, int j, int gameSeriesID)
 {
+  if(gameSeriesID!=this->gameSeriesID)return;
   gs.addPiece(i,j,aiColor);
   this->updateButtons(aiColor,i,j);
-  this->textLabel->setText(QString("Computer played at %1%2").arg(char('a'+i)).arg(j+1));
+  auto s = QString("Computer played at %1%2").arg(char('A'+j)).arg(i+1);
+  if(gs.nextPlayer()==this->aiColor){
+    s = QString("You have no move, Computer thinking...");
+    QMessageBox::information(this,"Opss!","You have no move, computer continue");
+  }
+  this->textLabel->setText(s);
   if(gs.gameIsEnd())
     endGame();
 }
@@ -106,8 +124,12 @@ void GameWindow::buttonClicked(int i, int j)
   if(moves.find(make_pair(i,j))!=moves.end()){
     gs.addPiece(i,j,humanColor);
     updateButtons(humanColor,i,j);
-    emit humanPlayed(i,j);
-    this->textLabel->setText(QString("Computer thinking"));
+    emit humanPlayed(i,j,this->gameSeriesID);
+    if(gs.nextPlayer()==this->humanColor){
+      this->textLabel->setText(QString("Computer have to pass, you turn:"));
+    }else if(gs.nextPlayer()==this->aiColor){
+      this->textLabel->setText(QString("Computer thinking"));
+    }
   }
   if(gs.gameIsEnd())
     endGame();
@@ -119,7 +141,8 @@ void GameWindow::newGameAsBlack()
   this->aiColor = Color::White;
   this->gs.restartGame();
   this->updateButtons(Color::Neither,-1,-1);
-  emit startNewGame(humanColor,thinkTime);
+  gameSeriesID++;
+  emit startNewGame(humanColor,this->spinBox->value(),gameSeriesID);
 }
 
 void GameWindow::newGameAsWhite()
@@ -128,6 +151,8 @@ void GameWindow::newGameAsWhite()
   this->aiColor = Color::Black;
   this->gs.restartGame();
   this->updateButtons(Color::Neither,-1,-1);
-  emit startNewGame(humanColor,thinkTime);
+  this->textLabel->setText(QString("Computer thinking"));
+  gameSeriesID++;
+  emit startNewGame(humanColor,this->spinBox->value(),gameSeriesID);
 }
 

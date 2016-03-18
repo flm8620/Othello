@@ -210,6 +210,7 @@ double OthelloAI::max_min(const GameState &gs,
 
 double OthelloAI::evaluateScore(const GameState &gs, Color myColor) const {
   //score from the article "Playing Othello with Artificial Intelligence" by  Michael J. Korman
+  static normal_distribution<double> normal_dist(1.0,0.015);
   int myPieceCount = myColor == Black ? gs.pieceCount(Black) : gs.pieceCount(White);
   int hisPieceCount = myColor == White ? gs.pieceCount(Black) : gs.pieceCount(White);
   int time = myPieceCount + hisPieceCount;//current step count
@@ -238,7 +239,8 @@ double OthelloAI::evaluateScore(const GameState &gs, Color myColor) const {
   double positionWeight, mobilityWeight, pieceWeight;
   this->scoreWeight.getThreeWeights(mobilityWeight, positionWeight, pieceWeight, time);
   assert(mobilityWeight > -1e-5 && positionWeight > -1e-5 && pieceWeight > -1e-5);
-  return mobilityWeight * mobilityScore + positionWeight * positionScore + pieceWeight * pieceScore;
+  double final = mobilityWeight * mobilityScore + positionWeight * positionScore + pieceWeight * pieceScore;
+  return final*normal_dist(generator);
 }
 
 pair<int, int> OthelloAI::startMaxMin(const GameState &gs,

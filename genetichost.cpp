@@ -87,26 +87,65 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
     for (int i = 0; i < zoo.size(); i++)index[i] = i;
     //sort to get good AIs
     sort(index.begin(), index.end(), [&](int a, int b) {
-      return winCount[a] + drawCount[a]/2.0 > winCount[b] + drawCount[b]/2.0;
+      //return winCount[a] + drawCount[a]/2.0 > winCount[b] + drawCount[b]/2.0;
+      return zooScores[a] > zooScores[b];
     });
 
-    //output
+
+
+    //save AI
+    vector<OthelloAI *> sortedZoo;
+    vector<int> sortedWinCount;
+    vector<int> sortedDrawCount;
+    //fitness, used for selection
+    vector<double> fitness;
+    for (int i = 0; i < index.size(); i++) {
+      sortedZoo.push_back(zoo[index[i]]);
+      sortedWinCount.push_back(winCount[index[i]]);
+      sortedDrawCount.push_back(drawCount[index[i]]);
+      fitness.push_back(sortedWinCount[i]+sortedDrawCount[i]/2.0);
+    }
+    zoo = sortedZoo;
+    saveAIFile(zoo,aiFile,N);
+
+    //from now zoo is sorted by performance
+
+    vector<OthelloAI *> newZoo;
+    //we take the 1/3 best AIs with random, throw the 2/3 (always keep the best one)
+    vector<int> selection = rouletteWheelSelection(fitness,zoo.size()/3);
+    vector<bool> chosen(zoo.size(),false);
+    for(auto index : selection){
+      chosen[index]=true;
+    }
+    chosen[0]=true; // always keeps the best
+
+    //------------output-----------------
     ofstream file(recordFile, ios::app);
     file << "Generation " << k << endl;
-    cout << "5 Best AIs:" << endl;
-    file << "5 Best AIs:" << endl;
-    for (int i = 0; i < min(5, (int) zoo.size()); i++) {
+    cout << "AI rank:" << endl;
+    file << "AI rank:" << endl;
+    for (int i = 0; i < zoo.size(); i++) {
       cout << "AI " << zoo[index[i]]->getID();
-      cout << "\tWin: " << winCount[index[i]] << "/" << (zoo.size() - 1) * 2;
-      cout << "\tDraw: " << drawCount[index[i]] << "/" << (zoo.size() - 1) * 2 << endl;
+      cout << "\tWin-" << winCount[index[i]] << "/" << (zoo.size() - 1) * 2;
+      cout << "\tDraw-" << drawCount[index[i]] << "/" << (zoo.size() - 1) * 2;
+      cout << "\tScore: "<< zooScores[index[i]]<<endl;
       file << "AI " << zoo[index[i]]->getID();
       file << "\tWin: " << winCount[index[i]] << "/" << (zoo.size() - 1) * 2;
-      file << "\tDraw: " << drawCount[index[i]] << "/" << (zoo.size() - 1) * 2 << endl;
+      file << "\tDraw: " << drawCount[index[i]] << "/" << (zoo.size() - 1) * 2;
+      file << "\tScore: "<< zooScores[index[i]];
+      if(chosen[i]){
+        cout<<"\tChosen"<<endl;
+        file<<"\tChosen"<<endl;
+      }else{
+        cout<<"\tNot Chosen"<<endl;
+        file<<"\tNot Chosen"<<endl;
+      }
     }
     cout << "Best DiskSquare:" << endl;
     auto s = zoo[index[0]]->getDiskSquare();
     s.printOut();
 
+    //output for diskSquare
     for (int i = 0; i < N / 2; i++) {
       for (int j = 0; j < i; j++) file << setw(10) << ' ';
       for (int j = i; j < N / 2; j++) {
@@ -123,35 +162,14 @@ void GeneticHost::startEvolution(int animalSize, int generation, bool loadAiFile
     file << endl;
 
     file.close();
+    //-----------END output--------------
 
-    //save AI
-    vector<OthelloAI *> sortedZoo;
-    vector<int> sortedWinCount;
-    vector<int> sortedDrawCount;
-    vector<double> fitness;
-    for (int i = 0; i < index.size(); i++) {
-      sortedZoo.push_back(zoo[index[i]]);
-      sortedWinCount.push_back(winCount[index[i]]);
-      sortedDrawCount.push_back(drawCount[index[i]]);
-      fitness.push_back(sortedWinCount[i]+sortedDrawCount[i]/2.0);
-    }
-    zoo = sortedZoo;
-    saveAIFile(zoo,aiFile,N);
 
-    //from now zoo is sorted by performance
-
-    vector<OthelloAI *> newZoo;
-    //we take the 1/3 best AIs with random, throw the 2/3 (always keep the best one)
-    vector<int> selection = rouletteWheelSelection(fitness,zoo.size()/3);
-    bool bestOneIsKept=false;
-    for(auto index : selection){
-      if(index == 0) bestOneIsKept=true;
-      newZoo.push_back(zoo[index]);
-      zoo[index]=0;
-    }
-    if(!bestOneIsKept){
-      newZoo.push_back(zoo[0]);
-      zoo[0]=0;
+    for(int i=0;i<zoo.size();i++){
+      if(chosen[i]){
+        newZoo.push_back(zoo[i]);
+        zoo[i]=0;
+      }
     }
 
     for (auto z : zoo)

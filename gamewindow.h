@@ -5,6 +5,7 @@
 #include <QVector>
 #include <QThread>
 #include <QLabel>
+#include <QDoubleSpinBox>
 #include "GameState.h"
 #include "piecebutton.h"
 #include "gameworker.h"
@@ -23,22 +24,23 @@ class GameWindow : public QWidget
   GameWorker worker;
   QThread workerThread;
   QLabel *textLabel;
-  double thinkTime;
+  QDoubleSpinBox* spinBox;
+  int gameSeriesID;
   void updateButtons(Color lastColor, int i, int j);
 public:
   explicit GameWindow(std::string aiFile,int Nsize,QWidget *parent = 0);
   void endGame();
   ~GameWindow();
-
-signals:
-  void startNewGame(Color humanColor, double thinkTime);
-  void humanPlayed(int i,int j);
-
-public slots:
-  void AIplayed(int i,int j);
-  void buttonClicked(int i,int j);
   void newGameAsBlack();
   void newGameAsWhite();
+signals:
+  void startNewGame(Color humanColor, double thinkTime, int gameSeriesID);
+  void humanPlayed(int i,int j,int gameSeriesID);
+
+public slots:
+  void AIplayed(int i,int j,int gameSeriesID);
+  void buttonClicked(int i,int j);
+
 };
 
 #endif // GAMEWINDOW_H

@@ -12,16 +12,16 @@ class GameWorker : public QObject
   Color aiColor;
   GameState gs;
   double thinkTime;
+  int gameSeriesID;
   void letAIplay();
 public:
   explicit GameWorker(int Nsize, OthelloAI ai,QObject *parent = 0);
   void setAI(const OthelloAI& ai){this->ai=ai;};
 signals:
-  void AIplayed(int i,int j);
+  void AIplayed(int i,int j,int gameSeriesID);
 public slots:
-  void startNewGame(Color humanColor, double thinkTime);
-  void humanPlayed(int i,int j);
-  void setThinkTime(double thinkTime){this->thinkTime=thinkTime;}
+  void startNewGame(Color humanColor, double thinkTime, int gameSeriesID);
+  void humanPlayed(int i,int j,int gameSeriesID);
 };
 
 #endif // GAMEWORKER_H
